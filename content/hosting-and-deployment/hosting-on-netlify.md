@@ -30,7 +30,7 @@ If you installed a theme for your project, be sure to install it as a git submod
 
 ## Create a Netlify account
 
-Got to [netlify.com][netlify] and click on the signup button. Alternatively, you may go directly to their [signup page][netlifysignup].
+Go to [netlify.com][netlify] and click on the signup button. Alternatively, you may go directly to their [signup page][netlifysignup].
 
 ![][1]
 

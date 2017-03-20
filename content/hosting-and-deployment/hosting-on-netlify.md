@@ -4,7 +4,7 @@ linktitle: Hosting on Netlify
 description: Netlify can host your Hugo site with CDN, continuous deployment, 1-click HTTPS, an admin GUI, and its own CLI.
 date: 2017-02-01
 publishdate: 2017-02-01
-lastmod: 2017-03-11
+lastmod: 2017-03-14
 categories: [hosting and deployment]
 tags: [netlify,hosting,deployment]
 authors: [Ryan Watters, Seth MacLeod]
@@ -24,9 +24,13 @@ wip: true
 
 We will connect a git repo to Netlify's continuous deployment service. Pushing a commit to your repo will automatically trigger Netlify's service and deploy your site.
 
+{{% warning %}}
+If you installed a theme for your project, be sure to install it as a git submodule. Otherwise, your build will fail. Run the following command in the themes directory of your site folder: `git submodule add https://github.com/<username>/<repository>.git`.
+{{% /warning %}}
+
 ## Create a Netlify account
 
-Got to [netlify.com][netlify] and click on the signup button. Alternatively, you may go directly to their [signup page][netlifysignup].
+Go to [netlify.com][netlify] and click on the signup button. Alternatively, you may go directly to their [signup page][netlifysignup].
 
 ![][1]
 
@@ -45,6 +49,10 @@ You will see a list of your repos. Click on the repo you wish to connect to Netl
 There are three settings on the Basic Settings tab. If you have multiple branches, you may choose which branch to deploy. Set the publish directory to `public` and the build command to `hugo`. After filling in the fields, click the button that says "Build your site."
 
 ![][4]
+
+{{% warning %}}
+You may require a different version of Hugo than what Netlify has set as its default. Check Netlify's [documentation](https://www.netlify.com/docs/continuous-deployment/#common-configuration-directives) on which versions they have available. Specify a particular version for the build command like so: `hugo_0.19`.
+{{% /warning %}}
 
 Your site is now configured for continuous deployment, and you may view your site once the build is complete.
 

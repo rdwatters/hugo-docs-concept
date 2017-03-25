@@ -7,14 +7,10 @@
       <!-- header spans the full width -->
 
     <div class="flex-l">
-
-{{ partial "docs/navigation.html" .}}
-
+      {{ partial "docs/navigation.html" .}}
 
 
-
-
-      <div class="fn f4 pl5-l pt4 mid-gray w-100 w-two-third-l serif nested-copy-line-height no-underline nested-links nested-img nested-copy-seperator nested-blockquote measure-wide-l mt0-ns"><!-- TODO: Can the content top and the description top line up more precisely, or is just winging it with padding the best we've got? -->
+      <div class="fn f4 pl5-l pt4 mid-gray w-100 nested-copy-line-height no-underline nested-links nested-img nested-copy-seperator nested-blockquote measure-wide-l mt0-ns"><!-- TODO: Can the content top and the description top line up more precisely, or is just winging it with padding the best we've got? -->
         <header class="flex-none w-100">
           {{ if .Params.categories }}
               {{ range .Params.categories }}
@@ -29,7 +25,7 @@
           </h1>
         </header>
 
-        <aside class="bt bw2 mt4 mid-gray b--mid-gray fn w-100 w-25-l">
+        <aside class="bt bw2 mt4 mid-gray b--mid-gray fn w-100">
           {{ with .Params.description }}
             <h2 class="f3  lh-title">
               {{ . | markdownify }}

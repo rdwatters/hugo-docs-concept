@@ -43,6 +43,7 @@ source = ""
 stepAnalysis = true
 # This is the top-level, global site title
 title = "Hugo"
+description = ""
 # Change this once you've created your theme
 theme = ""
 # Set to true to convert mysite/section/ to mysite/section.html
@@ -58,7 +59,6 @@ watch = true
 #CUSTOM PARAMS
 [params]
 	organizationname = ""
-  sitedescription = ""
   release = "0.20"
   # Add GA Tracking Code Here. This leverages a built-in (ie, "internal") partial from HUGO: https://gohugo.io/extras/analytics#configuring-google-analytics
   googleanalyticstrackingcode = ""

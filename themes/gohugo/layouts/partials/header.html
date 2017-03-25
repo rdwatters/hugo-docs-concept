@@ -1,0 +1,21 @@
+{{ $currentPage := . }}
+{{ $currentURL := .URL }}
+{{ partial "svg/github-corner.svg" . }}
+<header class="bg-light-gray ph4 ph5-ns flex pv4">
+  <ul class="list ma0 pa0 ">
+      <!-- TODO: Active classes -->
+      <li class="f5 dib mh3 v-top white">
+        <a href="/news/" class="link primary-color-dark dim">
+            News:
+        </a>
+      </li>
+      {{ range $name, $taxonomy := .Site.Taxonomies.categories }}
+        {{ $link :=  $name | printf "%s%s" "/categories/" | printf "%s/" }}
+        <li class="f5 dib mr3 v-top mr3 mb3">
+          <a href="{{ $link }}" class="link {{ if eq $currentURL $link }} bg-primary-color-dark {{ else }} bg-primary-color {{ end }} white ph3 pv1 br2 hover-bg-accent-color-light">
+            {{ $name  | humanize }}
+          </a>
+        </li>
+      {{ end }}
+  </ul>
+</header>

@@ -31,7 +31,7 @@ stepAnalysis = true
 # This is the top-level, global site title
 title = "Hugo"
 # Change this once you've created your theme
-theme = "hugo-docs-concept"
+theme = "gohugo"
 # Set to true to convert mysite/section/ to mysite/section.html
 uglyURLs = false
 verbose = false
@@ -84,3 +84,38 @@ googleAnalytics = ""
 ## As of v0.20, all content files include a default "categories" value that's the same as the section. This was a cheap future-proofing method and should/could be changed accordingly.
 [taxonomies]
   tag = "tags"
+
+[[menu.global]]
+    name = "News"
+    weight = 1
+    identifier = "news"
+    url = "/news/"
+
+  [[menu.global]]
+    name = "Docs"
+    weight = 5
+    identifier = "docs"
+    url = "https://hugodocs.info/"
+
+  [[menu.global]]
+    name = "Themes"
+    weight = 10
+    identifier = "themes"
+    url = "http://themes.gohugo.io/"
+
+  # Anything with a weight > 100 gets an external icon
+  [[menu.global]]
+    name = "Community"
+    weight = 150
+    icon = true
+    identifier = "community"
+    post = "external"
+    url = "https://discuss.gohugo.io/"
+
+
+  [[menu.global]]
+    name = "Github"
+    weight = 200
+    identifier = "github"
+    post = "external"
+    url = "https://github.com/spf13/hugo"

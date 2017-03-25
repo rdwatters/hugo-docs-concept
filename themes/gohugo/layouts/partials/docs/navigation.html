@@ -1,0 +1,32 @@
+<!-- TODO: This menu will be last in the HTML flow. We need to apply tab index values to each link -->
+  <nav class="site-navigation" id="site-navigation" role="navigation">
+  	<ul class="list">
+  		{{$.Scratch.Set "currentsection" $.Section}}
+  		{{$.Scratch.Set "currentpage" .Permalink }}
+  		{{$.Scratch.Set "url" .URL }}
+  		{{range $item, $params := sort ($.Site.Data.docsnav) "order"}}
+        {{ $.Scratch.Add "i" 1 }}{{ $i := $.Scratch.Get "i" }}
+  		{{$section := $params.url}}
+  		<li class="top-menu-item pa4 bg-moon-gray mb3 hover-bg-red" role="menuitem"><a class="list-icon top-menu-item-link black link f3 {{if $params.haschildren}}has-children{{end}}{{if eq ($.Scratch.Get "currentsection") $section }} active-section open{{end}}" href="{{if $params.haschildren}}#{{else}}/{{$params.url}}{{end}}" tabindex="{{add $i 1}}">{{$params.title}}</a>
+  		{{if $params.haschildren}}
+  			<ul class="submenu list ml0 pl2">
+  				{{- if eq $params.sortsubpagesby "title"}}
+  					{{range (where $.Site.Pages "Section" $section).ByTitle}}
+  					<li class="submenu-item"><a class="submenu-item-link link {{$section}}{{if eq ($.Scratch.Get "url") .URL}} active-page{{end}}" href="{{.Permalink}}" role="menuitem" tabindex="{{add $i 1}}">{{with .LinkTitle}}{{. | markdownify }}{{else}}{{.Title | markdownify}}{{end}}</a></li>
+  					{{end}}
+  				{{ else }}
+  					{{range (where $.Site.Pages "Section" $section).ByWeight}}
+  					<li class="submenu-item"><a class="submenu-item-link link {{$section}}{{if eq ($.Scratch.Get "url") .URL}} active-page{{end}}" href="{{with .Params.redirecturl}}{{.}}{{else}}{{.Permalink}}{{end}}" tabindex="{{add $i 1}}">{{with .LinkTitle}}{{. | markdownify }}{{else}}{{.Title | markdownify}}{{end}}</a></li>
+  					{{end}}
+  				{{- end }}
+  			</ul>
+  		{{end}}
+  		</li>
+  		{{end}}
+  	</ul>
+  	<div class="nav-buttons">
+  		<a role="button" href="https://github.com/spf13/hugo/releases"><i class="icon-download"></i>Download Hugo</a>
+  		<a role="button" href="{{.Site.Params.discuss}}" target="_blank"><i class="icon-forum"></i> Discuss Hugo</a><br>
+  		<a role="button" href="https://github.com/spf13/hugo/issues/new" target="_blank"><i class="icon-github"></i> File an Issue</a>
+  	</div>
+  </nav>

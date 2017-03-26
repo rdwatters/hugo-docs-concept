@@ -12,7 +12,7 @@
 @import '_columns';
 @import '_font-family';
 @import '_hugo-internal-template-styling';
-
+@import '_styles';
 @import '_variables';
 
 .nested-blockquote blockquote {

@@ -7,9 +7,9 @@ pre, .pre  {
 
 pre  code {
   display: block;
-  padding: 2em 2em;
+  padding: 1.5em 1.5em;
   white-space: normal;
-  font-size: .875em;
+  font-size: .875rem;
   line-height: 2;
 
 }
@@ -23,7 +23,7 @@ pre {
   position: relative;
 }
 @media (--breakpoint-large) {
-.full-width, pre {
+.full-width, preTK {
   /*width: 100vw;
   position: relative;
   left: 50%;

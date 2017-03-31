@@ -11,7 +11,7 @@
         {{ $.Scratch.Add "i" 1 }}{{ $i := $.Scratch.Get "i" }}
 
       {{$section := $params.url}}
-  		<li class=" f6 top-menu-item pa4 bg-moon-gray mb3 hover-bg-red" role="menuitem"><a class="list-icon top-menu-item-link black link f3 {{if $params.haschildren}}has-children{{end}}{{if eq ($.Scratch.Get "currentsection") $section }} active-section open{{end}}" href="{{if $params.haschildren}}#{{else}}/{{$params.url}}{{end}}" tabindex="{{add $i 1}}">{{$params.title}}</a>
+  		<li class="top-menu-item pa4 bg-moon-gray mb3 hover-bg-red" role="menuitem"><a class="list-icon top-menu-item-link black link f3 {{if $params.haschildren}}has-children{{end}}{{if eq ($.Scratch.Get "currentsection") $section }} active-section open{{end}}" href="{{if $params.haschildren}}#{{else}}/{{$params.url}}{{end}}" tabindex="{{add $i 1}}">{{$params.title}}</a>
   		{{if $params.haschildren}}
   			<ul class="submenu list ml0 pl2">
   				{{- if eq $params.sortsubpagesby "title"}}

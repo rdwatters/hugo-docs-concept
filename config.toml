@@ -73,6 +73,8 @@ googleAnalytics = ""
   # Set to true to include a CDN call to FontAwesome (note that Hugo currently hosts its own FA (see pipeline/scss/_variables.scss) if needed, but leverages a custom Fontello font or icons, including the "H" and "Gopher" icons for code blocks)
   usefontawesome = false
 
+  #sidebar_direction = "sidebar_left"
+
 # MARKDOWN
 ## Configuration for BlackFriday markdown parser: https://github.com/russross/blackfriday
 [blackfriday]

@@ -1,3 +1,5 @@
+{{ $currentPageUrl := .URL }}
+
 {{ if .Params.tags }}
       <div class="mt5 f6 gray nested-lh-copy bg-light-gray ph3 pv2 measure-wide-l">
           {{ $name := index .Params.tags 0 }}

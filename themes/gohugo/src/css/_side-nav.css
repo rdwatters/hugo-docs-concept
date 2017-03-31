@@ -20,6 +20,8 @@ body.sidebar_right .content-with-sidebar {
   body.sidebar_left .sidebar {
     width: var(--sidebar-width);
     left:  0;
+    z-index: -1000;
+    padding-top: 5.5em;
   }
   body.sidebar_right .sidebar {
     width: var(--sidebar-width);

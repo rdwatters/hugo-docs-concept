@@ -47,8 +47,6 @@ The above shortcode [is part of the code for the Hugo docs][dirindex]. Here it l
 
 {{< directoryindex path="/themes/hugo-docs-concept/static/css" pathURL="/css" >}}
 
-
-
 {{% note "Slashes are Important" %}}
 The initial slash `/` in `pathURL` is important in the `directoryindex` shortcode. Otherwise, `pathURL` becomes relative to the current web page.
 {{% /note %}}
@@ -70,6 +68,10 @@ As `readFile` is a function, it is only available to you in your templates and n
 ```
 {{</* readfile file="/path/to/local/file.txt" markdown="true" */>}}
 ```
+
+{{% warning %}}
+If you are going to create [custom shortcodes](/templates/shortcode-templates/) with `readFile` for a theme, note that usage of the shortcode will refer to the project root and *not* your `themes` directory.
+{{% /warning %}}
 
 Here is the templating for our new `readfile` shortcode:
 
@@ -107,5 +109,5 @@ And here is the result as [called directly in the Hugo docs][] and rendered for 
 [reads]: /functions/readfile/
 [sc]: /content-management/shortcodes/
 [sct]: /templates/shortcode-templates/
-[readfilesource]: https://github.com/spf13/hugo/blob/master/docs/layouts/shortcodes/readfile.html
+[readfilesource]: https://github.com/spf13/hugo/blob/master/
 [testfile]: https://github.com/spf13/hugo/blob/master/docs/testfile

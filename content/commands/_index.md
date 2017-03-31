@@ -9,7 +9,7 @@ categories: [commands]
 tags: [cli,command line]
 menu:
   main:
-    parent: "section name"
+    parent: "Commands"
     weight: 01
 weight: 01	#rem
 draft: false

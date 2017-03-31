@@ -10,7 +10,7 @@ categories: [themes]
 tags: [themes, showcase]
 menu:
   main:
-    parent: "section name"
+    parent: "Themes"
     weight: 40
 weight: 40	#rem
 draft: false

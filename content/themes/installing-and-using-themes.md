@@ -9,7 +9,7 @@ categories: [themes]
 tags: [install, themes, source, organization, directories,usage]
 menu:
   main:
-    parent: "section name"
+    parent: "Themes"
     weight: 10
 weight: 10	#rem
 draft: false

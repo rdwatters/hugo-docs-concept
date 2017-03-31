@@ -6,7 +6,11 @@ godocref:
 date: 2017-02-01
 publishdate: 2017-02-01
 lastmod: 2017-02-01
-weight: 25
+menu:
+  main:
+    parent: "section name"
+    weight: 25
+weight: 25	#rem
 categories: [content management]
 tags: [markdown,content,shortcodes]
 draft: false

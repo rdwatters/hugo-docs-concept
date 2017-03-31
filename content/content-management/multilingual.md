@@ -7,7 +7,11 @@ publishdate: 2017-01-10
 lastmod: 2017-01-10
 categories: [content management]
 tags: [multilingual,i18n, internationalization]
-weight: 150
+menu:
+  main:
+    parent: "section name"
+    weight: 150
+weight: 150	#rem
 draft: false
 aliases: [/content/multilingual/,/content-management/multilingual/]
 toc: true

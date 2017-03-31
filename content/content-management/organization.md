@@ -7,7 +7,11 @@ publishdate: 2017-02-01
 lastmod: 2017-02-01
 categories: [content management]
 tags: [sections,content,organization,fundamentals]
-weight: 10
+menu:
+  main:
+    parent: "section name"
+    weight: 10
+weight: 10	#rem
 draft: false
 aliases: [/content/sections/]
 toc: true

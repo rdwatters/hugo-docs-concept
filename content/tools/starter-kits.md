@@ -8,7 +8,7 @@ lastmod: 2017-02-22
 tags: [starters,assets,pipeline]
 menu:
   main:
-    parent: "section name"
+    parent: "Tools"
     weight: 30
 weight: 30	#rem
 draft: false

@@ -9,7 +9,7 @@ tags: [highlighting,pygments,code blocks,syntax]
 categories: [developer tools]
 menu:
   main:
-    parent: "section name"
+    parent: "Tools"
     weight: 20
 weight: 20	#rem
 draft: false

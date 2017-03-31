@@ -9,7 +9,7 @@ categories: [developer tools]
 tags: [frontend,gui]
 menu:
   main:
-    parent: "section name"
+    parent: "Tools"
     weight: 40
 weight: 40	#rem
 draft: false

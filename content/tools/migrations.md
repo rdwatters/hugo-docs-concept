@@ -8,7 +8,7 @@ lastmod: 2017-02-01
 tags: [migrations,jekyll,wordpress,drupal,ghost,contentful]
 menu:
   main:
-    parent: "section name"
+    parent: "Tools"
     weight: 10
 weight: 10	#rem
 draft: false

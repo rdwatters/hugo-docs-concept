@@ -9,7 +9,7 @@ categories: [developer tools]
 tags: [search,tools]
 menu:
   main:
-    parent: "section name"
+    parent: "Tools"
     weight: 60
 weight: 60	#rem
 draft: false

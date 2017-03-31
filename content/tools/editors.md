@@ -9,7 +9,7 @@ categories: [developer tools]
 tags: [editor, plug-ins]
 menu:
   main:
-    parent: "section name"
+    parent: "Tools"
     weight: 50
 weight: 50	#rem
 draft: false

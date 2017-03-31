@@ -9,7 +9,7 @@ categories: [content management]
 tags: ["front matter", "yaml", "toml", "json", "metadata", "archetypes"]
 menu:
   main:
-    parent: "section name"
+    parent: "Content Management"
     weight: 30
 weight: 30	#rem
 draft: false

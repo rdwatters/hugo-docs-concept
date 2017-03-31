@@ -9,7 +9,7 @@ categories: [content management]
 tags: ["amp","outputs"]
 menu:
   main:
-    parent: "section name"
+    parent: "Content Management"
     weight: 100
 weight: 100	#rem
 draft: false

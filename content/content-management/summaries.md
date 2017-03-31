@@ -9,7 +9,7 @@ categories: [content management]
 tags: [summaries,abstracts,read more]
 menu:
   main:
-    parent: "section name"
+    parent: "Content Management"
     weight: 90
 weight: 90	#rem
 draft: false

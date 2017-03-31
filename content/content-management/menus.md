@@ -10,7 +10,7 @@ tags: [menus]
 draft: false
 menu:
   main:
-    parent: "section name"
+    parent: "Content Management"
     weight: 120
 weight: 120	#rem
 aliases: [/extras/menus/]

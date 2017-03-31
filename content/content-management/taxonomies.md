@@ -9,7 +9,7 @@ tags: [taxonomies,metadata,front matter,terms]
 categories: [content management]
 menu:
   main:
-    parent: "section name"
+    parent: "Content Management"
     weight: 80
 weight: 80	#rem
 draft: false

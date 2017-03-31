@@ -9,7 +9,7 @@ categories: [content management]
 tags: [table of contents, toc]
 menu:
   main:
-    parent: "section name"
+    parent: "Content Management"
     weight: 130
 weight: 130	#rem
 draft: false

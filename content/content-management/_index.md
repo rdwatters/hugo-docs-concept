@@ -9,7 +9,7 @@ tags: [source, organization]
 categories: [content management]
 menu:
   main:
-    parent: "section name"
+    parent: "Content Management"
     weight: 01
 weight: 01	#rem
 draft: false

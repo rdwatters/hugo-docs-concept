@@ -9,7 +9,7 @@ tags: [sections,content,organization, fundamentals]
 categories: [project organization]
 menu:
   main:
-    parent: "section name"
+    parent: "Content Management"
     weight: 140
 weight: 140	#rem
 draft: false

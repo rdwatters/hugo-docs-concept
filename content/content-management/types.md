@@ -9,7 +9,7 @@ categories: [content management]
 tags: [lists,sections,content types,types,organization]
 menu:
   main:
-    parent: "section name"
+    parent: "Content Management"
     weight: 60
 weight: 60	#rem
 draft: false

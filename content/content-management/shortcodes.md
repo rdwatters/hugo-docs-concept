@@ -8,7 +8,7 @@ publishdate: 2017-02-01
 lastmod: 2017-02-01
 menu:
   main:
-    parent: "section name"
+    parent: "Content Management"
     weight: 25
 weight: 25	#rem
 categories: [content management]

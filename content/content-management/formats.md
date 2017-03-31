@@ -9,7 +9,7 @@ categories: [content management]
 tags: [markdown,asciidoc,mmark,content format]
 menu:
   main:
-    parent: "section name"
+    parent: "Content Management"
     weight: 20
 weight: 20	#rem
 draft: false

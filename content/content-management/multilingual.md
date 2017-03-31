@@ -9,7 +9,7 @@ categories: [content management]
 tags: [multilingual,i18n, internationalization]
 menu:
   main:
-    parent: "section name"
+    parent: "Content Management"
     weight: 150
 weight: 150	#rem
 draft: false

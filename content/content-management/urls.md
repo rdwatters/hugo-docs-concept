@@ -9,7 +9,7 @@ tags: [aliases,redirects,permalinks,urls]
 categories: [content management]
 menu:
   main:
-    parent: "section name"
+    parent: "Content Management"
     weight: 110
 weight: 110	#rem
 draft: false

@@ -9,7 +9,7 @@ tags: [archetypes,generators,metadata,front matter]
 categories: ["content management"]
 menu:
   main:
-    parent: "section name"
+    parent: "Content Management"
     weight: 70
 weight: 70	#rem
 draft: false

@@ -9,7 +9,7 @@ tags: [authors]
 categories: ["content management"]
 menu:
   main:
-    parent: "section name"
+    parent: "Content Management"
     weight: 55
 weight: 55	#rem
 draft: true

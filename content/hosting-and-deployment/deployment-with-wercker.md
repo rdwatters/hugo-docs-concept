@@ -10,7 +10,7 @@ tags: [wercker,deployment,github,git]
 authors: [Arjen Schwarz, Samuel Debruyn]
 menu:
   main:
-    parent: "section name"
+    parent: "Hosting and Deployment"
     weight: 60
 weight: 60	#rem
 draft: false

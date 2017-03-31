@@ -10,7 +10,7 @@ tags: [netlify,hosting,deployment]
 authors: [Ryan Watters, Seth MacLeod]
 menu:
   main:
-    parent: "section name"
+    parent: "Hosting and Deployment"
     weight: 10
 weight: 10	#rem
 draft: false

@@ -10,7 +10,7 @@ tags: [rysnc,deployment]
 authors: [Adrien Poupin]
 menu:
   main:
-    parent: "section name"
+    parent: "Hosting and Deployment"
     weight: 70
 weight: 70	#rem
 draft: false

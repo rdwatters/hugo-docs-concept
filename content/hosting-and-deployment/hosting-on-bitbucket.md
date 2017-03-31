@@ -10,7 +10,7 @@ tags: [hosting,bitbucket,deployment,aerobatic]
 authors: [Jason Gowans]
 menu:
   main:
-    parent: "section name"
+    parent: "Hosting and Deployment"
     weight: 50
 weight: 50	#rem
 draft: false

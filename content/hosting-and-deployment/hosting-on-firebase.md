@@ -10,7 +10,7 @@ tags: [hosting,firebase]
 authors: [Michel Racic]
 menu:
   main:
-    parent: "section name"
+    parent: "Hosting and Deployment"
     weight: 20
 weight: 20	#rem
 draft: false

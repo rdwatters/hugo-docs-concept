@@ -9,7 +9,7 @@ categories: [hosting and deployment]
 tags: []
 menu:
   main:
-    parent: "section name"
+    parent: "Hosting and Deployment"
     weight: 01
 weight: 01	#rem
 draft: false

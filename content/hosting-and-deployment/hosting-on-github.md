@@ -10,7 +10,7 @@ tags: [github,git,deployment,hosting]
 authors: [Spencer Lyon, Gunnar Morling]
 menu:
   main:
-    parent: "section name"
+    parent: "Hosting and Deployment"
     weight: 30
 weight: 30	#rem
 draft: false

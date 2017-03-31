@@ -10,7 +10,7 @@ tags: [hosting,deployment,git,gitlab]
 authors: [Riku-Pekka Silvola]
 menu:
   main:
-    parent: "section name"
+    parent: "Hosting and Deployment"
     weight: 40
 weight: 40	#rem
 draft: false

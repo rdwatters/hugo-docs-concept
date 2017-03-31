@@ -10,7 +10,7 @@ tags: [hugo,generator]
 draft: false
 menu:
   main:
-    parent: "section name"
+    parent: "Variables"
     weight: 60
 weight: 60	#rem
 aliases: []

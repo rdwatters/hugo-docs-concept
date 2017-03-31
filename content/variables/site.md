@@ -10,7 +10,7 @@ tags: [global,site]
 draft: false
 menu:
   main:
-    parent: "section name"
+    parent: "Variables"
     weight: 10
 weight: 10	#rem
 aliases: [/variables/site-variables/]

@@ -10,7 +10,7 @@ tags: [git]
 draft: false
 menu:
   main:
-    parent: "section name"
+    parent: "Variables"
     weight: 70
 weight: 70	#rem
 aliases: [/extras/gitinfo/]

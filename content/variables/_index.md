@@ -10,7 +10,7 @@ tags: [variables,params,values,globals]
 draft: false
 menu:
   main:
-    parent: "section name"
+    parent: "Variables"
     weight: 01
 weight: 01	#rem
 aliases: [/templates/variables/]

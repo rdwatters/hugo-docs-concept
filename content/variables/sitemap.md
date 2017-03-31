@@ -10,7 +10,7 @@ tags: [sitemap]
 draft: false
 menu:
   main:
-    parent: "section name"
+    parent: "Variables"
     weight: 80
 weight: 80	#rem
 aliases: []

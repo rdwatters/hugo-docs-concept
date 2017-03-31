@@ -10,7 +10,7 @@ tags: [taxonomies,terms]
 draft: false
 menu:
   main:
-    parent: "section name"
+    parent: "Variables"
     weight: 30
 weight: 30	#rem
 aliases: []

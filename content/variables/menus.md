@@ -10,7 +10,7 @@ tags: [menus]
 draft: false
 menu:
   main:
-    parent: "section name"
+    parent: "Variables"
     weight: 50
 weight: 50	#rem
 aliases: [/variables/menu/]

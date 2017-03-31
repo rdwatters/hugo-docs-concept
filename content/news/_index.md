@@ -9,7 +9,7 @@ tags: []
 categories: []
 menu:
   main:
-    parent: "section name"
+    parent: "News"
     weight: 01
 weight: 01	#rem
 draft: false

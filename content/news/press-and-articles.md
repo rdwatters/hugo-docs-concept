@@ -9,7 +9,7 @@ tags: [articles, tutorials, press]
 categories: [news and articles]
 menu:
   main:
-    parent: "section name"
+    parent: "News"
     weight: 30
 weight: 30	#rem
 draft: false

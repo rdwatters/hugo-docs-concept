@@ -10,7 +10,7 @@ tags: [contribute,themes,design]
 authors: [digitalcraftsman]
 menu:
   main:
-    parent: "section name"
+    parent: "Contribute"
     weight: 30
 weight: 30	#rem
 draft: false

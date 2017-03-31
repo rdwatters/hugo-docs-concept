@@ -9,7 +9,7 @@ categories: [contribute]
 tags: [docs,documentation,community, contribute]
 menu:
   main:
-    parent: "section name"
+    parent: "Contribute"
     weight: 20
 weight: 20	#rem
 draft: false

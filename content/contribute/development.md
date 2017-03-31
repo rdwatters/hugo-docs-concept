@@ -10,7 +10,7 @@ tags: [dev,open source]
 authors: [digitalcraftsman]
 menu:
   main:
-    parent: "section name"
+    parent: "Contribute"
     weight: 10
 weight: 10	#rem
 draft: false

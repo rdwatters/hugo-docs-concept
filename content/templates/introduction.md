@@ -10,7 +10,7 @@ categories: [templates]
 tags: [go,fundamentals]
 menu:
   main:
-    parent: "section name"
+    parent: "Templates"
     weight: 10
 weight: 10	#rem
 draft: false

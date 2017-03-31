@@ -10,7 +10,7 @@ categories: [templates]
 tags: [amber,ace,templating languages]
 menu:
   main:
-    parent: "section name"
+    parent: "Templates"
     weight: 170
 weight: 170	#rem
 draft: false

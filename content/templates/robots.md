@@ -9,7 +9,7 @@ categories: [templates]
 tags: [robots,search engines]
 menu:
   main:
-    parent: "section name"
+    parent: "Templates"
     weight: 165
 weight: 165	#rem
 draft: false

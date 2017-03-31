@@ -10,7 +10,7 @@ categories: [templates]
 tags: [files,directories]
 menu:
   main:
-    parent: "section name"
+    parent: "Templates"
     weight: 110
 weight: 110	#rem
 draft: false

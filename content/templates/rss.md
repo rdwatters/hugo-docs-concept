@@ -9,7 +9,7 @@ tags: [rss, xml]
 categories: [templates]
 menu:
   main:
-    parent: "section name"
+    parent: "Templates"
     weight: 150
 weight: 150	#rem
 draft: false

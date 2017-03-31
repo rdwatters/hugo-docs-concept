@@ -10,7 +10,7 @@ categories: [templates]
 tags: [debugging,troubleshooting]
 menu:
   main:
-    parent: "section name"
+    parent: "Templates"
     weight: 180
 weight: 180	#rem
 draft: false

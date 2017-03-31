@@ -9,7 +9,7 @@ categories: [templates]
 tags: [shortcodes]
 menu:
   main:
-    parent: "section name"
+    parent: "Templates"
     weight: 100
 weight: 100	#rem
 draft: false

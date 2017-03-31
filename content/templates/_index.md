@@ -7,7 +7,7 @@ publishdate: 2017-02-01
 lastmod: 2017-02-01
 menu:
   main:
-    parent: "section name"
+    parent: "Templates"
     weight: 01
 weight: 01	#rem
 categories: [templates]

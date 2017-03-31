@@ -10,7 +10,7 @@ categories: [templates]
 tags: [lookup,fundamentals]
 menu:
   main:
-    parent: "section name"
+    parent: "Templates"
     weight: 15
 weight: 15	#rem
 draft: false

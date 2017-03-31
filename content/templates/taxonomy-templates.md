@@ -9,7 +9,7 @@ categories: [templates]
 tags: [taxonomies,metadata,front matter,terms]
 menu:
   main:
-    parent: "section name"
+    parent: "Templates"
     weight: 50
 weight: 50	#rem
 draft: false

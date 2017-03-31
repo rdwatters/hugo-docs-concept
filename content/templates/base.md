@@ -10,7 +10,7 @@ categories: [templates]
 tags: [blocks,base,fundamentals]
 menu:
   main:
-    parent: "section name"
+    parent: "Templates"
     weight: 20
 weight: 20	#rem
 draft: false

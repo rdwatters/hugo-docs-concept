@@ -9,7 +9,7 @@ categories: [templates]
 tags: [data,dynamic,csv,json,toml,yaml]
 menu:
   main:
-    parent: "section name"
+    parent: "Templates"
     weight: 80
 weight: 80	#rem
 draft: false

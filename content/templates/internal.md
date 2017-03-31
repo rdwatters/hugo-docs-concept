@@ -9,7 +9,7 @@ categories: [templates]
 tags: [internal, analytics,]
 menu:
   main:
-    parent: "section name"
+    parent: "Templates"
     weight: 168
 weight: 168	#rem
 draft: false

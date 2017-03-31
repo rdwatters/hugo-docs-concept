@@ -9,7 +9,7 @@ categories: [getting started]
 tags: [usage,docs]
 menu:
   main:
-    parent: "section name"
+    parent: "Getting Started"
     weight: 01
 weight: 01	#rem
 draft: false

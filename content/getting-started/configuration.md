@@ -9,7 +9,7 @@ categories: [getting started]
 tags: [configuration,fundamentals,toml,yaml,json]
 menu:
   main:
-    parent: "section name"
+    parent: "Getting Started"
     weight: 60
 weight: 60	#rem
 draft: false

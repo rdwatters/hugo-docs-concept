@@ -9,7 +9,7 @@ categories: [getting started]
 tags: [usage,livereload,command line,flags]
 menu:
   main:
-    parent: "section name"
+    parent: "Getting Started"
     weight: 40
 weight: 40	#rem
 draft: false

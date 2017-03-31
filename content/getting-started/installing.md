@@ -10,7 +10,7 @@ authors: ["Michael Henderson"]
 tags: [install,fundamentals,pc,windows,linux,macos,binary,tarball]
 menu:
   main:
-    parent: "section name"
+    parent: "Getting Started"
     weight: 30
 weight: 30	#rem
 draft: false

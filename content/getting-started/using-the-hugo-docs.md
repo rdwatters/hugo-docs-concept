@@ -10,7 +10,7 @@ tags: [usage,docs,fundamentals]
 tags_weight: 01
 menu:
   main:
-    parent: "section name"
+    parent: "Getting Started"
     weight: 20
 weight: 20	#rem
 draft: true

@@ -9,7 +9,7 @@ categories: [project organization]
 tags: [source, organization, directories,fundamentals]
 menu:
   main:
-    parent: "section name"
+    parent: "Getting Started"
     weight: 50
 weight: 50	#rem
 draft: false

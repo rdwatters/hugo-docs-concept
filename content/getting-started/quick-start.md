@@ -10,7 +10,7 @@ tags: [quick start,usage]
 authors: [Shekhar Gulati, Ryan Watters]
 menu:
   main:
-    parent: "section name"
+    parent: "Getting Started"
     weight: 10
 weight: 10	#rem
 draft: false

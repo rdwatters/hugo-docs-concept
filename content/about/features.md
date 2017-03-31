@@ -7,7 +7,7 @@ publishdate: 2017-02-01
 lastmod: 2017-02-01
 menu:
   main:
-    parent: "section name"
+    parent: "About Hugo"
     weight: 20
 weight: 20	#rem
 draft: false

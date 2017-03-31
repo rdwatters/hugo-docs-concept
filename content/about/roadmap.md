@@ -9,7 +9,7 @@ categories: [about hugo]
 tags: [about,contribute,roadmap]
 menu:
   main:
-    parent: "section name"
+    parent: "About Hugo"
     weight: 50
 weight: 50	#rem
 draft: false

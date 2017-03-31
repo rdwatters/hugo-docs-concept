@@ -9,7 +9,7 @@ categories: ["about hugo"]
 tags: ["License","apache"]
 menu:
   main:
-    parent: "section name"
+    parent: "About Hugo"
     weight: 60
 weight: 60	#rem
 aliases: [/meta/license]

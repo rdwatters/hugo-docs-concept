@@ -8,7 +8,7 @@ lastmod: 2017-02-01
 tags: [ssg,static,performance,security]
 menu:
   main:
-    parent: "section name"
+    parent: "About Hugo"
     weight: 30
 weight: 30	#rem
 draft: false

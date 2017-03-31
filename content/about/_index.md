@@ -9,7 +9,7 @@ categories: []
 tags: []
 menu:
   main:
-    parent: "section name"
+    parent: "About Hugo"
     weight: 01
 weight: 01	#rem
 draft: false

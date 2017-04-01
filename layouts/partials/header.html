@@ -1,0 +1,20 @@
+{{ $currentPage := . }}
+{{ $currentURL := .URL }}
+{{ partial "svg/github-corner.svg" . }}
+<header class="bg-light-gray ph4 flex pv4">
+  <ul class="list ma0 pa0 ">
+      <!-- TODO: Active classes -->
+      <li class="f5 dib mh3 v-top white">
+        <a href="/news/" class="link primary-color-dark dim">
+            Quick Links:
+        </a>
+      </li>
+        {{ range .Site.Menus.top }}
+        <li class="f5 dib mr3 v-top mr3 mb3">
+          <a href="{{ .URL }}" class="link  bg-primary-color white ph3 pv1 br2 hover-bg-accent-color-light">
+            {{ .Name  }}
+          </a>
+        </li>
+      {{ end }}
+  </ul>
+</header>

@@ -1,25 +1,16 @@
 {{ $currentPage := . }}
-<nav class="pr4">
+<nav class="pr6">
   <ul class="list pa0">
-    {{ range .Site.Menus.main }}
-      <li class="sub-menu{{if $currentPage.HasMenuCurrent "main" . }} active {{end}} f3 mb4">
-        <a href="{{ .URL }}" class="link black pl2">
-          {{ .Pre }}
-          <span>{{ .Name }}</span>
-          <span class="menu-arrow arrow_carrot-right"></span>
-        </a>
-          {{ if .HasChildren }}
-            <ul class="list pl0">
-              {{ range .Children }}
-                <li  class="{{if $currentPage.IsMenuCurrent "main" . }}bg-light-gray white {{ else }}mid-gray {{end}} f6">
-                  <a href="{{.URL}}" class="link hover-bg-gray ph2 pv2 db">
-                    {{ .Name }}
-                  </a>
-                </li>
-              {{ end }}
-            </ul>
-          {{end}}
-        </li>
+    {{ range .Site.Menus.main.ByWeight }}
+      {{ if .HasChildren }}
+        {{ range .Children }}
+          <li>
+            <a href="{{.URL}}" class="link dim pv2 db {{if $currentPage.IsMenuCurrent "main" . }}red {{ else }}mid-gray {{end}}{{ if eq .Weight 1 }} fw8 f4 mt3{{ else }} f6{{ end }}">
+              {{ .Name }}
+            </a>
+          </li>
+        {{ end }}
+      {{end}}
     {{end}}
   </ul>
 </nav>

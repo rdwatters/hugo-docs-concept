@@ -7,7 +7,11 @@ publishdate: 2017-02-01
 lastmod: 2017-02-01
 categories: [templates]
 tags: [taxonomies,metadata,front matter,terms]
-weight: 50
+menu:
+  main:
+    parent: "Templates"
+    weight: 50
+weight: 50	#rem
 draft: false
 aliases: [/taxonomies/displaying/,/templates/terms/,/indexes/displaying/,/taxonomies/templates/,/indexes/ordering/, /templates/taxonomies/, /templates/taxonomy/]
 toc: true
@@ -30,7 +34,7 @@ Taxonomy list page templates are lists and therefore have all the variables and 
 
 ### Taxonomy List Template Lookup Order
 
-A Taxonomy will be rendered at /`PLURAL`/`TERM`/ (e.g., http://spf13.com/topics/golang/) from according to the following lookup order:
+A taxonomy will be rendered at /`PLURAL`/`TERM`/ (e.g., http://spf13.com/topics/golang/) according to the following lookup order:
 
 1. `/layouts/taxonomy/<SINGULAR>.html`
 2. `/layouts/_default/taxonomy.html`
@@ -43,8 +47,15 @@ A Taxonomy will be rendered at /`PLURAL`/`TERM`/ (e.g., http://spf13.com/topics/
 
 ### Taxonomy Terms Templates Lookup Order
 
+A taxonomy terms page will be rendered at `yoursite.com/<PLURALTAXONOMYNAME>`/ (e.g., http://spf13.com/topics/) according to the following lookup order:
+
+1. `/layouts/taxonomy/<SINGULAR>.terms.html`
+2. `/layouts/_default/terms.html`
+3. `/themes/<THEME>/layouts/taxonomy/<SINGULAR>.terms.html`
+4. `/themes/<THEME>/layouts/_default/terms.html`
+
 {{% warning "The Taxonomy Terms Template has a Unique Lookup Order" %}}
-Compared to taxonomy list pages and other list templates such as [sections](/templates/section-templates/), a terms template lookup has only two options. If Hugo does not find a terms template in `layout/` or `/themes/<THEME>/layouts/`, Hugo will *not* render a taxonomy terms page.
+If Hugo does not find a terms template in `layout/` or `/themes/<THEME>/layouts/`, Hugo will *not* render a taxonomy terms page.
 {{% /warning %}}
 
 <!-- Begin /taxonomies/methods/ -->

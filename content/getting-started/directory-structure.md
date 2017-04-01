@@ -5,9 +5,13 @@ description: Hugo's CLI scaffolds a project directory structure and then takes t
 date: 2017-01-02
 publishdate: 2017-02-01
 lastmod: 2017-03-09
-categories: [project organization]
+categories: [getting started]
 tags: [source, organization, directories,fundamentals]
-weight: 50
+menu:
+  main:
+    parent: "Getting Started"
+    weight: 50
+weight: 50	#rem
 draft: false
 aliases: [/overview/source-directory/]
 toc: true

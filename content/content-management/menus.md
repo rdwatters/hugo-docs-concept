@@ -4,11 +4,15 @@ linktitle: Menus
 description: Hugo's simple yet powerful menu system allows you to add content to menus with a high level of control and low level of effort.
 date: 2017-02-01
 publishdate: 2017-02-01
-lastmod: 2017-02-01
+lastmod: 2017-03-31
 categories: [content management]
 tags: [menus]
 draft: false
-weight: 120
+menu:
+  main:
+    parent: "Content Management"
+    weight: 120
+weight: 120	#rem
 aliases: [/extras/menus/]
 toc: true
 ---

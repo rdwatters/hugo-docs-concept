@@ -4,10 +4,14 @@ linktitle: Formats
 description: Markdown is natively supported in Hugo and is parsed by the feature-rich and incredibly speed Blackfriday parse. Hugo also provides support for additional syntaxes (eg, Asciidoc) via external helpers.
 date: 2017-01-10
 publishdate: 2017-01-10
-lastmod: 2017-01-10
+lastmod: 2017-03-31
 categories: [content management]
 tags: [markdown,asciidoc,mmark,content format]
-weight: 20
+menu:
+  main:
+    parent: "Content Management"
+    weight: 20
+weight: 20	#rem
 draft: false
 aliases: [/content/markdown-extras/,/content/supported-formats/,/doc/supported-formats/,/tutorials/mathjax/]
 toc: true
@@ -109,7 +113,7 @@ MathJax is a stable open-source library with many features. I encourage the inte
 
 ### Issues with Markdown
 
-After enabling MathJax, any math entered in-between proper markers (see documentation) will be processed and typeset in the web page. One issue that comes up, however, with Markdown is that the underscore character (`_`) is interpreted by Markdown as a way to wrap text in `emph` blocks while LaTeX (MathJax) interprets the underscore as a way to create a subscript. This "double speak" of the underscore can result in some unexpected and unwanted behavior.
+After enabling MathJax, any math entered between proper markers (see the [MathJax documentation][mathjaxdocs]) will be processed and typeset in the web page. One issue that comes up, however, with Markdown is that the underscore character (`_`) is interpreted by Markdown as a way to wrap text in `emph` blocks while LaTeX (MathJax) interprets the underscore as a way to create a subscript. This "double speak" of the underscore can result in some unexpected and unwanted behavior.
 
 ### Solution
 
@@ -146,6 +150,10 @@ MathJax.Hub.Config({
 </script>
 ```
 {{% /code %}}
+
+{{% note %}}
+If you are using Mmark with Mathjax, use `displayMath: [['$$','$$'], ['\\[','\\]']]`.
+{{% /note %}}
 
 As before, this content should be included in the HTML source of each page that will be using MathJax. The next code snippet contains the CSS that is used to have verbatim MathJax blocks render with the same font style as the body of the page.
 
@@ -200,6 +208,7 @@ Markdown syntax is simple enough to learn in a single sitting. The following are
 [hl]: /tools/syntax-highlighting/
 [hlsc]: /content-management/shortcodes/#highlight
 [hugocss]: /css/style.min.css
+[mathjaxdocs]: https://docs.mathjax.org/en/latest/
 [mdcheatsheet]: https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
 [mdtutorial]: http://www.markdowntutorial.com/
 [org]: http://orgmode.org/

@@ -5,8 +5,12 @@ description: Shortcodes are simple snippets inside your content files that Hugo 
 godocref:
 date: 2017-02-01
 publishdate: 2017-02-01
-lastmod: 2017-02-01
-weight: 25
+lastmod: 2017-03-31
+menu:
+  main:
+    parent: "Content Management"
+    weight: 25
+weight: 25	#rem
 categories: [content management]
 tags: [markdown,content,shortcodes]
 draft: false
@@ -34,11 +38,11 @@ Some shortcodes use or require closing shortcodes. Again like HTML, the opening 
 
 Here are two examples of paired shortcodes:
 
-```golang
+```md
 {{%/* mdshortcode */%}}Stuff to `process` in the *center*.{{%/* /mdshortcode */%}}
 ```
 
-```golang
+```md
 {{</* highlight go */>}} A bunch of code here {{</* /highlight */>}}
 ```
 
@@ -48,7 +52,7 @@ The examples above use two different delimiters, the difference being the `%` ch
 
 The `%` character indicates that the shortcode's inner content---called in the [shortcode template][sctemps] with the [`.Inner` variable][scvars]---needs further processing by the page's rendering processor (i.e. markdown via Blackfriday). In the following example, Blackfriday would convert `**World**` to `<strong>World</strong>`:
 
-```golang
+```md
 {{%/* myshortcode */%}}Hello **World!**{{%/* /myshortcode */%}}
 ```
 
@@ -56,7 +60,7 @@ The `%` character indicates that the shortcode's inner content---called in the [
 
 The `<` character indicates that the shortcode's inner content does *not* need further rendering. Often shortcodes without markdown include internal HTML:
 
-```golang
+```md
 {{</* myshortcode */>}}<p>Hello <strong>World!</strong></p>{{</* /myshortcode */>}}
 ```
 
@@ -114,7 +118,7 @@ https://gist.github.com/spf13/7896402
 
 We can embed the gist in our content via username and gist ID pulled from the URL:
 
-```golang
+```md
 {{</* gist spf13 7896402 */>}}
 ```
 
@@ -123,7 +127,7 @@ We can embed the gist in our content via username and gist ID pulled from the UR
 If the gist contains several files and you want to quote just one of them, you can pass the filename (quoted) as an optional third argument:
 
 {{% code file="gist-input.md" %}}
-```golang
+```md
 {{</* gist spf13 7896402 "img.html" */>}}
 ```
 {{% /code %}}
@@ -195,7 +199,7 @@ https://www.instagram.com/p/BMokmydjG-M/
 #### Example `instagram` Input
 
 {{% code file="instagram-input.md" %}}
-```golang
+```md
 {{</* instagram BMokmydjG-M */>}}
 ```
 {{% /code %}}
@@ -203,7 +207,7 @@ https://www.instagram.com/p/BMokmydjG-M/
 You also have the option to hide the caption:
 
 {{% code file="instagram-input-hide-caption.md" %}}
-```golang
+```md
 {{</* instagram BMokmydjG-M hidecaption */>}}
 ```
 {{% /code %}}
@@ -239,7 +243,7 @@ Read a more extensive description of `ref` and `relref` in the [cross references
 
 #### Example `ref` and `relref` Input
 
-```golang
+```md
 [Neat]({{</* ref "blog/neat.md" */>}})
 [Who]({{</* relref "about.md#who" */>}})
 ```
@@ -266,7 +270,7 @@ To embed slides from [Speaker Deck][], click on "&lt;&#8239;/&gt;&nbsp;Embed" (u
 Extract the value from the field `data-id` and pass it to the shortcode:
 
 {{% code file="speakerdeck-example-input.md" %}}
-```golang
+```md
 {{</* speakerdeck 4e8126e72d853c0060001f97 */>}}
 ```
 {{% /code %}}
@@ -298,7 +302,7 @@ https://twitter.com/spf13/status/666616452582129664
 Pass the tweet's ID from the URL as a parameter to the `tweet` shortcode:
 
 {{% code file="example-tweet-input.md" %}}
-```golang
+```md
 {{</* tweet 666616452582129664 */>}}
 ```
 {{% /code %}}
@@ -308,7 +312,7 @@ Pass the tweet's ID from the URL as a parameter to the `tweet` shortcode:
 Using the preceding `tweet` example, the following HTML will be added to your rendered website's markup:
 
 {{% output file="example-tweet-output.html" %}}
-```golang
+```html
 {{< tweet 666616452582129664 >}}
 ```
 {{% /output %}}
@@ -332,7 +336,7 @@ https://vimeo.com/channels/staffpicks/146022717
 Extract the ID from the video's URL and pass it to the `vimeo` shortcode:
 
 {{% code file="example-vimeo-input.md" %}}
-```golang
+```md
 {{</* vimeo 146022717 */>}}
 ```
 {{% /code %}}
@@ -346,6 +350,14 @@ Using the preceding `vimeo` example, the following HTML will be added to your re
 {{< vimeo 146022717 >}}
 ```
 {{% /output %}}
+
+{{% tip %}}
+If you want to further customize the visual styling of the YouTube or Vimeo output, add a `class` named parameter when calling the shortcode. The new `class` will be added to the `<div>` that wraps the `<iframe>` *and* will remove the inline styles. Note that you will need to call the `id` as a named parameter as well.
+
+```md
+{{</* vimeo id="146022717" class="my-vimeo-wrapper-class" */>}}
+```
+{{% /tip %}}
 
 #### Example `vimeo` Display
 
@@ -367,7 +379,7 @@ https://www.youtube.com/watch?v=w7Ft2ymGmfc
 Copy the YouTube video ID that follows `v=` in the video's URL and pass it to the `youtube` shortcode:
 
 {{% code file="example-youtube-input.md" %}}
-```golang
+```md
 {{</* youtube w7Ft2ymGmfc */>}}
 ```
 {{% /code %}}
@@ -376,7 +388,7 @@ Furthermore, you can autostart the embedded video by setting the `autostart` par
 
 
 {{% code file="example-youtube-input-with-autoplay.md" %}}
-```golang
+```md
 {{</* youtube id="w7Ft2ymGmfc" autoplay="true" */>}}
 ```
 {{% /code %}}
@@ -386,7 +398,7 @@ Furthermore, you can autostart the embedded video by setting the `autostart` par
 Using the preceding `youtube` example, the following HTML will be added to your rendered website's markup:
 
 {{% code file="example-youtube-output.html" %}}
-```golang
+```html
 {{< youtube id="w7Ft2ymGmfc" autoplay="true" >}}
 ```
 {{% /code %}}
@@ -412,6 +424,7 @@ To learn more about creating custom shortcodes, see the [shortcode template docu
 [quickstart]: /getting-started/quick-start/
 [sctemps]: /templates/shortcode-templates/
 [scvars]: /variables/shortcodes/
+[shortcode template documentation]: /templates/shortcode-templates/
 [Speaker Deck]: https://speakerdeck.com/
 [templatessection]: /templates/
 [Vimeo]: https://vimeo.com/

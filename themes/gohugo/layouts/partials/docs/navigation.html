@@ -11,7 +11,7 @@
             <ul class="animated fadeIn list pl0 bg-light-gray{{if $currentPage.HasMenuCurrent "docs" . }}{{ else }} child-menu{{ end }}">
               {{ range .Children }}
                 <li  class="f6 fw4">
-                  <a href="{{.URL}}" class="db link hover-bg-gray pl3 pr2 pv2 {{if $currentPage.IsMenuCurrent "docs" . }}accent-color-dark {{ else }}black {{end}}">
+                  <a href="{{.URL}}" class="db link hover-bg-gray hover-white pl3 pr2 pv2 {{if $currentPage.IsMenuCurrent "docs" . }}accent-color-dark {{ else }}black {{end}}">
                     {{ .Name }}
                   </a>
                 </li>

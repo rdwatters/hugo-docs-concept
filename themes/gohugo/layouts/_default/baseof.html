@@ -17,7 +17,8 @@
       {{ end }}
       {{- partial "manifest" . -}}
 
-     <link href='/css/main.min.css' rel='stylesheet' type="text/css" />
+     <link href='/css/main.min.css?98777' rel='stylesheet' type="text/css" />
+
      <!-- <link href='/css/tachyons-print.min.css' rel='stylesheet' type="text/css" media="print" /> -->
   </head>
   <body class="sans-serif bg-primary-color-light{{ if .Site.Params.sidebar_direction }} {{ .Site.Params.sidebar_direction }}{{ end}}">
@@ -28,7 +29,7 @@
     </main>
 
     {{ block "footer" . }}{{ partial "site-footer.html" . }}{{ end }}
-    {{ block "scripts" . }}{{ end }}
+    {{ block "scripts" . }}{{- partial "site-scripts.html" . -}}{{ end }}
 
   </body>
 </html>

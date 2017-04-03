@@ -15,6 +15,7 @@
 .hover-bg-accent-color:hover          {background-color: var(--accent-color)}
 
 .accent-color-light                   {color: var(--accent-color-light)}
+.hover-accent-color-light:hover                   {color: var(--accent-color-light)}
 .bg-accent-color-light                {background-color: var(--accent-color-light)}
 .hover-bg-accent-color-light:hover    {background-color: var(--accent-color-light)}
 

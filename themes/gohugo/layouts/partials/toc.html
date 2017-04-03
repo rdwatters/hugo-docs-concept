@@ -1,15 +1,21 @@
         <!-- TOCs need to be declared explicitly in the front matter of content/*.md -->
 {{ if .Params.toc }}
-	<aside id="toc">
-	  <div class="toc-inner-wrapper nested-list">
-	  	<header class="toc-header">
-	    	<a href="#{{ .Title | urlize }}">
-	    		<h3 class="{{ .Section }}">
-	    			{{ .Title }}
-	    		</h3>
-	    	</a>
-	  	</header>
+	<aside class="fixed overflow-scroll bl b--moon-gray min-h-100 right-0 pa4 nested-list-reset nested-links nested-copy-line-height">
 	  	{{ .TableOfContents }}
-	  </div>
 	</aside>
 {{ end }}
+
+
+<style media="screen">
+
+#TableOfContents ul li {
+font-weight: bold;
+
+}
+
+	#TableOfContents ul li ul li ul li{
+		font-weight: normal;
+		padding-left: 1em;
+	}
+
+</style>

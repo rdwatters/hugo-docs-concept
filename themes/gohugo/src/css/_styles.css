@@ -28,3 +28,13 @@
     /*font-size: .9375em;*/
     background-color: var(--black-05);
   }
+
+
+  .hide-child-menu .child-menu {
+    display: none;
+  }
+  .hide-child-menu:hover  .child-menu,
+  .hide-child-menu:focus  .child-menu,
+  .hide-child-menu:active .child-menu {
+  display: block;
+  }

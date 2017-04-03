@@ -1,16 +1,13 @@
 ---
 title: Content Management
-linktitle: Overview
+linktitle: Content Mgmt.
 description: Hugo makes managing large static sites easy with support for archetypes, content types, menus, cross references, summaries, and more.
 date: 2017-02-01
 publishdate: 2017-02-01
 lastmod: 2017-02-01
 tags: [source, organization]
 categories: [content management]
-menu:
-  main:
-    parent: "Content Management"
-    weight: 01
+menu: quicklinks
 weight: 01	#rem
 draft: false
 aliases: [/content/]

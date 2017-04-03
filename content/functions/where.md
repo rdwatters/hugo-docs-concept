@@ -1,12 +1,15 @@
 ---
 title: where
-linktitle: where
+# linktitle: where
 description: Filters an array to only the elements containing a matching value for a given field.
 godocref:
 date: 2017-02-01
 publishdate: 2017-02-01
 lastmod: 2017-02-01
 categories: [functions]
+menu:
+  docs:
+    parent: "functions"
 tags: [filtering]
 ns:
 signature: ["where COLLECTION KEY [OPERATOR] MATCH"]

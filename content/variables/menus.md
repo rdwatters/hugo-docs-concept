@@ -9,8 +9,8 @@ categories: [variables and params]
 tags: [menus]
 draft: false
 menu:
-  main:
-    parent: "Variables"
+  docs:
+    parent: "variables"
     weight: 50
 weight: 50	#rem
 aliases: [/variables/menu/]

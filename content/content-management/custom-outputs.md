@@ -8,8 +8,8 @@ lastmod: 2017-03-22
 categories: [content management]
 tags: ["amp","outputs"]
 menu:
-  main:
-    parent: "Content Management"
+  docs:
+    parent: "content-management"
     weight: 100
 weight: 100	#rem
 draft: false

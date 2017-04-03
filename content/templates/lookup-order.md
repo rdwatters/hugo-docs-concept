@@ -9,8 +9,8 @@ lastmod: 2017-02-25
 categories: [templates]
 tags: [lookup,fundamentals]
 menu:
-  main:
-    parent: "Templates"
+  docs:
+    parent: "templates"
     weight: 15
 weight: 15	#rem
 draft: false

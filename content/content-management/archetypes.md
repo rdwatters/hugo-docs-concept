@@ -8,8 +8,8 @@ lastmod: 2017-02-01
 tags: [archetypes,generators,metadata,front matter]
 categories: ["content management"]
 menu:
-  main:
-    parent: "Content Management"
+  docs:
+    parent: "content-management"
     weight: 70
 weight: 70	#rem
 draft: false

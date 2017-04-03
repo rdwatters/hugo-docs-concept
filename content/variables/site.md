@@ -9,8 +9,8 @@ categories: [variables and params]
 tags: [global,site]
 draft: false
 menu:
-  main:
-    parent: "Variables"
+  docs:
+    parent: "variables"
     weight: 10
 weight: 10	#rem
 aliases: [/variables/site-variables/]

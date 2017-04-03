@@ -8,9 +8,10 @@ lastmod: 2017-02-01
 categories: [content management]
 tags: [sections,content,organization,fundamentals]
 menu:
-  main:
-    parent: "Content Management"
-    weight: 10
+- quicklinks
+- main:
+   parent: "content-management"
+   weight: 10
 weight: 10	#rem
 draft: false
 aliases: [/content/sections/]

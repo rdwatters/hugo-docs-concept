@@ -121,3 +121,99 @@ googleAnalytics = ""
     identifier = "github"
     post = "external"
     url = "https://github.com/spf13/hugo"
+
+
+
+# High level items
+
+[[menu.docs]]
+  name = "About Hugo"
+  weight = 1
+  identifier = "about"
+  url = "/about/"
+
+[[menu.docs]]
+  name = "Getting Started"
+  weight = 5
+  identifier = "getting-started"
+  url = "/getting-started/"
+
+
+[[menu.docs]]
+  name = "Themes"
+  weight = 15
+  identifier = "themes"
+  post = "break"
+  url = "/themes/"
+
+# Core Menus
+
+[[menu.docs]]
+  name = "Functions"
+  weight = 18
+  identifier = "functions"
+  url = "/functions/"
+
+[[menu.docs]]
+  name = "Variables"
+  weight = 19
+  identifier = "variables"
+  url = "/variables/"
+
+
+[[menu.docs]]
+  name = "Content Management"
+  weight = 20
+  identifier = "content-management"
+  post = "expanded"
+  url = "/content-management/"
+
+[[menu.docs]]
+  name = "Templates"
+  weight = 30
+  identifier = "templates"
+
+  url = "/templates/"
+
+  [[menu.docs]]
+    name = "CLI"
+    weight = 35
+    post = "break"
+    identifier = "commands"
+    url = "/commands/"
+
+
+
+# LOW LEVEL ITEMS
+
+
+[[menu.docs]]
+  name = "Troubleshooting"
+  weight = 60
+  identifier = "troubleshooting"
+  url = "/troubleshooting/"
+
+[[menu.docs]]
+  name = "Tools"
+  weight = 70
+  identifier = "tools"
+  url = "/tools/"
+
+[[menu.docs]]
+  name = "Hosting & Deployment"
+  weight = 80
+  identifier = "hosting-and-deployment"
+  url = "/hosting-and-deployment/"
+
+[[menu.docs]]
+  name = "Showcase"
+  weight = 90
+  identifier = "showcase"
+  url = "/showcase/"
+
+
+[[menu.docs]]
+  name = "Contribute"
+  weight = 100
+  identifier = "contribute"
+  url = "/contribute/"

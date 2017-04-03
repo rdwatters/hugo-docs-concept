@@ -1,6 +1,6 @@
 ---
-title: Hosting and Deployment
-linktitle: Overview
+title: Hosting & Deployment
+linktitle: Hosting & Deployment
 description: Site builds, automated deployments, and popular hosting solutions.
 date: 2016-11-01
 publishdate: 2016-11-01

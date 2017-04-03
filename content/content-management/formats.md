@@ -8,8 +8,8 @@ lastmod: 2017-03-31
 categories: [content management]
 tags: [markdown,asciidoc,mmark,content format]
 menu:
-  main:
-    parent: "Content Management"
+  docs:
+    parent: "content-management"
     weight: 20
 weight: 20	#rem
 draft: false

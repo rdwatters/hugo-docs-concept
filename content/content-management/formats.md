@@ -4,7 +4,7 @@ linktitle: Formats
 description: Markdown is natively supported in Hugo and is parsed by the feature-rich and incredibly speed Blackfriday parse. Hugo also provides support for additional syntaxes (eg, Asciidoc) via external helpers.
 date: 2017-01-10
 publishdate: 2017-01-10
-lastmod: 2017-03-31
+lastmod: 2017-04-01
 categories: [content management]
 tags: [markdown,asciidoc,mmark,content format]
 menu:
@@ -25,7 +25,7 @@ Markdown is the native content format for Hugo and is rendered using the excelle
 Before you begin writing your content in markdown, Blackfriday has a known issue [(#329)](https://github.com/russross/blackfriday/issues/329) with handling deeply nested lists. Luckily, there is an easy workaround. Use 4-spaces (i.e., <kbd>tab</kbd>) rather than 2-space indentations.
 {{% /note %}}
 
-## Configuring Markdown Rendering
+## Configuring BlackFriday Markdown Rendering
 
 You can configure multiple aspects of Blackfriday as show in the following list. See the docs on [Configuration][config] for the full list of explicit directions you can give to Hugo when rendering your site.
 
@@ -88,6 +88,28 @@ See [Shortcodes][sc] for usage, particularly for the built-in shortcodes that sh
 
 Hugo supports GitHub-flavored markdown's use of triple back ticks, as well as provides a special [`highlight` nested shortcode][hlsc] to render syntax highlighting via [Pygments][]. For usage examples and a complete explanation, see the [syntax highlighting documentation][hl] in [developer tools][].
 
+## Mmark
+
+Mmark is a [fork of BlackFriday][mmark] and markdown superset that is well suited for writing [IETF documentation][ietf]. You can see examples of the syntax in the [Mmark GitHub repository][mmarkgh] or the full syntax on [Miek Gieben's website][].
+
+### Using Mmark
+
+As Hugo ships with Mmark, using the syntax is as easy as changing the extension of your content files from `.md` to `.mmark`.
+
+In the event that you want to only use Mmark in specific files, you can also define the Mmark syntax in your content's front matter:
+
+```yaml
+---
+title: My Post
+date: 2017-04-01
+markdown: mmark
+---
+```
+
+{{% warning %}}
+Mmark support is still an *experimental* feature in Hugo. For example, shortcodes are not translated when used in an included `.mmark` file ([#3131](https://github.com/spf13/hugo/issues/3137)), and `EXTENSION_ABBREVIATION` ([#1970](https://github.com/spf13/hugo/issues/1970)) and the aforementioned GFM todo lists ([#2270](https://github.com/spf13/hugo/issues/2270)) are not fully supported. Contributions are welcome.
+{{% /warning %}}
+
 ## MathJax with Hugo
 
 [MathJax](http://www.mathjax.org/) is a JavaScript library that allows the display of mathematical expressions described via a LaTeX-style syntax in the HTML (or Markdown) source of a web page. As it is a pure a JavaScript library, getting it to work within Hugo is fairly straightforward, but does have some oddities that will be discussed here.
@@ -112,6 +134,12 @@ One way to ensure that this code is included in all pages is to put it in one of
 MathJax is a stable open-source library with many features. I encourage the interested reader to view the [MathJax Documentation](http://docs.mathjax.org/en/latest/index.html), specifically the sections on [Basic Usage](http://docs.mathjax.org/en/latest/index.html#basic-usage) and [MathJax Configuration Options](http://docs.mathjax.org/en/latest/index.html#mathjax-configuration-options).
 
 ### Issues with Markdown
+
+{{% note %}}
+The following issues with Markdown assume you are using `.md` for content and BlackFriday for parsing. Using [Mmark](#mmark) as your content format will obviate the need for the following workarounds.
+
+When using Mmark with MathJax, use `displayMath: [['$$','$$'], ['\\[','\\]']]`. See the [Mmark `README.md`](https://github.com/miekg/mmark/wiki/Syntax#math-blocks) for more information. In addition to MathJax, Mmark has been shown to work well with [KaTex](https://github.com/Khan/KaTeX). See this [related blog post from a Hugo user](http://nosubstance.me/post/a-great-toolset-for-static-blogging/).
+{{% /note %}}
 
 After enabling MathJax, any math entered between proper markers (see the [MathJax documentation][mathjaxdocs]) will be processed and typeset in the web page. One issue that comes up, however, with Markdown is that the underscore character (`_`) is interpreted by Markdown as a way to wrap text in `emph` blocks while LaTeX (MathJax) interprets the underscore as a way to create a subscript. This "double speak" of the underscore can result in some unexpected and unwanted behavior.
 
@@ -151,9 +179,7 @@ MathJax.Hub.Config({
 ```
 {{% /code %}}
 
-{{% note %}}
-If you are using Mmark with Mathjax, use `displayMath: [['$$','$$'], ['\\[','\\]']]`.
-{{% /note %}}
+
 
 As before, this content should be included in the HTML source of each page that will be using MathJax. The next code snippet contains the CSS that is used to have verbatim MathJax blocks render with the same font style as the body of the page.
 
@@ -195,22 +221,26 @@ Markdown syntax is simple enough to learn in a single sitting. The following are
 * [Markdown Cheatsheet, Adam Pritchard][mdcheatsheet]
 * [Markdown Tutorial (Interactive), Garen Torikian][mdtutorial]
 
+[`emojify` function]: /functions/emojify/
 [ascii]: http://asciidoc.org/
 [bfconfig]: /getting-started/configuration/#configuring-blackfriday-rendering
 [blackfriday]: https://github.com/russross/blackfriday
 [config]: /getting-started/configuration/
 [developer tools]: /tools/
 [emojis]: https://www.webpagefx.com/tools/emoji-cheat-sheet/
-[`emojify` function]: /functions/emojify/function
 [fireball]: https://daringfireball.net/projects/markdown/
 [gfmtasks]: https://guides.github.com/features/mastering-markdown/#syntax
 [helperssource]: https://github.com/spf13/hugo/blob/77c60a3440806067109347d04eb5368b65ea0fe8/helpers/general.go#L65
 [hl]: /tools/syntax-highlighting/
 [hlsc]: /content-management/shortcodes/#highlight
 [hugocss]: /css/style.min.css
+[ietf]: https://tools.ietf.org/html/
 [mathjaxdocs]: https://docs.mathjax.org/en/latest/
 [mdcheatsheet]: https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
 [mdtutorial]: http://www.markdowntutorial.com/
+[Miek Gieben's website]: https://miek.nl/2016/March/05/mmark-syntax-document/
+[mmark]: https://github.com/miekg/mmark
+[mmarkgh]: https://github.com/miekg/mmark/wiki/Syntax
 [org]: http://orgmode.org/
 [Pygments]: http://pygments.org/
 [rest]: http://docutils.sourceforge.net/rst.html

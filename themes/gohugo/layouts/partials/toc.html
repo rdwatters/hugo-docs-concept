@@ -1,12 +1,24 @@
         <!-- TOCs need to be declared explicitly in the front matter of content/*.md -->
 {{ if .Params.toc }}
-	<aside class="fixed overflow-scroll bl b--moon-gray min-h-100 right-0 pa4 nested-list-reset nested-links nested-copy-line-height">
+	<aside class="fixedl overflow-scroll	f6 bl b--moon-gray min-h-100 right-0 pa4 nested-list-reset nested-links nested-copy-line-height">
 	  	{{ .TableOfContents }}
 	</aside>
 {{ end }}
 
 
 <style media="screen">
+
+#TableOfContents{
+position: fixed;
+overflow-y: scroll;
+
+}
+#TableOfContents ul li ul,
+#TableOfContents ul li ul li ul {
+position: static;
+overflow-y: scroll;
+
+}
 
 #TableOfContents ul li {
 font-weight: bold;
@@ -16,6 +28,10 @@ font-weight: bold;
 	#TableOfContents ul li ul li ul li{
 		font-weight: normal;
 		padding-left: 1em;
+	}
+
+	#TableOfContents ul li ul li ul li.active a {
+		background-color: red;
 	}
 
 </style>

@@ -6,8 +6,8 @@ date: 2017-02-01
 publishdate: 2017-02-01
 lastmod: 2017-02-01
 menu:
-  main:
-    parent: "Troubleshooting"
+  docs:
+    parent: "troubleshooting"
     weight: 01
 weight: 01	#rem
 draft: false

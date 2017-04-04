@@ -8,8 +8,8 @@ lastmod: 2016-11-01
 categories: [hosting and deployment]
 tags: []
 menu:
-  main:
-    parent: "Hosting and Deployment"
+  docs:
+    parent: "hosting-and-deployment"
     weight: 01
 weight: 01	#rem
 draft: false

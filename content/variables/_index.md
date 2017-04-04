@@ -9,10 +9,10 @@ categories: [variables and params]
 tags: [variables,params,values,globals]
 draft: false
 menu:
-  - quicklinks
-  - main:
+  docs:
     parent: "variables"
-    weight: 01
+    weight: 1
+  quicklinks:
 weight: 01	#rem
 aliases: [/templates/variables/]
 toc: false

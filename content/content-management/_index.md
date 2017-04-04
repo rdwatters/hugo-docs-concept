@@ -5,9 +5,13 @@ description: Hugo makes managing large static sites easy with support for archet
 date: 2017-02-01
 publishdate: 2017-02-01
 lastmod: 2017-02-01
+menu:
+  docs:
+    parent: "content-management"
+    weight: 1
+  quicklinks:
 tags: [source, organization]
 categories: [content management]
-menu: quicklinks
 weight: 01	#rem
 draft: false
 aliases: [/content/]

@@ -7,7 +7,8 @@ publishdate: 2017-02-01
 lastmod: 2017-02-01
 tags: []
 menu:
- - quicklinks
+  docs:
+    parent: "functions"
 weight: 01	#rem
 draft: false
 aliases: [/layout/functions/]

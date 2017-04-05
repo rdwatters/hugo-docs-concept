@@ -1,17 +1,17 @@
 {{ define "header" }}{{ partial "header" . }}{{ end }}
 {{ define "main" }}
-<div class="w-100 ph4 pb5 pb6-ns pt1 pt3-ns ">
+<div class="w-100 ph4 pb5 pb6-ns pt1 pt3-ns">
 
   <div class="flex">
     <div class="w-20">
         {{ partial "docs/navigation.html" . }}
     </div>
-    <div class="w-80 pl3">
-      <article class="w-100 cf pa3 pa4-m pa4-l nested-copy-line-height nested-img">
+    <div class="w-80 ph4">
+      <article class="w-100 nested-copy-line-height nested-links nested-img">
         <h1 class="primary-color-dark">
           {{ .Title }}
         </h1>
-        <div class="{{ .Site.Params.copyClass }}">
+        <div class="{{ .Site.Params.copyClass }} mid-gray f4">
           {{ .Content }}
         </div>
       </article>

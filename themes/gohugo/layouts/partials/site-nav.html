@@ -1,8 +1,8 @@
 {{ $currentPage := . }}
-{{ partial "svg/github-corner.svg" . }}
+
 <nav class="z-999 bg-primary-color-dark ph4 border-box pv4 w-100 flex justify-start items-center" role="navigation">
   <h1 class="mv0 lh-solid f3 ml0-ns mr0 mr4-l">
-    <a href="{{ .Site.Params.globalHome }}" class="link white" tabindex="1">
+    <a href="{{ .Site.Params.globalHome }}" class="link white">
        <!-- partial "svg/hugo-logo-wide.svg" (dict "size" "120")  -->
        HUGO
     </a>
@@ -12,7 +12,7 @@
     {{ $.Scratch.Add "i" 1 }}{{ $i := $.Scratch.Get "i" }}
       <li class="f5 dib mr4" role="menuitem">
           <!-- TODO: Create an active class to show which site one is currently at -->
-        <a href="{{ .URL }}" class="link dim{{ if $currentPage.IsMenuCurrent "global" . }} gray {{else}} light-silver{{ end }}" tabindex="{{add $i 1}}">
+        <a href="{{ .URL }}" class="link dim{{ if $currentPage.IsMenuCurrent "global" . }} gray {{else}} light-silver{{ end }}">
           {{ .Name }}
           {{ if ge .Post "external" }}
             {{ partial "svg/link-ext.svg" (dict "fill" "#999" "size" "10") }}
@@ -21,4 +21,9 @@
       </li>
     {{ end }}
   </ul>
+  <div class="flex-auto"> </div>
+  <span class="absolute flex-m flex-column static-l top-0 right-0">
+    {{- partial "social-follow.html" . -}}
+  </span>
+
 </nav>

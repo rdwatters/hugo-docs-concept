@@ -4,6 +4,8 @@ buildFuture = false
 canonifyurls = true
 # Pointing to this file
 config = "config.toml"
+
+paginate=  100
 copyright = ""
 defaultContentLanguage = "en"
 # Set to true to keep url path preserve casing (eg, for sections)
@@ -149,19 +151,6 @@ googleAnalytics = "UA-76549364-1"
 # Core Menus
 
 [[menu.docs]]
-  name = "Functions"
-  weight = 18
-  identifier = "functions"
-  url = "/functions/"
-
-[[menu.docs]]
-  name = "Variables"
-  weight = 19
-  identifier = "variables"
-  url = "/variables/"
-
-
-[[menu.docs]]
   name = "Content Management"
   weight = 20
   identifier = "content-management"
@@ -170,14 +159,29 @@ googleAnalytics = "UA-76549364-1"
 
 [[menu.docs]]
   name = "Templates"
-  weight = 30
+  weight = 25
   identifier = "templates"
 
   url = "/templates/"
 
+[[menu.docs]]
+  name = "Functions"
+  weight = 30
+  identifier = "functions"
+  url = "/functions/"
+
+[[menu.docs]]
+  name = "Variables"
+  weight = 35
+  identifier = "variables"
+  url = "/variables/"
+
+
+
+
   [[menu.docs]]
     name = "CLI"
-    weight = 35
+    weight = 40
     post = "break"
     identifier = "commands"
     url = "/commands/"

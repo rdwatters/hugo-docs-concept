@@ -12,7 +12,8 @@ menu:
   docs:
     parent: "hosting-and-deployment"
     weight: 60
-weight: 60	#rem
+weight: 60
+sections_weight: 60
 draft: false
 aliases: [/tutorials/automated-deployments/]
 toc: true

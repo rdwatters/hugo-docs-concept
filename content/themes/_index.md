@@ -9,7 +9,8 @@ menu:
   docs:
     parent: "themes"
     weight: 01
-weight: 01	#rem
+weight: 01
+sections_weight: 01
 categories: [themes]
 tags: [themes,introduction,overview]
 draft: false

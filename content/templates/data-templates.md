@@ -11,7 +11,8 @@ menu:
   docs:
     parent: "templates"
     weight: 80
-weight: 80	#rem
+weight: 80
+sections_weight: 80
 draft: false
 aliases: [/extras/datafiles/,/extras/datadrivencontent/,/doc/datafiles/]
 toc: true

@@ -12,7 +12,8 @@ menu:
   docs:
     parent: "templates"
     weight: 20
-weight: 20	#rem
+weight: 20
+sections_weight: 20
 draft: false
 aliases: [/templates/blocks/,/templates/base-templates-and-blocks/]
 toc: true

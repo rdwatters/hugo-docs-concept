@@ -1,5 +1,5 @@
 ---
-title: Creating Your Own Shortcode Templates
+title: Creating Your Own Shortcodes
 linktitle: Shortcode Templates
 description: You can extend Hugo's built-in shortcodes by creating your own using the same templating syntax as that for single and list pages.
 date: 2017-02-01
@@ -11,47 +11,59 @@ menu:
   docs:
     parent: "templates"
     weight: 100
-weight: 100	#rem
+weight: 100
+sections_weight: 100
 draft: false
 aliases: []
 toc: true
 ---
 
+Shortcodes are a means to consolidate templating into small, reusable snippets that you can embed directly inside of your content. In this sense, you can think of shortcodes as the intermediary between [page and list templates][templates] and [basic content files][].
+
+{{% note %}}
+Hugo also ships with built-in shortcodes for common use cases. (See [Content Management: Shortcodes](/content-management/shortcodes/).)
+{{% /note %}}
+
 ## Creating Custom Shortcodes
 
-Hugo's built-in shortcodes cover many common, but not all, use cases. Luckily, Hugo provides the ability to easily create custom shortcodes to meet your website's needs. In this sense, you can think of shortcodes as the intermediary between [page and list templates][templates] and [basic content files][].
+Hugo's built-in shortcodes cover many common, but not all, use cases. Luckily, Hugo provides the ability to easily create custom shortcodes to meet your website's needs.
 
 ### File Placement
 
 To create a shortcode, place an HTML template in the `layouts/shortcodes` directory of your [source organization][]. Consider the file name carefully since the shortcode name will mirror that of the file but without the `.html` extension. For example, `layouts/shortcodes/myshortcode.html` will be called with either `{{</* myshortcode /*/>}}` or `{{%/* myshortcode /*/%}}` depending on the type of parameters you choose.
 
-### Deciding on Shortcode and Parameter Type
+### Shortcode Template Lookup Order
 
-You can create the following types of shortcodes
+Shortcode templates have a simple [lookup order][]:
+
+1. `/layouts/shortcodes/<SHORTCODE>.html`
+2. `/themes/<THEME>/layouts/shortcodes/<SHORTCODE>.html`
+
+### Positional vs Named Parameters
+
+You can create shortcodes using the following types of parameters:
 
 * Positional parameters
 * Named parameters
 * Positional *or* named parameters (i.e, "flexible")
-* Single-word shortcodes
-* Nested
 
-#### Positional Parameters
+In shortcodes with positional parameters, the order of the parameters is important. If a shortcode has a single required value (e.g., the `youtube` shortcode below), positional parameters work very well and require less typing from content authors.
 
-In shortcodes with positional parameters, the order of the parameters is important.
+For more complex layouts with multiple or optional parameters, named parameters work best. While less terse, named parameters require less memorization from a content author and can be added in a shortcode declaration in any order.
 
-you can choose if the shortcode will use _positional parameters_, or _named parameters_, or _both_. A good rule of thumb is that if a shortcode has a single required value in the case of the `youtube` example below, then positional works very well. For more complex layouts with optional parameters, named parameters work best. Allowing both types of parameters is useful for complex layouts where you want to set default values that can be overridden.
+Allowing both types of parameters (i.e., a "flexible" shortcode) is useful for complex layouts where you want to set default values that can be easily overridden by users.
 
 ### Accessing Parameters
 
-To access a parameter in any shortcode, use the `.Get` method. Whether you pass a key (string) or a number to the `.Get` method depends on whether you are accessing a named or positional parameter, respectively.
+All shortcode parameters can be accessed via the `.Get` method. Whether you pass a key (i.e., string) or a number to the `.Get` method depends on whether you are accessing a named or positional parameter, respectively.
 
-To access a parameter by name, the `.Get` method followed by the named parameter as a quoted string. Named parameters are less terse but do not require that a content author be mindful of the order of parameters.
+To access a parameter by name, use the `.Get` method followed by the named parameter as a quoted string:
 
 ```golang
 {{ .Get "class" }}
 ```
 
-To access a parameter by position, the `.Get` method can be used, keeping in mind that the first positional parameter within the shortcode declaration starts at `0`:
+To access a parameter by position, use the `.Get` followed by a numeric position, keeping in mind that positional parameters are zero-indexed:
 
 ```golang
 {{ .Get 0 }}
@@ -70,15 +82,45 @@ most helpful when the condition depends on either of the values, or both:
 {{ or .Get "title" | .Get "alt" | if }} alt="{{ with .Get "alt"}}{{.}}{{else}}{{.Get "title"}}{{end}}"{{ end }}
 ```
 
-If a closing shortcode is used, the variable `.Inner` will be populated with all of the content between the opening and closing shortcodes. If a closing shortcode is required, you can check the length of `.Inner` and provide a warning to the user.
+#### `.Inner`
 
-A shortcode with `.Inner` content can be used without the inline content, and without the closing shortcode, by using the self-closing syntax:
+If a closing shortcode is used, the `.Inner` variable will be populated with all of the content between the opening and closing shortcodes. If a closing shortcode is required, you can check the length of `.Inner` as an indicator of its existence.
+
+A shortcode with content declared via the `.Inner` variable can also be declared without the inline content and without the closing shortcode by using the self-closing syntax:
 
 ```golang
 {{</* innershortcode /*/>}}
 ```
 
-The variable `.Params` contains the list of parameters in case you need to do more complicated things than `.Get`.  It is sometimes useful to provide a flexible shortcode that can take named or positional parameters. To meet this need, Hugo shortcodes have `.IsNamedParams`, a boolean available that can be used such as `{{ if .IsNamedParams }}...{{ else }}...{{ end }}`. See the [example Vimeo shortcode][vimeoexample] below for an example.
+#### `.Params`
+
+The `.Params` variable in shortcodes contains a list of the shortcode's parameters for more complicated use cases.
+
+#### `.IsNameParams`
+
+The `.IsNamedParams` variable checks whether the shortcode declaration uses named parameters and returns a boolean value.
+
+For example, you could create an `image` shortcode that can take either a `src` named parameter or the first positional parameter, depending on the preference of the content's author. Let's assume the `image` shortcode is called as follows:
+
+```md
+{{</* image src="images/my-image.jpg"*/>}}
+```
+
+You could then include the following as part of your shortcode templating:
+
+```html
+{{ if .IsNamedParams }}
+<img src="{{.Get "src" alt="">
+{{ else }}
+<img src="{{.Get 0}}" alt="">
+{{ end }}.
+```
+
+See the [example Vimeo shortcode][vimeoexample] below for `.IsNamedParams` in action.
+
+{{% warning %}}
+While you can create shortcode templates that accept both positional and named parameters, you *cannot* declare shortcodes in content with a mix of parameter types. Therefore, a shortcode declared like `{{</* image src="images/my-image.jpg" "This is my alt text" */>}}` will return an error.
+{{% /warning %}}
 
 You can also use the variable `.Page` to access all the normal [page variables][pagevars].
 
@@ -86,7 +128,7 @@ A shortcodes can also be nested. In a nested shortcode, you can access the paren
 
 ## Custom Shortcode Examples
 
-The following are examples of the different types of shortcodes you can create via template files in `/layouts/shortcodes`.
+The following are examples of the different types of shortcodes you can create via shortcode template files in `/layouts/shortcodes`.
 
 ### Single-word Example: `year`
 
@@ -305,9 +347,12 @@ More shortcode examples can be found in the [shortcodes directory for spf13.com]
 
 [basic content files]: /content-management/formats/ "See how Hugo leverages markdown--and other supported formats--to create content for your website."
 [built-in shortcode]: /content-management/shortcodes/
-[source organization]: /getting-started/directory-structure/ "Learn how Hugo scaffolds new sites and what it expects to find in each of your directories."
+[Content Management: Shortcodes]: /content-management/shortcodes/#using-hugo-s-built-in-shortcodes
+[source organization]: /getting-started/directory-structure/#directory-structure-explained "Learn how Hugo scaffolds new sites and what it expects to find in each of your directories."
 [docsshortcodes]: https://github.com/spf13/hugo/tree/master/docs/layouts/shortcodes "See the shortcode source directory for the documentation site you're currently reading."
 [figure]: /content-management/shortcodes/#figure
+[hugosc]: /content-management/shortcodes/#using-hugo-s-built-in-shortcodes
+[lookup order]: /templates/lookup-order/ "See the order in which Hugo traverses your template files to decide where and how to render your content at build time"
 [pagevars]: /variables/page/ "See which variables you can leverage in your templating for page vs list templates."
 [parent]: /variables/shortcodes/
 [shortcodesvars]: /variables/shortcodes/ "Certain variables are specific to shortcodes, although most .Page variables can be accessed within your shortcode template."

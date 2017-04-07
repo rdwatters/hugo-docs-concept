@@ -11,7 +11,8 @@ menu:
   docs:
     parent: "templates"
     weight: 140
-weight: 140	#rem
+weight: 140
+sections_weight: 140
 draft: false
 aliases: [/extras/pagination,/doc/pagination/]
 toc: true

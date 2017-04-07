@@ -1,7 +1,7 @@
 ---
 title: Hugo's Lookup Order
-linktitle: Lookup Order
-description: The lookup order is a prioritized list used by Hugo as it traverses your files looking for the appropriate template to render your content.
+linktitle: Template Lookup Order
+description: The lookup order is a prioritized list used by Hugo as it traverses your files looking for the appropriate corresponding file to render your content.
 godocref:
 date: 2017-02-01
 publishdate: 2017-02-01
@@ -12,8 +12,13 @@ menu:
   docs:
     parent: "templates"
     weight: 15
+<<<<<<< HEAD
   quicklinks:
 weight: 15	#rem
+=======
+weight: 15
+sections_weight: 15
+>>>>>>> master
 draft: false
 aliases: [/templates/lookup/]
 toc: true
@@ -173,6 +178,7 @@ The respective lookup order for each of Hugo's templates has been defined throug
 * [Taxonomy Terms Templates][termslookup]
 * [Single Page Templates][singlelookup]
 * [RSS Templates][rsslookup]
+* [Shortcode Templates][sclookup]
 
 [base]: /templates/base/#base-template-lookup-order
 [config]: /getting-started/configuration/
@@ -180,6 +186,7 @@ The respective lookup order for each of Hugo's templates has been defined throug
 [DRY]: https://en.wikipedia.org/wiki/Don%27t_repeat_yourself
 [home]: /templates/homepage/#homepage-template-lookup-order
 [rsslookup]: /templates/rss/#rss-template-lookup-order
+[sclookup]: /templates/shortcode-templates/#shortcode-template-lookup-order
 [sections]: /content-management/sections/
 [sectionlookup]: /templates/section-templates/#section-template-lookup-order
 [single page templates]: /templates/single-page-templates/

@@ -12,7 +12,8 @@ menu:
   docs:
     parent: "hosting-and-deployment"
     weight: 30
-weight: 30	#rem
+weight: 30
+sections_weight: 30
 draft: false
 toc: true
 aliases: [/tutorials/github-pages-blog/]

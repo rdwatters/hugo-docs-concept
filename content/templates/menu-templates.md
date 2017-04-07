@@ -11,7 +11,8 @@ menu:
   docs:
     parent: "templates"
     weight: 130
-weight: 130	#rem
+weight: 130
+sections_weight: 130
 draft: false
 aliases: [/templates/menus/]
 toc: false

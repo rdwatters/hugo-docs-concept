@@ -12,7 +12,8 @@ menu:
   docs:
     parent: "templates"
     weight: 170
-weight: 170	#rem
+weight: 170
+sections_weight: 170
 draft: false
 aliases: [/templates/ace/,/templates/amber/]
 toc: true

@@ -12,7 +12,8 @@ menu:
   docs:
     parent: "hosting-and-deployment"
     weight: 20
-weight: 20	#rem
+weight: 20
+sections_weight: 20
 draft: false
 toc: true
 aliases: []

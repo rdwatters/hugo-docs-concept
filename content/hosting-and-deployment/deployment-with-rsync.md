@@ -12,7 +12,8 @@ menu:
   docs:
     parent: "hosting-and-deployment"
     weight: 70
-weight: 70	#rem
+weight: 70
+sections_weight: 70
 draft: false
 aliases: [/tutorials/deployment-with-rsync/]
 toc: true

@@ -11,7 +11,8 @@ menu:
   docs:
     parent: "templates"
     weight: 90
-weight: 90	#rem
+weight: 90
+sections_weight: 90
 draft: false
 aliases: [/templates/partial/,/layout/chrome/,/extras/analytics/]
 toc: true

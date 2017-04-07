@@ -32,13 +32,10 @@ relativeURLs = true
 stepAnalysis = true
 # This is the top-level, global site title
 title = "Hugo"
-<<<<<<< HEAD
+
 # Change this once you've created your theme
 theme = "gohugo"
-=======
-# Change this to your preferred theme
-theme = "hugo-docs-concept"
->>>>>>> master
+
 # Set to true to convert mysite/section/ to mysite/section.html
 uglyURLs = false
 verbose = false

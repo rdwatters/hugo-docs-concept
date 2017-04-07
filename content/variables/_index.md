@@ -9,18 +9,11 @@ categories: [variables and params]
 tags: [variables,params,values,globals]
 draft: false
 menu:
-<<<<<<< HEAD
   docs:
     parent: "variables"
     weight: 1
 weight: 01	#rem
-=======
-  main:
-    parent: "Variables"
-    weight: 01
-weight: 01
 sections_weight: 01
->>>>>>> master
 aliases: [/templates/variables/]
 toc: false
 ---

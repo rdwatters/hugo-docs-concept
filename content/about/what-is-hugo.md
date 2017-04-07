@@ -7,18 +7,11 @@ publishdate: 2017-02-01
 lastmod: 2017-02-01
 layout: single
 menu:
-<<<<<<< HEAD
-  - main:
-      parent: "about"
-      weight: 10
-weight: 10	#rem
-=======
   main:
     parent: "About Hugo"
     weight: 10
 weight: 10
 sections_weight: 10
->>>>>>> master
 draft: false
 aliases: [/overview/introduction/,/about/why-i-built-hugo/]
 toc: true

@@ -7,7 +7,11 @@ publishdate: 2017-01-10
 lastmod: 2017-01-10
 categories: [content management]
 tags: [multilingual,i18n, internationalization]
-weight: 150
+menu:
+  main:
+    parent: "Content Management"
+    weight: 150
+weight: 150	#rem
 draft: false
 aliases: [/content/multilingual/,/content-management/multilingual/]
 toc: true
@@ -59,7 +63,7 @@ Only the obvious non-global options can be overridden per language. Examples of 
 
 ## Taxonomies and Blackfriday
 
-Taxonomies and [Blackfriday configuration][hugoconfig] can also be set per language:
+Taxonomies and [Blackfriday configuration][config] can also be set per language:
 
 
 {{% code file="bf-config.toml" %}}
@@ -131,7 +135,7 @@ The above also uses the [`i18n` function][i18func] described in the next section
 
 Hugo uses [go-i18n][] to support string translations. [See the project's source repository][go-i18n-source] to find tools that will help you manage your translation workflows.
 
-Translations are collected from the `themes/<THEME>/i18n/` folder (built into the theme), as well as translations present in `i18n/` at the root of your project. In the `i18n`, the translations will be merged and take precedence over what is in the theme folder. Language files should be named according to [RFC 5646][] with names such as `en-US.yaml`, `fr.yaml`, etc.
+Translations are collected from the `themes/<THEME>/i18n/` folder (built into the theme), as well as translations present in `i18n/` at the root of your project. In the `i18n`, the translations will be merged and take precedence over what is in the theme folder. Language files should be named according to [RFC 5646][] with names such as `en-US.toml`, `fr.toml`, etc.
 
 From within your templates, use the `i18n` function like this:
 
@@ -139,11 +143,11 @@ From within your templates, use the `i18n` function like this:
 {{ i18n "home" }}
 ```
 
-This uses a definition like this one in `i18n/en-US.yaml`:
+This uses a definition like this one in `i18n/en-US.toml`:
 
 ```
-- id: home
-  translation: "Home"
+[home]
+other = "Home"
 ```
 
 Often you will want to use to the page variables in the translations strings. To do that, pass on the "." context when calling `i18n`:
@@ -152,19 +156,18 @@ Often you will want to use to the page variables in the translations strings. To
 {{ i18n "wordCount" . }}
 ```
 
-This uses a definition like this one in `i18n/en-US.yaml`:
+This uses a definition like this one in `i18n/en-US.toml`:
 
 ```
-- id: wordCount
-  translation: "This article has {{ .WordCount }} words."
+[wordCount]
+other = "This article has {{ .WordCount }} words."
 ```
 An example of singular and plural form:
 
 ```
-- id: readingTime
-  translation:
-    one: "One minute read"
-    other: "{{.Count}} minutes read"
+[readingTime]
+one = "One minute read"
+other = "{{.Count}} minutes read"
 ```
 And then in the template:
 
@@ -177,6 +180,35 @@ To track down missing translation strings, run Hugo with the `--i18n-warnings` f
  hugo --i18n-warnings | grep i18n
 i18n|MISSING_TRANSLATION|en|wordCount
 ```
+
+## Customize Dates
+
+At the time of this writing, Golang does not yet have support for internationalized locales, but if you do some work, you can simulate it. For example, if you want to use French month names, you can add a data file like ``data/mois.yaml`` with this content:
+
+~~~yaml
+1: "janvier"
+2: "février"
+3: "mars"
+4: "avril"
+5: "mai"
+6: "juin"
+7: "juillet"
+8: "août"
+9: "septembre"
+10: "octobre"
+11: "novembre"
+12: "décembre"
+~~~
+
+... then index the non-English date names in your templates like so:
+
+~~~html
+<time class="post-date" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" | safeHTML }}">
+  Article publié le {{ .Date.Day }} {{ index $.Site.Data.mois (printf "%d" .Date.Month) }} {{ .Date.Year }} (dernière modification le {{ .Lastmod.Day }} {{ index $.Site.Data.mois (printf "%d" .Lastmod.Month) }} {{ .Lastmod.Year }})
+</time>
+~~~
+
+This technique extracts the day, month and year by specifying ``.Date.Day``, ``.Date.Month``, and ``.Date.Year``, and uses the month number as a key, when indexing the month name data file.
 
 ## Menus
 
@@ -242,7 +274,7 @@ If there is more than one language defined, the `LanguagePrefix` variable will e
 
 [abslangurl]: /functions/abslangurl
 [config]: /getting-started/configuration/
-[contenttemplate]: /templates/single-page-template/
+[contenttemplate]: /templates/single-page-templates/
 [go-i18n-source]: https://github.com/nicksnyder/go-i18n
 [go-i18n]: https://github.com/nicksnyder/go-i18n
 [homepage]: /templates/homepage/

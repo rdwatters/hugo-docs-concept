@@ -4,16 +4,21 @@ linktitle:
 description: The primary view of content in Hugo is the single view. Hugo will render every Markdown file provided with a corresponding single template.
 date: 2017-02-01
 publishdate: 2017-02-01
-lastmod: 2017-02-01
+lastmod: 2017-04-06
 categories: [templates]
 tags: [page]
+menu:
+  main:
+    parent: "Templates"
+    weight: 60
 weight: 60
+sections_weight: 60
 draft: false
 aliases: [/layout/content/]
 toc: true
 ---
 
-The primary view of content in Hugo is the single view. Hugo will render every Markdown file provided with a corresponding single template.
+The primary view of content in Hugo is the single view. Hugo's default behavior is to render every Markdown file provided with a corresponding single template.
 
 ## Single Page Template Lookup Order
 
@@ -42,13 +47,11 @@ Content pages are of the type `page` and will therefore have all the [page varia
 
 ### `post/single.html`
 
-This content template is used for [spf13.com][spf13]. It makes use of [partial templates][partials]:
+This single page template is a modified version of one used for for [spf13.com][spf13]. It makes use of [base templates][]:
 
 {{% code file="layouts/post/single.html" download="single.html" %}}
 ```html
-{{ partial "header.html" . }}
-{{ partial "subheader.html" . }}
-{{ $baseURL := .Site.BaseURL }}
+{{ define "main" }}
 <section id="main">
   <h1 id="title">{{ .Title }}</h1>
   <div>
@@ -57,48 +60,47 @@ This content template is used for [spf13.com][spf13]. It makes use of [partial t
         </article>
   </div>
 </section>
-
 <aside id="meta">
     <div>
     <section>
       <h4 id="date"> {{ .Date.Format "Mon Jan 2, 2006" }} </h4>
       <h5 id="wc"> {{ .FuzzyWordCount }} Words </h5>
     </section>
-    <ul id="categories">
-      {{ range .Params.topics }}
-        <li><a href="{{ $baseURL }}/topics/{{ . | urlize }}">{{ . }}</a> </li>
+    {{ with .Params.topics }}
+    <ul id="topics">
+      {{ range . }}
+        <li><a href="{{ "topics" | absURL}}{{ . | urlize }}">{{ . }}</a> </li>
       {{ end }}
     </ul>
+    {{ end }}
+    {{ with .Params.tags }}
     <ul id="tags">
-      {{ range .Params.tags }}
-        <li> <a href="{{ $baseURL }}/tags/{{ . | urlize }}">{{ . }}</a> </li>
+      {{ range . }}
+        <li> <a href="{{ "tags" | absURL }}{{ . | urlize }}">{{ . }}</a> </li>
       {{ end }}
     </ul>
+    {{ end }}
     </div>
     <div>
-        {{ if .Prev }}
-          <a class="previous" href="{{.Prev.Permalink}}"> {{.Prev.Title}}</a>
+        {{ with .Prev }}
+          <a class="previous" href="{{.Permalink}}"> {{.Title}}</a>
         {{ end }}
-        {{ if .Next }}
-          <a class="next" href="{{.Next.Permalink}}"> {{.Next.Title}}</a>
+        {{ with .Next }}
+          <a class="next" href="{{.Permalink}}"> {{.Title}}</a>
         {{ end }}
     </div>
 </aside>
-{{ partial "disqus.html" . }}
-{{ partial "footer.html" . }}
+{{ end }}
 ```
 {{% /code %}}
 
 ### `project/single.html`
 
-This content template is also used for [spf13.com][spf13] and makes use of [partial templates][partials]:
+This single page template is also modified from an existing template for [spf13.com][spf13] and makes use of [base templates][]:
 
 {{% code file="project/single.html" download="single.html" %}}
 ```html
-  {{ partial "header.html" . }}
-  {{ partial "subheader.html" . }}
-  {{ $baseURL := .Site.BaseURL }}
-
+{{ define "main" }}
   <section id="main">
     <h1 id="title">{{ .Title }}</h1>
     <div>
@@ -107,48 +109,50 @@ This content template is also used for [spf13.com][spf13] and makes use of [part
           </article>
     </div>
   </section>
-
   <aside id="meta">
       <div>
       <section>
         <h4 id="date"> {{ .Date.Format "Mon Jan 2, 2006" }} </h4>
         <h5 id="wc"> {{ .FuzzyWordCount }} Words </h5>
       </section>
-      <ul id="categories">
-        {{ range .Params.topics }}
-        <li><a href="{{ $baseURL }}/topics/{{ . | urlize }}">{{ . }}</a> </li>
+      {{ with .Params.topics }}
+      <ul id="topics">
+        {{ range . }}
+          <li><a href="{{ "topics" | absURL}}{{ . | urlize }}">{{ . }}</a> </li>
         {{ end }}
       </ul>
+      {{ end }}
+      {{ with .Params.tags}}
       <ul id="tags">
-        {{ range .Params.tags }}
-          <li> <a href="{{ $baseURL }}/tags/{{ . | urlize }}">{{ . }}</a> </li>
+        {{ range . }}
+          <li> <a href="{{ "tags" | absURL }}{{ . | urlize}}">{{ . }}</a> </li>
         {{ end }}
       </ul>
+      {{ end }}
       </div>
   </aside>
-
-  {{if isset .Params "project_url" }}
+  {{with .Params "project_url" }}
   <div id="ribbon">
-      <a href="{{ index .Params "project_url" }}" rel="me">Fork me on GitHub</a>
+      <a href="{{ . }}">Fork me on GitHub</a>
   </div>
   {{ end }}
-
-  {{ partial "footer.html" . }}
+{{ end }}
 ```
 {{% /code %}}
 
-Notice how `project/single.html` uses an additional parameter unique to this template. This doesn't need to be defined ahead of time. The key can wait to be used in the template if present in the content file's front matter.
+Notice how `project/single.html` uses an additional parameter unique to this template (i.e., `project_url`). This doesn't need to be defined ahead of time. The use of [`with`](/functions/with) means the key can be used in the template only if set in the content file's front matter.
 
-To easily generate new instances of this content type (e.g., new `.md` files in `project/`) with preconfigured front matter, use [content archetypes][archetypes].
+To easily generate new instances of a content type (e.g., new `.md` files in a section like `project/`) with preconfigured front matter, use [content archetypes][archetypes].
 
 [archetypes]: /content-management/archetypes/
+[base templates]: /templates/base/
 [config]: /getting-started/configuration/
 [content type]: /content-management/types/
 [directory structure]: /getting-started/directory-structure/
 [dry]: https://en.wikipedia.org/wiki/Don%27t_repeat_yourself
 [front matter]: /content-management/front-matter/
-[page variables]: /variables/page-variables/
+[page variables]: /variables/page/
 [partials]: /templates/partials/
 [section]: /content-management/sections/
-[site variables]: /variables/site-variables/
+[site variables]: /variables/site/
 [spf13]: http://spf13.com/

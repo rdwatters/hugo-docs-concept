@@ -8,7 +8,8 @@ publishdate: 2017-02-01
 lastmod: 2017-02-01
 categories: [functions]
 tags: [strings,singular]
-signature:
+ns:
+signature: ["singularize INPUT"]
 workson: []
 hugoversion:
 relatedfuncs: []
@@ -20,5 +21,5 @@ aliases: []
 
 `{{ "cats" | singularize }}` → "cat"
 
-See also the `.Data.Singular` [taxonomy variable](/variables/taxonomy-variables/) for singularizing taxonomy names.
+See also the `.Data.Singular` [taxonomy variable](/variables/taxonomy/) for singularizing taxonomy names.
 

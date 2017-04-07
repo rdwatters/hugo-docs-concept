@@ -8,7 +8,8 @@ publishdate: 2017-02-01
 lastmod: 2017-02-01
 categories: [functions]
 tags: [strings,casing]
-signature:
+ns:
+signature: ["humanize INPUT"]
 workson: []
 hugoversion:
 relatedfuncs: []

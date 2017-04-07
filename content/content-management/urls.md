@@ -7,7 +7,11 @@ publishdate: 2017-02-01
 lastmod: 2017-03-09
 tags: [aliases,redirects,permalinks,urls]
 categories: [content management]
-weight: 110
+menu:
+  main:
+    parent: "Content Management"
+    weight: 110
+weight: 110	#rem
 draft: false
 aliases: [/extras/permalinks/,/extras/aliases/,/extras/urls/,/doc/redirects/,/doc/alias/,/doc/aliases/]
 toc: true
@@ -194,7 +198,7 @@ content/posts/post-1.md
 
 ## Ugly URLs
 
-If you would like to have are often referred to as "ugly URLs" (e.g.,&nbsp;http://example.com/extras/urls.html), set `uglyurls = true` or `uglyurls: true` to your site's `config.toml` or `config.yaml`, respectively. You can also use the `--uglyURLs=true` [flag from the command line][usage] with `hugo` or `hugo server`..
+If you would like to have are often referred to as "ugly URLs" (e.g., yoursite.com/urls.html), set `uglyurls = true` or `uglyurls: true` in your site's `config.toml` or `config.yaml`, respectively. You can also use the `--uglyURLs=true` [flag from the command line][usage] with `hugo` or `hugo server`..
 
 If you want a specific piece of content to have an exact URL, you can specify this in the [front matter][] under the `url` key. The following are examples of the same content directory and what the eventual URL structure will be when Hugo runs with its default behavior.
 

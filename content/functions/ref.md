@@ -8,7 +8,8 @@ publishdate: 2017-02-01
 lastmod: 2017-02-01
 categories: [functions]
 tags: [cross references, anchors]
-signature:
+ns:
+signature: ["ref PAGE CONTENT"]
 workson: []
 hugoversion:
 relatedfuncs: [relref]

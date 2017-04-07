@@ -7,7 +7,11 @@ publishdate: 2017-02-01
 lastmod: 2017-02-01
 tags: [taxonomies,metadata,front matter,terms]
 categories: [content management]
-weight: 80
+menu:
+  main:
+    parent: "Content Management"
+    weight: 80
+weight: 80	#rem
 draft: false
 aliases: [/taxonomies/overview/,/taxonomies/usage/,/indexes/overview/,/doc/indexes/,/extras/indexes]
 toc: true
@@ -21,7 +25,7 @@ Hugo includes support for user-defined groupings of content called **taxonomies*
 Taxonomies were previously known as *indexes* in Hugo before v0.11.
 {{% /note %}}
 
-### Taxonomy Definitions
+### Definitions
 
 In order to effectively work with taxonomies in Hugo, it's important to first understand the language used to described the concept.
 
@@ -29,12 +33,12 @@ Taxonomy
 : a categorization that can be used to classify content
 
 Term
-: A key within the taxonomy
+: a key within the taxonomy
 
 Value
-: A piece of content assigned to a term
+: a piece of content assigned to a term
 
-### Example Taxonomy: Movie Website
+## Example Taxonomy: Movie Website
 
 Let's assume you are making a website about movies. You may want to include the following taxonomies:
 
@@ -84,29 +88,24 @@ Moonrise Kingdom            <- Content
 
 ## Hugo Taxonomy Defaults
 
-Hugo natively supports taxonomies, which means there are architectural patterns and default values baked into Hugo's core. Luckily, Hugo limits these default behaviors to those that fit the most common use cases in an effort to save you time.
+Hugo natively supports taxonomies, which means there are architectural patterns for rendering your project's taxonomies baked into Hugo's core.
 
-### Default Taxonomies
+{{% note %}}
+Users of versions older than v0.20 may notice that Hugo built `/tags` and `/categories` as long as these fields were called in at least a single content file. A previous hack involved setting these values to empty strings. This is *not* a proper workaround.
 
-Hugo ships with *tags* and *categories* as default taxonomies. These taxonomies are common to many website systems (e.g., WordPress, Drupal, Jekyll). Unlike these systems, Hugo makes it trivial to customize the taxonomies you will be using for your website.
+As of v0.20, Hugo does *not* automatically generate default taxonomies for your site. If your site configuration contains no key-values in the taxonomies field, Hugo will not build anything.
+{{% /note %}}
 
-### Default Taxonomy Pages and URLs
+### Default Destinations
 
-When taxonomies are used---and [taxonomy templates][] are provided---Hugo will automatically create both a page listing all the taxonomy's terms and individual pages with lists of content associated with each term. For example, a `categories` taxonomy will create the following pages:
+When taxonomies are used---and [taxonomy templates][] are provided---Hugo will automatically create both a page listing all the taxonomy's terms and individual pages with lists of content associated with each term. For example, a `categories` taxonomy declared in your your configuration and used in your content front matter will create the following pages:
 
-* A single page at `yoursite.com/categories/` that lists all the [terms within the taxonomy][taxonomy terms templates]
+* A single page at `yoursite.com/categories/` that lists all the [terms within the taxonomy][]
 * [Individual taxonomy list pages][taxonomy templates] (e.g., `/categories/development/`) for each of the terms that shows a listing of all pages marked as part of that taxonomy within any content file's [front matter][]
 
 ## Configuring Taxonomies
 
-Taxonomies must be defined in your [website configuration][config] before they can be
-used throughout the site. You need to provide both the plural and
-singular labels for each taxonomy.
-
-Here is an example configuration in TOML and YAML
-that specifies three taxonomies (the default two, plus `series`).
-
-Notice the format is `singular key = "plural value"` for TOML and `singular key: "plural value"` for YAML:
+Taxonomies must be defined in your [website configuration][config] before they can be used throughout the site. You need to provide both the plural and singular labels for each taxonomy. For example, `singular key = "plural value"` for TOML and `singular key: "plural value"` for YAML.
 
 ### Example: TOML Taxonomy Configuration
 
@@ -126,30 +125,19 @@ taxonomies:
   series: "series"
 ```
 
-### Overriding Hugo's Default Taxonomies
-
-If you do not specify any taxonomies in your site configuration file *and* your content already includes front matter with `tags:` or `categories`, Hugo will automatically create taxonomy pages. To override this behavior, set the key-value pairs for both of the default taxonomies to empty strings in your `config` file:
-
-```toml
-[taxonomies]
-  tag = ""
-  category = ""
-```
-
-```yaml
-taxonomies:
-    tag: ""
-    category: ""
-```
-
-
 ### Preserving Taxonomy Values
 
 By default, taxonomy names are hyphenated, lower-cased, normalized, and then fixed and title-ized within.
 
-Therefore, if you want to have a taxonomy value with special characters such as `Gérard Depardieu` instead of `Gerard Depardieu`, set the value for `preserveTaxonomyNames` to `true` in your [site configuration][config]. Hugo will then preserve special characters in taxonomy values but will still title-ize the values for titles and normalize them in URLs.
+Therefore, if you want to have a taxonomy term with special characters such as `Gérard Depardieu` instead of `Gerard Depardieu`, set the value for `preserveTaxonomyNames` to `true` in your [site configuration][config]. Hugo will then preserve special characters in taxonomy values but will still title-ize the values for titles and normalize them in URLs.
 
 Note that if you use `preserveTaxonomyNames` and intend to manually construct URLs to the archive pages, you will need to pass the taxonomy values through the [`urlize` template function][].
+
+{{% note %}}
+You can add content and front matter to your taxonomy list and taxonomy terms pages. See [Content Organization](/content-management/organization/) for more information on how to add an `_index.md` for this purpose.
+
+Note also that taxonomy [permalinks](/content-management/urls/) are *not* configurable.
+{{% /note %}}
 
 ## Adding Taxonomies to Content
 
@@ -209,7 +197,7 @@ project_url: "https://github.com/spf13/hugo"
 }
 ```
 
-## Ordering Taxonomies with `weight`
+## Ordering Taxonomies
 
 A content file can assign weight for each of its associate taxonomies. Taxonomic weight can be used for sorting or ordering content in [taxonomy list templates][] and is declared in a content file's [front matter][]. The convention for declaring taxonomic weight is `taxonomyname_weight`.
 
@@ -242,16 +230,15 @@ categories_weight: 44
 By using taxonomic weight, the same piece of content can appear in different positions in different taxonomies.
 
 {{% note "Limits to Ordering Taxonomies" %}}
-Currently taxonomies only support the default ordering of content which is weight -> date. For more information, see the documentation on [taxonomy templates](/templates/taxonomy-templates/).
+Currently taxonomies only support the [default `weight => date` ordering of list content](/templates/lists/#default-weight-date). For more information, see the documentation on [taxonomy templates](/templates/taxonomy-templates/).
 {{% /note %}}
 
-
 [`urlize` template function]: /functions/urlize/
-[content section]: /content-section/
-[content type]: /content-type/
+[content section]: /content-management/sections/
+[content type]: /content-management/types/
 [documentation on archetypes]: /content-management/archetypes/
 [front matter]: /content-management/front-matter/
 [taxonomy list templates]: /templates/taxonomy-templates/#taxonomy-page-templates
 [taxonomy templates]: /templates/taxonomy-templates/
-[taxonomy terms templates]: /templates/taxonomy-templates/#taxonomy-terms-templates "See how to order terms associated with a taxonomy"
+[terms within the taxonomy]: /templates/taxonomy-templates/#taxonomy-terms-templates "See how to order terms associated with a taxonomy"
 [config]: /getting-started/configuration/

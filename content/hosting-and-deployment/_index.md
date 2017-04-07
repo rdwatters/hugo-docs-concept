@@ -7,8 +7,14 @@ publishdate: 2016-11-01
 lastmod: 2016-11-01
 categories: [hosting and deployment]
 tags: []
-weight: 01
+menu:
+  main:
+    parent: "Hosting and Deployment"
+    weight: 01
+weight: 01	#rem
 draft: false
 aliases: []
 toc: false
 ---
+
+Because Hugo renders *static* websites, you can host your new Hugo website virtually anywhere. The following represent only a few of the more popular hosting and automated deployment solutions used by the Hugo community.

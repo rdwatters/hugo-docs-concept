@@ -7,7 +7,12 @@ publishdate: 2017-02-01
 lastmod: 2017-02-01
 categories: [contribute]
 tags: [docs,documentation,community, contribute]
+menu:
+  main:
+    parent: "Contribute"
+    weight: 20
 weight: 20
+sections_weight: 20
 draft: false
 aliases: [/contribute/docs/]
 toc: true
@@ -47,11 +52,11 @@ Once you have cloned the Hugo repository, you can create a new function via the 
 hugo new functions/newfunction.md
 ```
 
-The archetype for the `functions` content type is as follows:
+The archetype for `functions` according to the Hugo theme is as follows:
 
 {{% code file="archetypes/functions.md" %}}
 ```yaml
-{{< readfile file="archetypes/functions.md">}}
+{{< readfile file="/themes/hugo-docs-concept/archetypes/functions.md">}}
 ```
 {{% /code %}}
 
@@ -103,7 +108,7 @@ The archetype for the `showcase` content type is as follows:
 
 {{% code file="archetypes/showcase.md" %}}
 ```yaml
-{{< readfile file="archetypes/showcase.md">}}
+{{< readfile file="/themes/hugo-docs-concept/archetypes/showcase.md">}}
 ```
 {{% /code %}}
 
@@ -143,7 +148,7 @@ The archetype for the `tutorials` content type is as follows:
 
 {{% code file="archetypes/tutorials.md" %}}
 ```yaml
-{{< readfile file="archetypes/tutorials.md">}}
+{{< readfile file="/themes/hugo-docs-concept/archetypes/tutorials.md">}}
 ```
 {{% /code %}}
 
@@ -305,6 +310,8 @@ Previous versions of Hugo documentation used blockquotes to draw attention to te
 
 > Admonitions are specially marked "topics" that can appear anywhere an ordinary body element can. They contain arbitrary body elements. Typically, an admonition is rendered as an offset block in a document, sometimes outlined or shaded, with a title matching the admonition type. - [SourceForge][sourceforge]
 
+The Hugo docs contain three admonitions: `note`, `tip`, and `warning`.
+
 ### `note` Admonition
 
 Use the `note` shortcode when you want to draw attention to information subtly. `note` is intended to be less of an interruption in content than is `warning`.
@@ -334,6 +341,36 @@ Here is a piece of information I would like to draw your **attention** to.
 {{% note %}}
 Here is a piece of information I would like to draw your **attention** to.
 {{% /note %}}
+
+### `tip` Admonition
+
+Use the `tip` shortcode when you want to give the reader advice. `tip`, like `note`, is intended to be less of an interruption in content than is `warning`.
+
+#### Example `tip` Input
+
+{{% code file="using-tip.md" %}}
+```markdown
+{{%/* tip */%}}
+Here's a bit of advice to improve your productivity with Hugo.
+{{%/* /tip */%}}
+```
+{{% /code %}}
+
+#### Example `tip` Output
+
+{{% output file="tip-output.html" %}}
+```html
+{{% tip %}}
+Here's a bit of advice to improve your productivity with Hugo.
+{{% /tip %}}
+```
+{{% /output %}}
+
+#### Example `tip` Display
+
+{{% tip %}}
+Here's a bit of advice to improve your productivity with Hugo.
+{{% /tip %}}
 
 ### `warning` Admonition
 

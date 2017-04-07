@@ -6,8 +6,13 @@ date: 2016-02-01
 publishdate: 2016-02-01
 lastmod: 2016-03-02
 categories: ["about hugo"]
-tags: ["license","apache"]
+tags: ["License","apache"]
+menu:
+  main:
+    parent: "About Hugo"
+    weight: 60
 weight: 60
+sections_weight: 60
 aliases: [/meta/license]
 toc: true
 ---
@@ -109,7 +114,7 @@ provided that You meet the following conditions:
 this License; and
 * **(b)** You must cause any modified files to carry prominent notices stating that You
 changed the files; and
-* **(c)** You must retain, in the Source form of any Derivative Works that You distribute,
+* **\(c)** You must retain, in the Source form of any Derivative Works that You distribute,
 all copyright, patent, trademark, and attribution notices from the Source form
 of the Work, excluding those notices that do not pertain to any part of the
 Derivative Works; and
@@ -143,7 +148,7 @@ _END OF TERMS AND CONDITIONS_
 
 To apply the Apache License to your work, attach the following boilerplate notice, with the fields enclosed by brackets `[]` replaced with your own identifying information. (Don't include the brackets!) The text should be enclosed in the appropriate comment syntax for the file format. We also recommend that a file or class name and description of purpose be included on the same “printed page” as the copyright notice for easier identification within third-party archives.
 
-{{% code file="apache-notice.txt" %}}
+{{% code file="apache-notice.txt" download="apache-notice.txt" %}}
 ```
 Copyright [yyyy] [name of copyright owner]
 

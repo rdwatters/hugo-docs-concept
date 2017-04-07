@@ -8,7 +8,8 @@ lastmod: 2017-02-01
 categories: [functions]
 tags: [urls]
 godocref:
-signature:
+ns:
+signature: ["querify KEY VALUE [KEY VALUE]..."]
 hugoversion:
 deprecated: false
 workson: []

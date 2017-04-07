@@ -8,7 +8,8 @@ publishdate: 2017-02-01
 lastmod: 2017-02-01
 categories: [functions]
 tags: []
-signature:
+ns:
+signature: ["partialCached LAYOUT INPUT [VARIANT...]"]
 workson: []
 hugoversion:
 relatedfuncs: []

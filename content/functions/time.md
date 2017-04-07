@@ -8,7 +8,8 @@ publishdate: 2017-02-01
 lastmod: 2017-02-01
 categories: [functions]
 tags: [dates,time]
-signature:
+ns:
+signature: ["time INPUT"]
 workson: []
 hugoversion:
 relatedfuncs: []

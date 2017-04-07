@@ -5,11 +5,15 @@ description: Hugo's CLI scaffolds a project directory structure and then takes t
 date: 2017-01-02
 publishdate: 2017-02-01
 lastmod: 2017-03-09
-categories: [project organization]
+categories: [getting started]
 tags: [source, organization, directories,fundamentals]
+menu:
+  main:
+    parent: "Getting Started"
+    weight: 50
 weight: 50
+sections_weight: 50
 draft: false
-wip: true
 aliases: [/overview/source-directory/]
 toc: true
 ---
@@ -17,134 +21,65 @@ toc: true
 Hugo takes a single directory and uses it as the input for creating a complete
 website.
 
-## Directory Scaffolding in `new hugo site`
+## New Site Scaffolding
 
-The top level of a source directory will typically have the following elements:
-
-```bash
-▸ archetypes/
-▸ content/
-▸ data/
-▸ i18n/
-▸ layouts/
-▸ static/
-▸ themes/
-  config.toml
-```
-
-You can learn more about each component of a newly scaffolded site in its respective documentation:
-
-* [config](/getting-started/configuration/)
-* [data](/templates/data-templates/)
-* [i18n](/content-management/multilingual/)
-* [archetypes](/content-management/archetypes/)
-* [content](/content-management/organization/)
-* [layouts](/templates/)
-* [static](/themes/creating-a-theme/)
-* [themes](/themes/)
-
-
-## Example Hugo Project Directory
-
-An example directory may look like the following
+Running `hugo new site` from the command line will create a directory structure with the following elements:
 
 ```bash
 .
-├── config.toml
 ├── archetypes
-|   └── default.md
+├── config.toml
 ├── content
-|   ├── post
-|   |   ├── firstpost.md
-|   |   └── secondpost.md
-|   └── quote
-|   |   ├── first.md
-|   |   └── second.md
 ├── data
-├── i18n
 ├── layouts
-|   ├── _default
-|   |   ├── single.html
-|   |   └── list.html
-|   ├── partials
-|   |   ├── header.html
-|   |   └── footer.html
-|   ├── taxonomies
-|   |   ├── category.html
-|   |   ├── post.html
-|   |   ├── quote.html
-|   |   └── tag.html
-|   ├── post
-|   |   ├── li.html
-|   |   ├── single.html
-|   |   └── summary.html
-|   ├── quote
-|   |   ├── li.html
-|   |   ├── single.html
-|   |   └── summary.html
-|   ├── shortcodes
-|   |   ├── img.html
-|   |   ├── vimeo.html
-|   |   └── youtube.html
-|   ├── index.html
-|   └── sitemap.xml
-├── themes
-|   ├── hyde
-|   └── doc
-└── static
-    ├── css
-    ├── images
-    └── js
+├── static
+└── themes
 ```
 
-This directory structure tells us a lot about this website:
 
-1. The website intends to have two different types of content: *posts* and *quotes*.
-2. It will also apply two different taxonomies to that content: *categories* and *tags*.
-3. It will be displaying content in 3 different views: a list, a summary, and a full-page view.
+## Directory Structure Explained
 
-## Content for Homepage and Other List Pages
+The following is a high-level overview of each of the directories with links to each of their respective sections with in the Hugo docs.
 
-Since Hugo 0.18, "everything" is a `Page` that can have content and metadata, like `.Params`, attached to it -- and share the same set of [page variables](/variables/page-variables/).
+[`archetypes`](/content-management/archetypes/)
+: You can create new content files in Hugo using the `hugo new` command.
+By default, hugo will create new content files with at least `date`, `title` (inferred from the file name), and `draft = true`. This saves time and promotes consistency for sites using multiple content types. You can create your own [archetypes][] with custom preconfigured front matter fields as well.
 
-To add content and front matter to the home page, a section, a taxonomy or a taxonomy terms listing, add a markdown file with the base name `_index` on the relevant place on the file system.
+[`config.toml`](/getting-started/configuration/)
+: Every Hugo project should have a configuration file in TOML, YAML, or JSON format at the root. Many sites may need little to no configuration, but Hugo ships with a large number of [configuration directives][] for more granular directions on how you want Hugo to build your website.
 
-For the default Markdown content, the filename will be `_index.md`.
+[`content`][]
+: All content for your website will live inside this directory. Each top-level folder in Hugo is considered a [content section][]. For example, if your site has three main sections---`blog`, `articles`, and `tutorials`---you will have three directories at `content/blog`, `content/articles`, and `content/tutorials`. Hugo uses sections to assign default [content types][].
 
-Se the example directory tree below.
+[`data`](/templates/data-templates/)
+: This directory is used to store configuration files that can be
+used by Hugo when generating your website. You can write these files in YAML, JSON, or TOML format. In addition to the files you add to this folder, you can also create [data templates][] that pull from dynamic content.
 
-{{% note "You Don't Have to Create `_index.md`"%}}
-You don't have to create an `_index` file for every list page (i.e. section, taxonomy, taxonomy terms, etc). If Hugo does not find an `_index.md` on a list page, a default page will be created if not present but with no `{{.Content}}`  and only the default values for `.Title` etc.
+[`layouts`][]
+: stores templates in the form of `.html` files that specify how views of your content will be rendered into a static website. Templates include [list pages][lists], your [homepage][], [taxonomy templates][], [partials][], [single page templates][singles], and more.
+
+`static`
+: stores all the static content for your future website: images, CSS, JavaScript, etc. When Hugo builds your site, all assets inside your static directory are copied over as-is. A good example of using the `static` folder is for [verifying site ownership on Google Search Console][searchconsole], where you want Hugo to copy over a complete HTML file without modifying its content.
+
+{{% note %}}
+Hugo does not currently ship with an asset pipeline ([#3207](https://github.com/spf13/hugo/issues/3207)). You can solicit support from the community in the [Hugo forums](https://discuss.gohugo.io) or check out a few of the [Hugo starter kits](/tools/starter-kits/) for examples of how Hugo developers are managing static assets.
 {{% /note %}}
 
-```bash
-└── content
-    ├── _index.md
-    ├── categories
-    │   ├── _index.md
-    │   └── photo
-    │       └── _index.md
-    ├── post
-    │   ├── _index.md
-    │   └── firstpost.md
-    └── tags
-        ├── _index.md
-        └── hugo
-            └── _index.md
-```
 
-
-<!-- copied from old version of quick start -->
-
-* **archetypes**: You can create new content files in Hugo using the `hugo new` command. When you run that command, it adds few configuration properties to the post like date and title. [Archetype][archetypes] allows you to define your own configuration properties that will be added to front matter of new content files whenever `hugo new` command is used.
-
-* **config.toml**: Every website should have a configuration file at the root. By default, the configuration file uses `TOML` format but you can also use `YAML` or `JSON` formats as well. [TOML](https://github.com/toml-lang/toml) is minimal configuration file format that's easy to read due to obvious semantics. The configuration settings mentioned in the `config.toml` are applied to the full site. These configuration settings include `baseURL` and `title` of the website.
-
-* **content**: This is where you will store content of the website. Inside content, you will create sub-directories for different sections. Let's suppose your website has three actions -- `blog`, `article`, and `tutorial` then you will have three different directories for each of them inside the `content` directory. The name of the section i.e. `blog`, `article`, or `tutorial` will be used by Hugo to apply a specific layout applicable to that section.
-
-* **data**: This directory is used to store configuration files that can be
-used by Hugo when generating your website. You can write these files in YAML, JSON, or TOML format.
-
-* **layouts**: The content inside this directory is used to specify how your content will be converted into the static website.
-
-* **static**: This directory is used to store all the static content that your website will need like images, CSS, JavaScript or other static content.
+[archetypes]: /content-management/archetypes/
+[configuration directives]: /getting-started/configuration/#all-variables-yaml
+[`content`]: /content-management/organization/
+[content section]: /content-management/sections/
+[content types]: /content-management/types/
+[data templates]: /templates/data-templates/
+[homepage]: /templates/homepage-templates/
+[`layouts`]: /templates/
+[lists]: /templates/list/
+[pagevars]: /variables/page/
+[partials]: /templates/partials/
+[searchconsole]: https://support.google.com/analytics/answer/1142414?hl=en
+[singles]: /templates/single-page-templates/
+[starters]: /tools/starter-kits/
+[taxonomies]: /content-management/taxonomies/
+[taxonomy templates]: /templates/taxonomy-templates/
+[types]: /content-management/types/

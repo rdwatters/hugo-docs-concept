@@ -7,11 +7,15 @@ publishdate: 2017-02-01
 lastmod: 2017-02-01
 categories: [templates]
 tags: [robots,search engines]
+menu:
+  main:
+    parent: "Templates"
+    weight: 165
 weight: 165
+sections_weight: 165
 draft: false
 aliases: [/extras/robots-txt/]
 toc: false
-wip: true
 ---
 
 Hugo can generate a customized [robots.txt][robots] in the same way as any other template.
@@ -50,5 +54,5 @@ Disallow: {{.RelPermalink}}
 This template disallows all the pages of the site by creating one `Disallow` entry for each page.
 
 [config]: /getting-started/configuration/
-[lookup]: /layouts/lookup-order
+[lookup]: /templates/lookup-order/
 [robots]: http://www.robotstxt.org/

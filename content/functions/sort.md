@@ -8,7 +8,8 @@ publishdate: 2017-02-01
 lastmod: 2017-02-01
 categories: [functions]
 tags: [ordering,sorting,lists]
-signature:
+ns:
+signature: []
 workson: [lists,taxonomies,terms,groups]
 hugoversion:
 relatedfuncs: []

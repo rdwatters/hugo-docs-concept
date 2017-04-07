@@ -9,7 +9,8 @@ lastmod: 2017-02-01
 tags: []
 categories: [functions]
 toc:
-signature:
+ns:
+signature: ["upper INPUT"]
 workson: []
 hugoversion:
 relatedfuncs: []

@@ -7,7 +7,11 @@ publishdate: 2017-02-01
 lastmod: 2017-02-01
 categories: [content management]
 tags: [sections,content,organization,fundamentals]
-weight: 10
+menu:
+  main:
+    parent: "Content Management"
+    weight: 10
+weight: 10	#rem
 draft: false
 aliases: [/content/sections/]
 toc: true
@@ -113,7 +117,7 @@ http://yoursite.com/events/chicago/lollapalooza/
 ```
 
 {{% note %}}
-As of v0.20, Hugo does not recognize nested sections. So while you can nest as many content *directories* as you'd like, any child directory of a section will still be considered the same section as that of its parents. Therefore, in the above example, `{{.Section}}` for `lollapalooza.md` is `events` and *not* `chicago`.
+As of v0.20, Hugo does not recognize nested sections. While you can nest as many content *directories* as you'd like, any child directory of a section will still be considered the same section as that of its parents. Therefore, in the above example, `{{.Section}}` for `lollapalooza.md` is `events` and *not* `chicago`. See the [related issue on GitHub](https://github.com/spf13/hugo/issues/465).
 {{% /note %}}
 
 ## Paths Explained
@@ -145,7 +149,7 @@ The `url` is the relative URL for the piece of content. The `url`
 * is based on the content's location within the directory structure OR
 * is defined in front matter and *overrides all the above*
 
-## Overriding Default Behaviors via Front Matter
+## Overriding Destination Paths via Front Matter
 
 Hugo believes that you organize your content with a purpose. The same structure that works to organize your source content is used to organize the rendered site. As displayed above, the organization of the source content will be mirrored in the destination.
 

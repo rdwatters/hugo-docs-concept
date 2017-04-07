@@ -23,7 +23,7 @@ Hugo currently provides pre-built binaries for the following:
 * <i class="icon-linux"></i> Linux
 * <i class="icon-freebsd"></i> FreeBSD
 
-Hugo may also be compiled from source wherever the Go compiler tool chain can run; e.g., for other operating systems, including DragonFly BSD, OpenBSD, Plan&nbsp;9 and Solaris. See <http://golang.org/doc/install/source> for the full set of supported combinations of target operating systems and compilation architectures.
+Hugo may also be compiled from source wherever the Go compiler tool chain can run; e.g., for other operating systems, including DragonFly BSD, OpenBSD, Plan&nbsp;9 and Solaris. See <https://golang.org/doc/install/source> for the full set of supported combinations of target operating systems and compilation architectures.
 
 ## Quick Install
 
@@ -106,7 +106,7 @@ Since building from source is appealing to more seasoned command line users, thi
 
 #### Step 1: Install `brew` if you haven't already
 
-Go to the `brew` website, <http://brew.sh/>, and follow the directions there. The most important step is the installation from the command line:
+Go to the `brew` website, <https://brew.sh/>, and follow the directions there. The most important step is the installation from the command line:
 
 {{% code file="install-brew.sh" %}}
 ```bash
@@ -312,14 +312,14 @@ You'll need a place to store the Hugo executable, your content (the files that y
 
 ### Technical Users
 
-1. Download the latest zipped Hugo executable from the [Hugo Releases](https://github.com/spf13/hugo/releases) page.
+1. Download the latest zipped Hugo executable from the [Hugo Releases][releases] page.
 2. Extract all contents to your `..\Hugo\bin` folder.
 3. The `hugo` executable will be named as `hugo_hugo-version_platform_arch.exe`. Rename that executable to `hugo.exe` for ease of use.
 4. In PowerShell or your preferred CLI, add the `hugo.exe` executable to your PATH by navigating to `C:\Hugo\bin` (or the location of your hugo.exe file) and use the command `set PATH=%PATH%;C:\Hugo\bin`. If the `hugo` command does not work after a reboot, you may have to run the command prompt as administrator.
 
 ### Less-technical Users
 
-1. Go to the [Hugo Releases](https://github.com/spf13/hugo/releases) page.
+1. Go to the [Hugo Releases][releases] page.
 2. The latest release is announced on top. Scroll to the bottom of the release announcement to see the downloads. They're all ZIP files.
 3. Find the Windows files near the bottom (they're in alphabetical order, so Windows is last) – download either the 32-bit or 64-bit file depending on whether you have 32-bit or 64-bit Windows. (If you don't know, [see here](https://esupport.trendmicro.com/en-us/home/pages/technical-support/1038680.aspx).)
 4. Move the ZIP file into your `C:\Hugo\bin` folder.
@@ -340,12 +340,12 @@ You'll need a place to store the Hugo executable, your content (the files that y
 * Click OK at every window to exit.
 
 {{% note "Path Editor in Windows 10"%}}
-The path editor in Windows 10 was added in the large [November 2015 Update](https://blogs.windows.com/windowsexperience/2015/11/12/first-major-update-for-windows-10-available-today/). You'll need to have that or a later update installed for the above steps to work. You can see what Windows 10 build you have by clicking on the <i class="fa fa-windows"></i>&nbsp;Start button → Settings → System → About. See [here](http://www.howtogeek.com/236195/how-to-find-out-which-build-and-version-of-windows-10-you-have/) for more.)
+The path editor in Windows 10 was added in the large [November 2015 Update](https://blogs.windows.com/windowsexperience/2015/11/12/first-major-update-for-windows-10-available-today/). You'll need to have that or a later update installed for the above steps to work. You can see what Windows 10 build you have by clicking on the <i class="fa fa-windows"></i>&nbsp;Start button → Settings → System → About. See [here](https://www.howtogeek.com/236195/how-to-find-out-which-build-and-version-of-windows-10-you-have/) for more.)
 {{% /note %}}
 
 #### For Windows 7 and 8.x users:
 
-Windows 7 and 8.1 do not include the easy path editor included in Windows 10, so non-technical users on those platforms are advised to install a free third-party path editor like [Windows Environment Variables Editor](http://eveditor.com/) or [Path Editor](https://patheditor2.codeplex.com/).
+Windows 7 and 8.1 do not include the easy path editor included in Windows 10, so non-technical users on those platforms are advised to install a free third-party path editor like [Windows Environment Variables Editor][Windows Environment Variables Editor] or [Path Editor](https://patheditor2.codeplex.com/).
 
 ### Verify the Executable
 
@@ -361,7 +361,7 @@ hugo is the main command, used to build your Hugo site.
 Hugo is a Fast and Flexible Static Site Generator
 built with love by spf13 and friends in Go.
 
-Complete documentation is available at http://gohugo.io/.
+Complete documentation is available at https://gohugo.io/.
 ```
 
 If you do, then the installation is complete. If you don't, double-check the path that you placed the `hugo.exe` file in and that you typed that path correctly when you added it to your `PATH` variable. If you're still not getting the output, search the [Hugo discussion forum][forum] to see if others have already figured out our problem. If not, add a note---in the "Support" category---and be sure to include your command and the output.
@@ -410,7 +410,7 @@ C:\Hugo\Sites\example.com&gt;dir
 
 ### Installing From Snap
 
-In any of the [Linux distributions that support snaps](http://snapcraft.io/docs/core/install):
+In any of the [Linux distributions that support snaps](https://snapcraft.io/docs/core/install):
 
 ```bash
 snap install hugo
@@ -448,10 +448,10 @@ Now that you've installed Hugo, read the [Quick Start guide][quickstart] and exp
 [brew]: https://brew.sh/
 [highlight shortcode]: /content-management/shortcodes/#highlight
 [forum]: https://discuss.gohugo.io
-[installgit]: (http://git-scm.com/)
+[installgit]: (https://git-scm.com/)
 [installgo]: https://golang.org/dl/
 [Path Editor]: https://patheditor2.codeplex.com/
-[pygments]: http://pygments.org
+[pygments]: https://pygments.org
 [quickstart]: /getting-started/quick-start/
 [releases]: https://github.com/spf13/hugo/releases
 [Windows Environment Variables Editor]: http://eveditor.com/

@@ -10,7 +10,8 @@ lastmod: 2017-02-01
 tags: [defaults]
 categories: [functions]
 toc:
-signature:
+ns:
+signature: ["default DEFAULT INPUT"]
 workson: []
 hugoversion:
 relatedfuncs: []

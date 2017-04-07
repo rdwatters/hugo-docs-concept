@@ -8,7 +8,12 @@ lastmod: 2017-02-27
 categories: [contribute]
 tags: [contribute,themes,design]
 authors: [digitalcraftsman]
+menu:
+  main:
+    parent: "Contribute"
+    weight: 30
 weight: 30
+sections_weight: 30
 draft: false
 aliases: [/contribute/theme/]
 wip: true
@@ -44,7 +49,7 @@ In order to add your theme to the Hugo Themes Showcase, the following requiremen
 1. `theme.toml` with all required fields
 2. Images for thumbnail and screenshot
 3. A good README file instructions for users
-4. Added to the hugoThemes GitHub repository
+4. Addition to the hugoThemes GitHub repository
 
 ### Add Your Theme to the Repo
 
@@ -109,9 +114,9 @@ min_version = 0.13
 
 Screenshots are used for previews in the Hugo Theme Gallery. Make sure that they have the right dimensions:
 
-* Thumbnail should be 900×600 in pixels
-* Screenshot should be 1500×1000 in pixels
-* Media must be located in:
+* Thumbnail should be 900px × 600px
+* Screenshot should be 1500px × 1000px
+* Media must be located in
     * <THEMEDIR>/images/screenshot.png</code>
     * <THEMEDIR>/images/tn.png</code>
 

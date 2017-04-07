@@ -8,13 +8,15 @@ publishdate: 2017-02-01
 lastmod: 2017-02-01
 categories: [functions]
 tags: [regex]
-signature:
+ns:
+signature: ["findRE PATTERN INPUT [LIMIT]"]
 workson: []
 hugoversion:
 relatedfuncs: []
 deprecated: false
 aliases: []
 ---
+
 
 Returns a list of strings that match the regular expression. By default all matches will be included. The number of matches can be limitted with an optional third parameter.
 
@@ -31,7 +33,8 @@ You can limit the number of matches in the list with a third parameter. The foll
     <!-- returns ["<h2 id="#foo">Foo</h2>"] -->
 ```
 
-## `findRE` Example: Building a Table of Contents
+<!-- Removed per request of @bep: https://github.com/spf13/hugo/issues/3188 -->
+<!-- ## `findRE` Example: Building a Table of Contents
 
 `findRE` allows us to build an automatically generated table of contents that could be used for a simple scrollspy if you don't want to use [Hugo's native .TableOfContents feature][toc]. The following shows how this could be done in a [partial template][partials]:
 
@@ -52,7 +55,7 @@ You can limit the number of matches in the list with a third parameter. The foll
 ```
 {{% /code %}}
 
-The preceding snippet tries to find all second-level headers and generate a list where at least one header is found. [`plainify`][] strips the HTML and [`urlize`][] converts the header into a valid URL.
+The preceding snippet tries to find all second-level headers and generate a list where at least one header is found. [`plainify`][] strips the HTML and [`urlize`][] converts the header into a valid URL. -->
 
 [partials]: /templates/partials/
 [`plainify`]: /functions/plainify/

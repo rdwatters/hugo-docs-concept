@@ -8,7 +8,12 @@ lastmod: 2017-02-01
 categories: [hosting and deployment]
 tags: [rysnc,deployment]
 authors: [Adrien Poupin]
-weight: 60
+menu:
+  main:
+    parent: "Hosting and Deployment"
+    weight: 70
+weight: 70
+sections_weight: 70
 draft: false
 aliases: [/tutorials/deployment-with-rsync/]
 toc: true

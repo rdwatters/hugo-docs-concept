@@ -8,7 +8,8 @@ publishdate: 2017-02-01
 lastmod: 2017-02-26
 categories: [functions]
 tags: [style,css,strings]
-signature:
+ns:
+signature: ["safeCSS INPUT"]
 workson: []
 hugoversion:
 relatedfuncs: [safeHTML,safeHTMLAttr,]

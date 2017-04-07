@@ -8,7 +8,8 @@ publishdate: 2017-02-01
 lastmod: 2017-02-01
 categories: [functions]
 tags: [files]
-signature:
+ns:
+signature: ["readDir PATH"]
 workson: []
 hugoversion:
 relatedfuncs: [readFile]

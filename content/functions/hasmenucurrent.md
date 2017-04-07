@@ -8,14 +8,16 @@ publishdate: 2017-02-01
 lastmod: 2017-02-01
 categories: [functions]
 tags: [menus]
-toc:
-signature:
-workson: []
+ns:
+signature: ["HasMenuCurrent"]
+workson: [menus]
 hugoversion:
 relatedfuncs: []
 deprecated: false
-draft: true
+toc: false
+draft: false
 aliases: []
+needsexamples: true
 ---
 
-**Needs examples?**
+Used in [menu templates](/templates/menu-templates/).

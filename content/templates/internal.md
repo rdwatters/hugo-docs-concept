@@ -7,13 +7,19 @@ publishdate: 2017-03-06
 lastmod: 2017-03-06
 categories: [templates]
 tags: [internal, analytics,]
+menu:
+  main:
+    parent: "Templates"
+    weight: 168
 weight: 168
+sections_weight: 168
 draft: false
 aliases: []
 toc: true
 wip: true
 ---
-<!-- reference: https://discuss.gohugo.io/t/lookup-order-for-partials/5705/6 -->
+<!-- reference: https://discuss.gohugo.io/t/lookup-order-for-partials/5705/6
+code: https://github.com/spf13/hugo/blob/e445c35d6a0c7f5fc2f90f31226cd1d46e048bbc/tpl/template_embedded.go#L147 -->
 
 {{% warning %}}
 While the following internal templates are called similar to partials, they do *not* observe the partial template lookup order.

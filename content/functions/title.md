@@ -8,7 +8,8 @@ publishdate: 2017-02-01
 lastmod: 2017-02-01
 categories: [functions]
 tags: [fundamentals,strings]
-signature:
+ns:
+signature: ["title INPUT"]
 workson: []
 hugoversion:
 relatedfuncs: []

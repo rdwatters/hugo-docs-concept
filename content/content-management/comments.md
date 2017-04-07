@@ -7,7 +7,11 @@ publishdate: 2017-02-01
 lastmod: 2017-03-09
 tags: [sections,content,organization, fundamentals]
 categories: [project organization]
-weight: 140
+menu:
+  main:
+    parent: "Content Management"
+    weight: 140
+weight: 140	#rem
 draft: false
 aliases: [/extras/comments/]
 toc: true
@@ -51,7 +55,6 @@ There are a few alternatives to commenting on static sites for those who do not 
 
 * [Static Man](https://staticman.net/)
 * [IntenseDebate](http://intensedebate.com/)
-* [Livefyre](http://livefyre.com/)
 * [Graph Comment][]
 * [Muut](http://muut.com/)
 * [多说](http://duoshuo.com/) ([Duoshuo](http://duoshuo.com/), popular in China)

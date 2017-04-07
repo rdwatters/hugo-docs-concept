@@ -8,16 +8,13 @@ publishdate: 2017-02-01
 lastmod: 2017-02-01
 categories: [functions]
 tags: [images]
-signature:
+ns:
+signature: ["imageConfig PATH"]
 workson: []
 hugoversion:
 relatedfuncs: []
 deprecated: false
 ---
-
-{{% warning %}}
-`imageConfig` does not currently work in Hugo. See [the related `imageConfig` issue](https://github.com/spf13/hugo/issues/2806).
-{{% /warning %}}
 
 `imageConfig` parses the image and returns the height, width, and color model.
 

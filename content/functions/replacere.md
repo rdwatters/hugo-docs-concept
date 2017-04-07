@@ -8,7 +8,8 @@ publishdate: 2017-02-01
 lastmod: 2017-02-01
 categories: [functions]
 tags: [regex]
-signature:
+ns:
+signature: ["replaceRE PATTERN REPLACEMENT INPUT"]
 workson: []
 hugoversion:
 relatedfuncs: []

@@ -8,7 +8,8 @@ publishdate: 2017-02-01
 lastmod: 2017-02-01
 categories: [functions]
 tags: [dates,time,strings]
-signature:
+ns:
+signature: ["dateFormat LAYOUT INPUT"]
 workson: []
 hugoversion:
 relatedfuncs: [Format,now,Unix,time]

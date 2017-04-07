@@ -8,7 +8,8 @@ publishdate: 2017-02-01
 lastmod: 2017-02-01
 categories: [functions]
 tags: [advanced]
-signature:
+ns:
+signature: ["apply COLLETION FUNCTION [PARAM...]"]
 workson: []
 hugoversion:
 relatedfuncs: []

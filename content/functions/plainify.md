@@ -8,7 +8,8 @@ publishdate: 2017-02-01
 lastmod: 2017-02-01
 categories: [functions]
 tags: [strings]
-signature:
+ns:
+signature: ["plainify INPUT"]
 workson: []
 hugoversion:
 relatedfuncs: [jsonify]
@@ -25,6 +26,6 @@ aliases: []
 See also the [`.PlainWords`, `.Plain`, and `.RawContent` page variables][pagevars].
 
 
-[pagevars]: /variables/page-variables/
+[pagevars]: /variables/page/
 
 

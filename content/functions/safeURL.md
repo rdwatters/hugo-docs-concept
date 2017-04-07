@@ -8,7 +8,8 @@ publishdate: 2017-02-01
 lastmod: 2017-02-01
 tags: [strings,urls]
 categories: [functions]
-signature:
+ns:
+signature: ["safeURL INPUT"]
 workson: []
 hugoversion:
 relatedfuncs: []

@@ -8,7 +8,8 @@ publishdate: 2017-02-01
 lastmod: 2017-02-01
 categories: [functions]
 tags: [counting, word count]
-signature:
+ns:
+signature: ["countwords INPUT"]
 workson: []
 hugoversion:
 relatedfuncs: [countrunes]
@@ -24,4 +25,4 @@ aliases: [/functions/countrunes/,/functions/countwords/]
 ```
 
 
-[pagevars]: /variables/page-variables/
+[pagevars]: /variables/page/

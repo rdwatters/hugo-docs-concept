@@ -5,7 +5,12 @@ description: Hugo boasts blistering speed, robust content management, and a powe
 date: 2017-02-01
 publishdate: 2017-02-01
 lastmod: 2017-02-01
+menu:
+  main:
+    parent: "About Hugo"
+    weight: 20
 weight: 20
+sections_weight: 20
 draft: false
 aliases: [/about/features]
 toc: true
@@ -14,7 +19,7 @@ toc: true
 ## General
 
 * [Extremely fast][] build times (&lt; .7 ms per page)
-* Completely cross platform, with [easy installation][install] on Mac OSX, Linux, Windows, and more
+* Completely cross platform, with [easy installation][install] on macOS, Linux, Windows, and more
 * Renders changes on the fly with [LiveReload][] as you develop
 * [Powerful theming][]
 * [Host your site anywhere][hostanywhere]
@@ -52,7 +57,7 @@ toc: true
 
 See what's coming next in the [Hugo roadmap][].
 
-[Ace]: /templates/ace-templating/
+[Ace]: /templates/alternatives/
 [aliases]: /content-management/urls/#aliases
 [Amber]: https://github.com/eknkc/amber
 [content summaries]: /content-management/summaries/
@@ -68,9 +73,9 @@ See what's coming next in the [Hugo roadmap][].
 [hostanywhere]: /hosting-and-deployment/
 [Hugo roadmap]: /about/roadmap
 [install]: /getting-started/installing/
-[LiveReload]: /getting-started/using-hugo/
+[LiveReload]: /getting-started/usage/
 [organization for your projects]: /getting-started/directory-structure/
-[pagevars]: /variables/page-variables/
+[pagevars]: /variables/page/
 [Permalink]: /content-management/urls/#permalinks
 [Powerful theming]: /themes/
 [Pretty URLs]: /content-management/urls/

@@ -8,7 +8,8 @@ publishdate: 2017-02-01
 lastmod: 2017-02-01
 categories: [functions]
 tags: [shortcodes]
-signature:
+ns:
+signature: ["Get INDEX", "Get KEY"]
 workson: []
 hugoversion:
 relatedfuncs: []

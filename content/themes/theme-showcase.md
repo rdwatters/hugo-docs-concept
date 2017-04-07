@@ -8,7 +8,12 @@ publishdate: 2017-02-01
 lastmod: 2017-02-01
 categories: [themes]
 tags: [themes, showcase]
+menu:
+  main:
+    parent: "Themes"
+    weight: 40
 weight: 40
+sections_weight: 40
 draft: false
 aliases: []
 toc: false

@@ -9,7 +9,8 @@ lastmod: 2017-02-01
 tags: [math, operators]
 categories: [functions]
 toc:
-signature:
+ns:
+signature: []
 workson: []
 hugoversion:
 relatedfuncs: []

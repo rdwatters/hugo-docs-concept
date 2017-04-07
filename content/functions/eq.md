@@ -8,7 +8,8 @@ publishdate: 2017-02-01
 lastmod: 2017-02-01
 categories: [functions]
 tags: [operators,logic]
-signature:
+ns:
+signature: ["eq ARG1 ARG2"]
 workson: []
 hugoversion:
 relatedfuncs: []

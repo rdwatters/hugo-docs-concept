@@ -8,7 +8,8 @@ publishdate: 2017-02-01
 lastmod: 2017-02-01
 categories: [functions]
 tags: [multilingual,i18n,urls]
-signature:
+ns:
+signature: ["absLangURL INPUT"]
 workson: []
 hugoversion:
 relatedfuncs: [relLangURL]
@@ -17,7 +18,7 @@ aliases: []
 needsexamples: true
 ---
 
-Both `absLangURL` and [`relLangURL`](/functions/rellangurl/) are similar to their [`absURL`](/functions/absurl/) and [`relURL`](/functions/absurl-and-relurl) relatives but will add the correct language prefix when the site is configured with more than one language.
+Both `absLangURL` and [`relLangURL`](/functions/rellangurl/) are similar to their [`absURL`](/functions/absurl/) and [`relURL`](/functions/relurl) relatives but will add the correct language prefix when the site is configured with more than one language.
 
 So for a site  `baseURL` set to `http://yoursite.com/hugo/` and the current language is `en`:
 

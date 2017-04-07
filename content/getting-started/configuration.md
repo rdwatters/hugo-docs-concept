@@ -7,20 +7,28 @@ publishdate: 2017-01-02
 lastmod: 2017-03-05
 categories: [getting started]
 tags: [configuration,fundamentals,toml,yaml,json]
+menu:
+  main:
+    parent: "Getting Started"
+    weight: 60
 weight: 60
+sections_weight: 60
 draft: false
 aliases: [/overview/source-directory/,/overview/configuration/]
 toc: true
 ---
 
-The [directory structure][dirs] of a Hugo website&mdash;or more precisely, the source organization of files containing the website's content and templates&mdash;provides most of the configuration information that Hugo needs in order to statically generate a finished website.
+The [directory structure][] of a Hugo website&mdash;or more precisely, the source organization of files containing the website's content and templates&mdash;provides most of the configuration information that Hugo needs in order to statically generate a finished website.
 
 Because of Hugo's preference for sane defaults, many websites may not need a configuration file. Hugo is designed to recognize certain typical usage patterns (and even expects them by default).
 
-
 ## Configuration Lookup Order
 
-Hugo searches for a configuration file in the root of your website's source directory as a default behavior. First, it looks for a `./config.toml` file. If that's not present, it will seek a `./config.yaml` file, followed by a `./config.json` file.
+Similar to the template [lookup order][], Hugo has a default set of rules for searching for a configuration file in the root of your website's source directory as a default behavior:
+
+1. `./config.toml`
+2. `./config.yaml`
+3. `./config.json`
 
 In your `config` file, you can direct Hugo as to how you want your website rendered, control your website's menus, and arbitrarily define site-wide parameters specific to your project.
 
@@ -64,7 +72,7 @@ buildDrafts:                false
 buildFuture:                false
 # include content already expired
 buildExpired:               false
-# enable this to make all relative URLs relative to content root. Note that this does not affect absolute URLs.
+# enable this to make all relative URLs relative to content root. Note that this does not affect absolute URLs. See the "URL Management" page
 relativeURLs:               false
 canonifyURLs:               false
 # config file (default is path/config.yaml|json|toml)
@@ -94,9 +102,7 @@ disableHugoGeneratorInject: false
 # values = "page", "home", "section", "taxonomy", "taxonomyTerm", "RSS", "sitemap", "robotsTXT", "404"
 disableKinds: []
 # Do not make the url/path to lowercase
-disablePathToLower:         false
-# edit new content with this editor, if provided
-editor:                     ""
+disablePathToLower:         false                   ""
 # Enable Emoji emoticons support for page content; see emoji-cheat-sheet.com
 enableEmoji:                false
 # Show a placeholder instead of the default value or an empty string if a translation is missing
@@ -236,8 +242,6 @@ disableHugoGeneratorInject =  false
 disableKinds = []
 # Do not make the url/path to lowercase
 disablePathToLower =          false
-# edit new content with this editor, if provided
-editor =                      ""
 # Enable Emoji emoticons support for page content; see emoji-cheat-sheet.com
 enableEmoji =                 false
 # Show a placeholder instead of the default value or an empty string if a translation is missing
@@ -319,7 +323,7 @@ enableemoji: true
 
 ## Environmental Variables
 
-In addition to the 3 configuration file options already mentioned, website configuration can be accomplished through operating system environment variables.
+In addition to the 3 config options already mentioned, website configuration can be accomplished through operating system environment variables.
 
 For example, the following command will effectively set a website's title on Unix-like systems:
 
@@ -328,13 +332,12 @@ $ env HUGO_TITLE="Some Title" hugo
 ```
 
 {{% note "Setting Environment Variables" %}}
-Names must be prefixed with `HUGO_` when setting operating system environment variables.
+Names must be prefixed with `HUGO_` and the configuration key must be set in uppercase when setting operating system environment variables.
 {{% /note %}}
 
 ## Ignoring Files When Rendering
 
-The following statement inside `./config.toml` will cause Hugo to ignore files
-ending with `.foo` and `.boo` when rendering:
+The following statement inside `./config.toml` will cause Hugo to ignore files ending with `.foo` and `.boo` when rendering:
 
 ```toml
 ignoreFiles = [ "\\.foo$", "\\.boo$" ]
@@ -344,14 +347,13 @@ The above is a list of regular expressions. Note that the backslash (`\`) charac
 
 ## Configuring Blackfriday
 
-[Blackfriday](https://github.com/russross/blackfriday) is Hugo's built-in
-Markdown rendering engine.
+[Blackfriday](https://github.com/russross/blackfriday) is Hugo's built-in Markdown rendering engine.
 
 Hugo typically configures Blackfriday with sane default values that should fit most use cases reasonably well.
 
 However, if you have specific needs with respect to Markdown, Hugo exposes some of its Blackfriday behavior options for you to alter. The following table lists these Hugo options, paired with the corresponding flags from Blackfriday's source code ( [html.go](https://github.com/russross/blackfriday/blob/master/html.go) and [markdown.go](https://github.com/russross/blackfriday/blob/master/markdown.go)).
 
-{{< readfile file="content/readfiles/bfconfig.md" markdown="true" >}}
+{{< readfile file="/content/readfiles/bfconfig.md" markdown="true" >}}
 
 {{% note %}}
 1. Blackfriday flags are *case sensitive* as of Hugo v0.15.
@@ -385,9 +387,10 @@ blackfriday:
 * [YAML Spec][yaml]
 * [JSON Spec][json]
 
-[`.Site.Params`]: /variables/
-[dirs]: /getting-started/directory-structure
+[`.Site.Params`]: /variables/site/
+[directory structure]: /getting-started/directory-structure
 [json]: /documents/ecma-404-json-spec.pdf
+[lookup order]: /templates/lookup-order/
 [templates]: /templates/
 [toml]: https://github.com/toml-lang/toml
 [yaml]: http://yaml.org/spec/

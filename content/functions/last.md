@@ -9,7 +9,8 @@ lastmod: 2017-02-01
 tags: []
 categories: [functions]
 toc:
-signature:
+ns:
+signature: ["last INDEX COLLECTION"]
 workson: [lists, taxonomies, terms, groups]
 hugoversion:
 relatedfuncs: []

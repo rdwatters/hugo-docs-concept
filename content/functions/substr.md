@@ -9,7 +9,8 @@ lastmod: 2017-02-01
 categories: [functions]
 tags: [strings]
 aliases: []
-signature:
+ns:
+signature: ["substr STRING START [LENGTH]"]
 workson: []
 hugoversion:
 relatedfuncs: []

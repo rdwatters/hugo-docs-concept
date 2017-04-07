@@ -7,16 +7,20 @@ publishdate: 2017-02-01
 lastmod: 2017-02-01
 categories: [templates]
 tags: [sitemap, xml]
+menu:
+  main:
+    parent: "Templates"
+    weight: 160
 weight: 160
+sections_weight: 160
 draft: false
 aliases: [/layout/sitemap/,/templates/sitemap/]
 toc: false
-wip: true
 ---
 
 A single Sitemap template is used to generate the `sitemap.xml` file.
-Hugo automatically comes with this template file. **No work is needed on
-the users' part unless they want to customize `sitemap.xml`.**
+Hugo automatically comes with this template file. *No work is needed on
+the users' part unless they want to customize `sitemap.xml`.*
 
 A sitemap is a `Page` and therefore has all the [page variables][pagevars] available to use in this template along with Sitemap-specific ones:
 
@@ -29,7 +33,7 @@ A sitemap is a `Page` and therefore has all the [page variables][pagevars] avail
 `.Sitemap.Filename`
 : The sitemap filename
 
-If provided, Hugo will use `/layouts/sitemap.xml` instead of the internal `sitemap.xml` template that ships with Hugo..
+If provided, Hugo will use `/layouts/sitemap.xml` instead of the internal `sitemap.xml` template that ships with Hugo.
 
 ## Hugo’s sitemap.xml
 
@@ -68,4 +72,4 @@ Defaults for `<changefreq>`, `<priority>` and `filename` values can be set in th
 
 The same fields can be specified in an individual content file's front matter in order to override the value assigned to that piece of content at render time.
 
-[pagevars]: /variables/page-variables/
+[pagevars]: /variables/page/

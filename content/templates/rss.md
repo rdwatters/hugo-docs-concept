@@ -7,24 +7,28 @@ publishdate: 2017-02-01
 lastmod: 2017-02-01
 tags: [rss, xml]
 categories: [templates]
+menu:
+  main:
+    parent: "Templates"
+    weight: 150
 weight: 150
+sections_weight: 150
 draft: false
 aliases: [/templates/rss/]
 toc: true
-wip: true
 ---
 
 ## RSS Template Lookup Order
 
-Like all other templates, you can use a single RSS template to generate all of your RSS feeds, or you can create a specific template for each individual feed.
+You can use a single RSS template to generate all of your RSS feeds or create a specific template for each individual feed.
 
 1. `/layouts/section/<section>.rss.xml`
-2. `/layouts/\_default/rss.xml`
+2. `/layouts/_default/rss.xml`
 3. `/themes/<theme>/layouts/section/<section>.rss.xml`
-4. `/themes/<theme>/layouts/\_default/rss.xml`
+4. `/themes/<theme>/layouts/_default/rss.xml`
 
 {{% note "Hugo Ships with an RSS Template" %}}
-Unlike other Hugo templates, Hugo ships with its own [RSS 2.0 template](#the-embedded-rss-xml). The embedded template will be sufficient in most cases, and an RSS template will not need to be provided by the user. But you can provide an RSS template, as you can see in the next section.
+Hugo ships with its own [RSS 2.0 template](#the-embedded-rss-xml). The embedded template will be sufficient for most use cases.
 {{% /note %}}
 
 RSS pages are of the type `Page` and have all the [page variables](/layout/variables/) available to use in the templates.
@@ -35,37 +39,35 @@ A [section’s][section] RSS will be rendered at `/<SECTION>/index.xml` (e.g., h
 
 Hugo provides the ability for you to define any RSS type you wish and can have different RSS files for each section and taxonomy.
 
-## Which Template will be Rendered?
-
-Hugo uses a set of rules to figure out which template to use when rendering a specific page.
-
-Hugo will use the following prioritized list. If a file isn’t present, then the next one in the list will be used. This enables you to craft specific layouts when you want to without creating more templates than necessary. For most sites only the `\_default` file at the end of the list will be needed.
+## Lookup Order for RSS Templates
 
 ### Main RSS
 
 1. `/layouts/rss.xml`
-2. `/layouts/\_default/rss.xml`
-3.  [Embedded rss.xml][embedded]
+2. `/layouts/_default/rss.xml`
+3.  Embedded rss.xml
 
 ### Section RSS
 
 1. `/layouts/section/<SECTION>.rss.xml`
-2. `/layouts/\_default/rss.xml`
+2. `/layouts/_default/rss.xml`
 3. `/themes/<THEME>/layouts/section/<SECTION>.rss.xml`
-4. `/themes/<THEME>/layouts/\_default/rss.xml`
-5. [Embedded rss.xml][embedded]
+4. `/themes/<THEME>/layouts/_default/rss.xml`
+5. Embedded rss.xml
 
 ### Taxonomy RSS
 
 1. `/layouts/taxonomy/<SINGULAR>.rss.xml`
-2. `/layouts/\_default/rss.xml`
+2. `/layouts/_default/rss.xml`
 3. `/themes/<THEME>/layouts/taxonomy/<SINGULAR>.rss.xml`
-4. `/themes/<THEME>/layouts/\_default/rss.xml`
-5. [Embedded rss.xml][embedded]
+4. `/themes/<THEME>/layouts/_default/rss.xml`
+5. Embedded rss.xml
 
 ## Configuring RSS
 
-The following values will be included in the RSS output if specified in your site’s [`config` file][config]. Example values are provided.
+By default, Hugo will create an unlimited number of RSS entries. You can limit this number via the `rssLimit:` field in your [`config` file](/getting-started/configuration/).
+
+The following values will also be included in the RSS output if specified in your site’s configuration:
 
 ```toml
 languageCode = "en-us"
@@ -74,7 +76,6 @@ copyright = "This work is licensed under a Creative Commons Attribution-ShareAli
 [author]
     name = "My Name Here"
 ```
-
 
 ## The Embedded rss.xml
 
@@ -108,7 +109,7 @@ This is the default RSS template that ships with Hugo. It adheres to the [RSS 2.
 ```
 
 {{% warning "XML Header" %}}
-Hugo will automatically add the following header line to this file on render…please don't include this in the template as it's not valid HTML.
+Hugo will automatically add the following header line to this file on render. Please do *not* include this in the template as it's not valid HTML.
 ```xml
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 ```
@@ -125,13 +126,11 @@ In your `header.html` template, you can specify your RSS feed in your `<head></h
 {{ end }}
 ```
 
-...with the autodiscovery link specified by the line with `rel="alternate"`.
+...with the auto-discovery link specified by the line with `rel="alternate"`.
 
 The `.RSSLink` will render the appropriate RSS feed URL for the section, whether it's everything, posts in a section, or a taxonomy.
 
-{{% note %}}
 If you reference your RSS link, be sure to specify the MIME type with `type="application/rss+xml"`.
-{{% /note %}}
 
 ```html
 <a href="{{ .URL }}" type="application/rss+xml" target="_blank">{{ .SomeText }}</a>

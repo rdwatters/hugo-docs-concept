@@ -8,7 +8,8 @@ publishdate: 2017-02-01
 lastmod: 2017-02-01
 categories: [functions]
 tags: []
-signature:
+ns:
+signature: ["intersect SET1 SET2"]
 workson: []
 hugoversion:
 relatedfuncs: []
@@ -39,4 +40,4 @@ The following is an example of a "related posts" [partial template][partials] th
 {{% /code %}}
 
 [partials]: /templates/partials/
-[single]: /templates/single-page-template/
+[single]: /templates/single-page-templates/

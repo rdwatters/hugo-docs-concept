@@ -7,9 +7,14 @@ publishdate: 2017-02-01
 lastmod: 2017-02-01
 categories: [themes]
 tags: [themes, source, organization, directories]
+menu:
+  main:
+    parent: "Themes"
+    weight: 30
 weight: 30
+sections_weight: 30
 draft: false
-aliases: [/themes/creation/]
+aliases: [/themes/creation/,/tutorials/creating-a-new-theme/]
 toc: true
 wip: true
 ---
@@ -30,7 +35,7 @@ A theme consists of templates and static assets such as javascript and css files
 
 
 {{% note "Use the Hugo Generator Tag" %}}
-The [`.Hugo.Generator`](/variables/other/) tag is included in all themes featured in the [Hugo Themes Showcase](http://themes.gohugo.io). We ask that you include the generator tag in all sites and themes you create with Hugo to help the core team track Hugo's usage and popularity.
+The [`.Hugo.Generator`](/variables/hugo/) tag is included in all themes featured in the [Hugo Themes Showcase](http://themes.gohugo.io). We ask that you include the generator tag in all sites and themes you create with Hugo to help the core team track Hugo's usage and popularity.
 {{% /note %}}
 
 ## Layouts

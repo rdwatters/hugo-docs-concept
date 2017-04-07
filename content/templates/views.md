@@ -7,7 +7,12 @@ publishdate: 2017-02-01
 lastmod: 2017-02-01
 categories: [templates]
 tags: [views]
+menu:
+  main:
+    parent: "Templates"
+    weight: 70
 weight: 70
+sections_weight: 70
 draft: false
 aliases: []
 toc: true
@@ -111,7 +116,7 @@ Continuing on the previous example, we can change our render function to use a s
 
 [lists]: /templates/lists/
 [lookup]: /templates/lookup-order/
-[pagevars]: /variables/page-variables/
+[pagevars]: /variables/page/
 [render]: /functions/render/
 [single]: /templates/single-page-templates/
 [spf]: http://spf13.com

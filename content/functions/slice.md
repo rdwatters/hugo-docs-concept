@@ -8,7 +8,8 @@ publishdate: 2017-02-01
 lastmod: 2017-02-01
 categories: [functions]
 tags: [slice, array, interface]
-signature:
+ns:
+signature: ["slice ITEM..."]
 workson: []
 hugoversion:
 relatedfuncs: []

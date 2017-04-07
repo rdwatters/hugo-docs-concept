@@ -7,11 +7,15 @@ publishdate: 2017-02-01
 lastmod: 2017-02-01
 categories: [templates]
 tags: [lists,sections,menus]
+menu:
+  main:
+    parent: "Templates"
+    weight: 130
 weight: 130
+sections_weight: 130
 draft: false
 aliases: [/templates/menus/]
-toc: true
-wip: true
+toc: false
 ---
 
 Hugo makes no assumptions about how your rendered HTML will be
@@ -20,8 +24,9 @@ able to build your menu however you want.
 
 The following is an example:
 
+{{% code file="layouts/partials/sidebar.html" download="sidebar.html" %}}
 ```html
-<!--sidebar start-->
+<!-- sidebar start -->
 <aside>
     <div id="sidebar" class="nav-collapse">
         <!-- sidebar menu start-->
@@ -58,9 +63,10 @@ The following is an example:
 </aside>
 <!--sidebar end-->
 ```
+{{% /code %}}
 
 {{% note "`absLangURL` and `relLangURL`" %}}
-Use the `absLangURL` or `relLangURL` if your theme makes use of the [multilingual feature](/content-management/multilingual/). In contrast to `absURL` and `relURL`, these two functions add the correct language prefix to the url. Read more on the [`absLangUrl`](/functions/abslangurl) and [`relLangUrl`](/functions/rellangurl) functions.
+Use the [`absLangUrl`](/functions/abslangurl) or [`relLangUrl`](/functions/rellangurl) functions if your theme makes use of the [multilingual feature](/content-management/multilingual/). In contrast to `absURL` and `relURL`, these two functions add the correct language prefix to the url.
 {{% /note %}}
 
 ## Section Menu for Lazy Bloggers
@@ -96,4 +102,6 @@ The above is all that's needed. But if you want custom menu items, e.g. changing
     url = "/blog/"
 ```
 
-**Note** that the `identifier` must match the section name.
+{{% note %}}
+The `identifier` *must* match the section name.
+{{% /note %}}

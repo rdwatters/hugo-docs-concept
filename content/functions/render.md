@@ -8,7 +8,8 @@ publishdate: 2017-02-01
 lastmod: 2017-02-01
 categories: [functions]
 tags: [views]
-signature:
+ns:
+signature: ["render LAYOUT"]
 workson: []
 hugoversion:
 relatedfuncs: []

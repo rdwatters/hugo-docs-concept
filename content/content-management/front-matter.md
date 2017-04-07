@@ -4,10 +4,14 @@ linktitle:
 description: Hugo allows you to add front matter in yaml, toml, or json to your content files.
 date: 2017-01-09
 publishdate: 2017-01-09
-lastmod: 2017-01-09
+lastmod: 2017-02-24
 categories: [content management]
 tags: ["front matter", "yaml", "toml", "json", "metadata", "archetypes"]
-weight: 30
+menu:
+  main:
+    parent: "Content Management"
+    weight: 30
+weight: 30	#rem
 draft: false
 aliases: [/content/front-matter/]
 toc: true
@@ -26,7 +30,7 @@ YAML
 : identified by opening and closing `---` *or* opening `---` and closing `...`
 
 JSON
-: a single JSON object surrounded by '`{`' and '`}`', each on their own line.
+: a single JSON object surrounded by '`{`' and '`}`', followed by a new line.
 
 ### TOML Example
 
@@ -78,98 +82,112 @@ slug: "spf13-vim-3-0-release-and-new-website"
 
 ## Front Matter Variables
 
-There are a few predefined variables that Hugo is aware of and utilizes.
+### Predefined
 
-### Required
-
-`title`
-: The title for the content
-
-`description`
-: The description for the content
-
-`date`
-: The date the content will be sorted by
-
-`taxonomies`
-: These will use the field name of the plural form of the index (see tags and
-categories above)
-
-### Optional
+There are a few predefined variables that Hugo is aware of. See [Page Variables][pagevars] for how to call many of these predefined variables in your templates.
 
 `aliases`
-: An array of one or more aliases (e.g. old published path of a renamed content) that would be created to redirect to this content. See [Aliases][] for details.
+: an array of one or more aliases (e.g., old published paths of renamed content) that will be created in the output directory structure . See [Aliases][aliases] for details.
+
+`date`
+: the datetime at which the content was created; note this value is auto-populated according to Hugo's built-in [archetype][].
+
+`description`
+: the description for the content.
 
 `draft`
-: If true, the content will not be rendered unless `hugo` is called with `--buildDrafts`
+: if `true`, the content will not be rendered unless the `--buildDrafts` flag is passed to the `hugo` command.
 
 `expirydate`
-: Content already expired will not be rendered unless `hugo` is called with `--buildExpired`
+: the datetime at which the content should no longer be published by Hugo; expired content will not be rendered unless the `--buildExpired` flag is passed to the `hugo` command.
 
 `isCJKLanguage`
-: If true, explicitly treat the content as CJKLanguage (`.Summary` and `.WordCount` can work properly in CJKLanguage)
+: if `true`, Hugo will explicitly treat the content as a CJK language; both `.Summary` and `.WordCount` work properly in CJK languages.
+
+`keywords`
+: the meta keywords for the content.
+
+`layout`
+: the layout Hugo should select from the [lookup order][] when rendering the content.
+
+`lastmod`
+: the datetime at which the content was last modified.
+
+`linktitle`
+: used for creating links to content; if set, Hugo defaults to using the `linktitle` before the `title`. Hugo can also [order lists of content by `linktitle`][bylinktitle].
 
 `markup`
-: **experimental**; specify `"rst"` for reStructuredText (requires`rst2html`) or `"md"` (default) for Markdown
+: **experimental**; specify `"rst"` for reStructuredText (requires`rst2html`) or `"md"` (default) for Markdown.
 
 `publishdate`
-: If in the future, content will not be rendered unless `hugo` is called with `--buildFuture`
+: if in the future, content will not be rendered unless the `--buildFuture` flag is passed to `hugo`.
 
 `slug`
-: appears as tail of the url. It can be used to change the part of the url that is based on the filename
+: appears as the tail of the output URL. A value specified in front matter will override the segment of the URL based on the filename.
+
+`taxonomies`
+: these will use the field name of the plural form of the index; see the `tags` and `categories` in the above front matter examples.
+
+`title`
+: the title for the content.
 
 `type`
-: The type of the content (will be derived from the directory automatically if unset)
+: the type of the content; this value will be derived from the directory (i.e., the [section][]) automatically if unset.
 
 `url`
-: The full path to the content from the web root. It makes no assumptions about the path of the content file. It also ignores any language prefixes of
+: the full path to the content from the web root. It makes no assumptions about the path of the content file. It also ignores any language prefixes of
 the multilingual feature.
 
 `weight`
-: Used for sorting
+: used for [ordering your content in lists][ordering].
 
 {{% note "Hugo's Default URL Destinations" %}}
-If neither `slug` nor `url` is present, and [permalinks are not configured otherwise](/content-management/urls/#permalinks), the filename will be used to create the URL for a page. See [Content Organization](/content-management/organization) and [URL Management](/content-management/urls/).
+If neither `slug` nor `url` is present and [permalinks are not configured otherwise](/content-management/urls/#permalinks), Hugo will use the filename of your content to create the output URL. See [Content Organization](/content-management/organization) for an explanation of paths in Hugo and [URL Management](/content-management/urls/) for ways to customize Hugo's default behaviors.
 {{% /note %}}
 
 ### User-Defined
 
-You can add fields to your front matter arbitrarily to meet your needs. These user-defined key-values are placed into a single `.Params` variable for use in your templates:
+You can add fields to your front matter arbitrarily to meet your needs. These user-defined key-values are placed into a single `.Params` variable for use in your templates.
+
+These fields in the following example can be accessed via `.Params.include_toc` and `.Params.show_comments`, respectively. The [Variables][] section provides more information on using Hugo's page- and site-level variables in your templates.
 
 ```yaml
 include_toc: true
 show_comments: false
 ```
 
-These two user-defined fields can then be accessed via `.Params.include_toc` and `.Params.show_comments`, respectively. The [Variables][] section provides more information on using Hugo's page- and site-level variables in your templates.
-
 {{% note %}}
 Field names are always normalized to lowercase; e.g., `camelCase: true` is available as `.Params.camelcase`.
 {{% /note %}}
 
-## Ordering Through Front Matter
+## Ordering Content Through Front Matter
 
-You can assign content-specific `weight` in the front matter of your content. These values are especially useful for [ordering][] in list views. You can use `weight` for ordering of content and the convention of [`<TAXONOMY>_weight`][taxweight] for ordering content within a taxonomy. See [Ordering and Grouping Hugo Lists][] to see how `weight` can be used to organize your content in list views.
+Assigning a specific `weight` in the front matter of individual content allows finer control over sorting of content in lists. The convention of [`<TAXONOMY>_weight`][taxweight] allows for ordering of content within a taxonomy. See [Hugo's multiple ordering methods][ordering] to find out how to use `weight` in your templates.
 
 ## Overriding Global Blackfriday Configuration
 
-It's possible to set some options for Markdown rendering in a content's front matter as an override to the options set in your site `config`.
-
-See [site configuration][config] for more information on Blackfriday configuration options.
+It's possible to set some options for Markdown rendering in a content's front matter as an override to the [BlackFriday rendering options set in your project configuration][config].
 
 ## Front Matter Format Specs
 
-* [TOML Spec][]
-* [YAML Spec][]
-* [JSON Spec][]
+The following are the specs used for Hugo's accepted front matter data formats:
+
+* [TOML Spec][toml]
+* [YAML Spec][yaml]
+* [JSON Spec][json]
 
 [aliases]: /content-management/urls/#aliases/
+[archetype]: /content-management/archetypes/
+[bylinktitle]: /templates/lists/#by-link-title
 [config]: /getting-started/configuration/ "Hugo documentation for site configuration"
-[contentorg]: /content-management/organization/
 [content type]: /content-management/types/
-[JSON Spec]: /documents/ecma-404-json-spec.pdf "Specification for JSON, JavaScript Object Notation"
-[ordering]: /templates/ordering-and-grouping/ "Hugo provides multiple ways to sort and order your content in list templates"
+[contentorg]: /content-management/organization/
+[json]: /documents/ecma-404-json-spec.pdf "Specification for JSON, JavaScript Object Notation"
+[lookup]: /content-management/l
+[ordering]: /templates/lists/ "Hugo provides multiple ways to sort and order your content in list templates"
+[pagevars]: /variables/page/
+[section]: /content-management/sections/
 [taxweight]: /content-management/taxonomies/
-[TOML Spec]: https://github.com/toml-lang/toml "Specification for TOML, Tom's Obvious Minimal Language"
+[toml]: https://github.com/toml-lang/toml "Specification for TOML, Tom's Obvious Minimal Language"
 [urls]: /content-management/urls/
-[YAML Spec]: http://yaml.org/spec/ "Specification for YAML, YAML Ain't Markup Language"
+[yaml]: http://yaml.org/spec/ "Specification for YAML, YAML Ain't Markup Language"

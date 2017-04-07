@@ -7,7 +7,12 @@ publishdate: 2017-02-01
 lastmod: 2017-02-01
 categories: [templates]
 tags: [lists,sections]
+menu:
+  main:
+    parent: "Templates"
+    weight: 40
 weight: 40
+sections_weight: 40
 draft: false
 aliases: [/templates/sections/]
 toc: true
@@ -15,9 +20,10 @@ toc: true
 
 Templates used for section pages are *lists* and therefore have all the variables and methods available to [list pages][lists].
 
-{{% note "Section Pages Pull Content from `_index.md`" %}}
-To effectively leverage section page templates, you should first understand Hugo's [content organization][contentorg] and, specifically, the purpose of `_index.md` for adding content and front matter to section and other list pages.
-{{% /note %}}
+## Adding Content to Section Templates
+
+To effectively leverage section page templates, you should first understand Hugo's [content organization](/content-management/organization/) and, specifically, the purpose of `_index.md` for adding content and front matter to section and other list pages.
+
 
 ## Section Template Lookup Order
 

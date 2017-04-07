@@ -8,7 +8,8 @@ publishdate: 2017-02-01
 lastmod: 2017-02-01
 categories: [functions]
 tags: [counting, word count]
-signature:
+ns:
+signature: ["countrunes INPUT"]
 workson: []
 hugoversion:
 relatedfuncs: []
@@ -23,4 +24,4 @@ In contrast with `countwords` function, which counts every word in a string, the
 <!-- outputs a content length of 8 runes. -->
 ```
 
-[pagevars]: /variables/page-variables/
+[pagevars]: /variables/page/

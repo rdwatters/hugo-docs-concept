@@ -11,7 +11,8 @@ lastmod: 2017-02-01
 categories: [functions]
 tags: [iteration]
 toc: false
-signature: ""
+ns:
+signature: ["delimit COLLECTION DELIMIT LAST"]
 workson: [lists,taxonomies,terms]
 hugoversion:
 relatedfuncs: []

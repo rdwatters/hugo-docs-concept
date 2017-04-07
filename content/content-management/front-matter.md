@@ -141,7 +141,7 @@ include_toc: true
 show_comments: false
 ```
 
-These two user-defined fields can then be accessed via `.Params.include_toc` and `.Params.show_comments`, respectively. The [Variables][] section provides more information on using Hugo's page- and site-level variables in your templates.
+These two user-defined fields can then be accessed via `.Params.include_toc` and `.Params.show_comments`, respectively. The [Variables][variables] section provides more information on using Hugo's page- and site-level variables in your templates.
 
 {{% note %}}
 Field names are always normalized to lowercase; e.g., `camelCase: true` is available as `.Params.camelcase`.
@@ -149,7 +149,7 @@ Field names are always normalized to lowercase; e.g., `camelCase: true` is avail
 
 ## Ordering Through Front Matter
 
-You can assign content-specific `weight` in the front matter of your content. These values are especially useful for [ordering][] in list views. You can use `weight` for ordering of content and the convention of [`<TAXONOMY>_weight`][taxweight] for ordering content within a taxonomy. See [Ordering and Grouping Hugo Lists][] to see how `weight` can be used to organize your content in list views.
+You can assign content-specific `weight` in the front matter of your content. These values are especially useful for [ordering][ordering] in list views. You can use `weight` for ordering of content and the convention of [`<TAXONOMY>_weight`][taxweight] for ordering content within a taxonomy. See [Ordering and Grouping Hugo Lists][] to see how `weight` can be used to organize your content in list views.
 
 ## Overriding Global Blackfriday Configuration
 
@@ -159,10 +159,11 @@ See [site configuration][config] for more information on Blackfriday configurati
 
 ## Front Matter Format Specs
 
-* [TOML Spec][]
-* [YAML Spec][]
-* [JSON Spec][]
+* [TOML Spec][TOML Spec]
+* [YAML Spec][YAML Spec]
+* [JSON Spec][JSON Spec]
 
+[variables]: /variables/
 [aliases]: /content-management/urls/#aliases/
 [config]: /getting-started/configuration/ "Hugo documentation for site configuration"
 [contentorg]: /content-management/organization/

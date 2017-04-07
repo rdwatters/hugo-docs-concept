@@ -38,3 +38,14 @@
   .hide-child-menu:active .child-menu {
   display: block;
   }
+
+  .documentation-copy h2 {
+    margin-top: 3em;
+    font-size: 1.875em;
+    border-bottom: 3px solid #ccc;
+  }
+
+  .documentation-copy h3 {
+    margin-top: 2em;
+    font-size: 1.5em;
+  }

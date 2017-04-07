@@ -12,6 +12,7 @@ menu:
   docs:
     parent: "templates"
     weight: 15
+  quicklinks:
 weight: 15	#rem
 draft: false
 aliases: [/templates/lookup/]

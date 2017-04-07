@@ -11,6 +11,7 @@ menu:
   docs:
     parent: "content-management"
     weight: 100
+  quicklinks:
 weight: 100	#rem
 draft: false
 aliases: [/extras/custom-output-types/]

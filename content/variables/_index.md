@@ -12,7 +12,6 @@ menu:
   docs:
     parent: "variables"
     weight: 1
-  quicklinks:
 weight: 01	#rem
 aliases: [/templates/variables/]
 toc: false

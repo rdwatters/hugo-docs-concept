@@ -9,7 +9,6 @@ menu:
   docs:
     parent: "content-management"
     weight: 1
-  quicklinks:
 tags: [source, organization]
 categories: [content management]
 weight: 01	#rem

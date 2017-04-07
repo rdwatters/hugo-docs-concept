@@ -11,7 +11,6 @@ menu:
   docs:
     parent: "commands"
     weight: 1
-  quicklinks:
 weight: 01	#rem
 draft: false
 aliases: [/cli/]

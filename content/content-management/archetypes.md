@@ -11,6 +11,7 @@ menu:
   docs:
     parent: "content-management"
     weight: 70
+  quicklinks:    
 weight: 70	#rem
 draft: false
 aliases: [/content/archetypes/]

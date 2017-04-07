@@ -1,17 +1,13 @@
         <!-- TOCs need to be declared explicitly in the front matter of content/*.md -->
 {{ if .Params.toc }}
-	<aside class="fixed-l overflow-scroll	f6 bl b--moon-gray min-h-100 right-0 pa4 nested-list-reset nested-links nested-copy-line-height">
+	<aside class="fixed-l overflow-scroll	f6 bl-l b--moon-gray min-h-100 right-0 pv4 pv0-ns ph4-l nested-list-reset nested-links nested-copy-line-height">
 		<p class="b">What's on this Page</p>
 	  	{{ .TableOfContents }}
 	</aside>
 {{ end }}
 
-
 <style media="screen">
-
-
 	#TableOfContents ul li ul li ul li{
 		display: none;
 	}
-
 </style>

@@ -27,4 +27,4 @@ section_flex_wrap: "flex-ns flex-wrap justify-between"
 section_flex_wrap_interior: "flex-auto w-100 w-40-l mr3 mb3 bg-white shadow-2TK ba b--moon-gray nested-copy-line-height"
 
 # universal. Color may be overridden by color in section_flex_wrap_interior
-box_style_classes: "bg-white mb2 ph4 pt2 pb3 gray"
+box_style_classes: "bg-white mb2 ph4 pv3 gray"

@@ -3,13 +3,13 @@
 <header class="bg-light-gray ph4 flex pv4">
   <ul class="list ma0 pa0 ">
       <!-- TODO: Active classes -->
-      <li class="f5 dib mr3 v-top white">
+      <li class="f5 dib mr3 mb3 mb0-ns v-top white">
         <a href="/news/" class="link primary-color-dark dim">
             Quick Links:
         </a>
       </li>
         {{ range .Site.Menus.quicklinks }}
-        <li class="f5 dib mr3 v-top mr3">
+        <li class="f5 dib mr3 v-top mr3 mb3 mb0-ns">
           <a href="{{ .URL }}" class="link  bg-primary-color white ph3 pv1 br2 hover-bg-accent-color-light">
             {{ .Name  }}
           </a>

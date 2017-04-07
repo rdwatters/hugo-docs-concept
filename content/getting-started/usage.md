@@ -146,6 +146,7 @@ This will run a fully functioning web server while simultaneously watching your 
 * `/static/*`
 * `/content/*`
 * `/data/*`
+* `/i18n/*`
 * `/layouts/*`
 * `/themes/<CURRENT-THEME>/*`
 * `config`
@@ -188,7 +189,7 @@ disableLiveReload: true
 
 After running `hugo server` for local web development, you need to do a final `hugo` run *without the `server` part of the command* to rebuild your site. You may then deploy your site by copying the `public/` directory to your production web server.
 
-Since Hugo generates a static website, your site can be hosted *anywhere* using any web server. See [Hosting and Deployments][] for methods for hosting and automating deployments contributed by the Hugo community.
+Since Hugo generates a static website, your site can be hosted *anywhere* using any web server. See [Hosting and Deployment][hosting] for methods for hosting and automating deployments contributed by the Hugo community.
 
 {{% warning "Generated Files are **NOT** Removed on Site Build" %}}
 Running `hugo` *does not* remove generated files before building. This means that you should delete your `public/` directory (or the publish directory you specified via flag or configuration file) before running the `hugo` command. If you do not remove these files, you run the risk of the wrong files (e.g., drafts or future posts) being left in the generated site.
@@ -233,11 +234,11 @@ By using Hugo's server in production, you are able to deploy just the source fil
 
 Interested? Here are some great tutorials contributed by Hugo users:
 
-* [hugo, syncthing](http://fredix.xyz/2014/10/hugo-syncthing/) (French) by Frédéric Logier (@fredix)
+* [hugo, syncthing](https://fredix.xyz/2014/10/hugo-syncthing/) (French) by Frédéric Logier (@fredix)
 
 [commands]: /commands/
 [config]: /getting-started/configuration/
 [dirs]: /getting-started/directory-structure/
 [front matter]: /content-management/front-matter/
-[hosting]: /hosting-and-deployments/
+[hosting]: /hosting-and-deployment/
 [install]: /getting-started/installing/

@@ -15,3 +15,4 @@ slug:
 aliases: []
 toc: false
 ---
+Hugo is the world's fastest static website engine. It's written in Golang and developed by spf13 and friends.

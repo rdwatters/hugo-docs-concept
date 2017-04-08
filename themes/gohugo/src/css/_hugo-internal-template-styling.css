@@ -25,3 +25,24 @@
 .pagination li.active a:visited {
   background-color: #ddd;
 }
+
+/* Hides non-meaningful TOC items*/
+  #TableOfContents ul li ul li ul li{
+    display: none;
+  }
+
+
+#TableOfContents ul li {
+  margin-bottom: .25em;
+}
+
+#TableOfContents ul li a{
+  width: 100%;
+  padding: .25em .375em;
+
+}
+#TableOfContents ul li a:hover {
+  background-color: #999;
+  color: white;
+
+}

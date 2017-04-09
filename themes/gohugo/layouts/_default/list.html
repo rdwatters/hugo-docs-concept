@@ -1,4 +1,4 @@
-{{ define "header" }}{{ partial "header" . }}{{ end }}
+{{ define "header" }}{{ partial "page-header.html" . }}{{ end }}
 {{ define "main" }}
 <div class="w-100 ph4 ph5-ns pb5 pb6-ns pt1 pt3-ns ">
 
@@ -19,7 +19,7 @@
     {{ $interior_classes := $globalVariables.section_flex_wrap_interior }}
     <section class="{{ $section_classes }} w-100">
       {{ range .Paginator.Pages }}
-        {{ partial "section-boxes" (dict "context" . "classes" $interior_classes "fullcontent" false) }}
+        {{ partial "boxes-section-summaries" (dict "context" . "classes" $interior_classes "fullcontent" false) }}
       {{ end }}
     </section>
   </div>

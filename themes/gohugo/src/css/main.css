@@ -9,12 +9,11 @@
 @import '_animation';
 @import '_documentation-styles';
 
+@import '_algolia';
 @import '_code';
 @import '_color-scheme';
-@import '_columns';
 @import '_font-family';
 @import '_hugo-internal-template-styling';
-@import '_side-nav';
 @import '_social-icons';
 @import '_variables';
 

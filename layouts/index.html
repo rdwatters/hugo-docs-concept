@@ -1,11 +1,11 @@
-{{ define "header" }}{{ partial "header" . }}{{ end }}
+{{ define "header" }}{{ partial "page-header" . }}{{ end }}
 {{ define "main" }}
     {{ $section_to_display :=  where .Site.RegularPages "Section" "about" }}
 <div class="w-100 ph4 pb5 pb6-ns pt1 pt3-ns">
 
   <div class="flex">
     <div class="w-20">
-      {{ partial "docs/navigation.html" . }}
+      {{ partial "nav-links-docs.html" . }}
     </div>
     <div class="w-80 ph4">
       <article class="w-100 nested-copy-line-height nested-links nested-img">
@@ -25,7 +25,7 @@
         {{ $interior_classes := $globalVariables.section_flex_wrap_interior }}
         <section class="{{ $section_classes }} w-100">
           {{ range $section_to_display }}
-            {{ partial "section-boxes" (dict "context" . "classes" $interior_classes "fullcontent" true) }}
+            {{ partial "boxes-section-summaries" (dict "context" . "classes" $interior_classes "fullcontent" true) }}
           {{ end }}
         </section>
       </div>

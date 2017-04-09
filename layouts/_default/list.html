@@ -1,11 +1,11 @@
-{{ define "header" }}{{ partial "header" . }}{{ end }}
+{{ define "header" }}{{ partial "page-header" . }}{{ end }}
 {{ define "main" }}
 {{ $section_to_display :=  .Paginator.Pages }}
 <div class="w-100 ph4 pb5 pb6-ns pt1 pt3-ns">
 
   <div class="flex">
     <div class="dn db-l w-20">
-        {{ partial "docs/navigation.html" . }}
+        {{ partial "nav-links-docs.html" . }}
     </div>
 
     <div class="w-100 w-80-l ph0 ph4-l">
@@ -26,7 +26,7 @@
         {{ $interior_classes := $globalVariables.section_flex_wrap_interior }}
         <section class="{{ $section_classes }} w-100">
           {{ range $section_to_display }}
-            {{ partial "section-boxes" (dict "context" . "classes" $interior_classes "fullcontent" true) }}
+            {{ partial "boxes-section-summaries" (dict "context" . "classes" $interior_classes "fullcontent" true) }}
           {{ end }}
         </section>
       </div>

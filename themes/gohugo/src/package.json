@@ -17,6 +17,7 @@
   "devDependencies": {
     "copyfiles": "^1.2.0",
     "cssnano": "^3.9.1",
+    "docsearch.js": "^2.3.3",
     "onchange": "^3.2.1",
     "postcss": "^5.2.8",
     "postcss-cli": "^2.6.0",

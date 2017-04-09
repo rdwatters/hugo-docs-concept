@@ -1,4 +1,4 @@
-{{ define "header" }}{{ partial "header" . }}{{ end }}
+{{ define "header" }}{{ partial "page-header" . }}{{ end }}
 
 {{ define "main" }}
 
@@ -17,7 +17,7 @@
       </div>
 
       <div class="order-0 w-20 dn db-l">
-        {{ partial "docs/navigation.html" . }}
+        {{ partial "nav-links-docs.html" . }}
       </div>
 
     </div>

@@ -18,7 +18,7 @@
       {{- partial "manifest" . -}}
 
      <link href='/css/main.min.css?98777' rel='stylesheet' type="text/css" />
-
+     {{ template "_internal/google_analytics_async.html" . }}
      <!-- <link href='/css/tachyons-print.min.css' rel='stylesheet' type="text/css" media="print" /> -->
   </head>
   <body class="sans-serif bg-primary-color-light{{ if .Site.Params.sidebar_direction }} {{ .Site.Params.sidebar_direction }}{{ end}}">

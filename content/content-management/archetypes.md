@@ -7,7 +7,11 @@ publishdate: 2017-02-01
 lastmod: 2017-02-01
 tags: [archetypes,generators,metadata,front matter]
 categories: ["content management"]
-weight: 70
+menu:
+  main:
+    parent: "Content Management"
+    weight: 70
+weight: 70	#rem
 draft: false
 aliases: [/content/archetypes/]
 toc: true
@@ -164,7 +168,7 @@ categories = ""
 date = 2017-02-13T17:24:43-08:00
 description = ""
 tags = ""
-title = post from custom archetype
+title = "post from custom archetype"
 +++
 ```
 {{% /output %}}
@@ -175,7 +179,7 @@ As an example of archetypes in practice, the following is the `functions` archet
 
 {{% code file="archetypes/functions.md" %}}
 ```yaml
-{{< readfile file="archetypes/functions.md" >}}
+{{< readfile file="/themes/hugo-docs-concept/archetypes/functions.md" >}}
 ```
 {{% /code %}}
 
@@ -186,7 +190,7 @@ The preceding archetype is kept up to date with every Hugo build by using Hugo's
 [archetypes directory]: /getting-started/directory-structure/
 [`now()`]: http://golang.org/pkg/time/#Now
 [configuration file]: /getting-started/configuration/
-[sections]: /sections/
+[sections]: /content-management/sections/
 [content types]: /content-management/types/
 [front matter]: /content-management/front-matter/
 [RFC 3339 format]: https://www.ietf.org/rfc/rfc3339.txt

@@ -5,10 +5,15 @@ description: In addition to Go templates, Hugo supports the powerful Ace templat
 godocref:
 date: 2017-02-01
 publishdate: 2017-02-01
-lastmod: 2017-02-01
+lastmod: 2017-02-20
 categories: [templates]
 tags: [amber,ace,templating languages]
+menu:
+  main:
+    parent: "Templates"
+    weight: 170
 weight: 170
+sections_weight: 170
 draft: false
 aliases: [/templates/ace/,/templates/amber/]
 toc: true
@@ -70,5 +75,5 @@ For Amber template documentation, follow the links from the [Amber project][].
 [aceinheritance]: https://github.com/yosssi/ace/tree/master/examples/base_inner_template
 [Amber Project]: https://github.com/eknkc/amber
 [template functions]: /functions/
-[Go templates]: /templates/go-templates/
+[Go templates]: /templates/introduction/
 [Go base templates]: /templates/base/

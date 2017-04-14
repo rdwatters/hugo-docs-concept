@@ -8,7 +8,8 @@ publishdate: 2017-02-01
 lastmod: 2017-02-01
 categories: [functions]
 tags: []
-signature:
+ns:
+signature: ["hasPrefix STRING PREFIX"]
 workson: []
 hugoversion:
 relatedfuncs: []

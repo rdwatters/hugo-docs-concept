@@ -6,7 +6,12 @@ date: 2017-02-01
 publishdate: 2017-02-01
 lastmod: 2017-02-01
 tags: [migrations,jekyll,wordpress,drupal,ghost,contentful]
+menu:
+  main:
+    parent: "Tools"
+    weight: 10
 weight: 10
+sections_weight: 10
 draft: false
 aliases: [/developer-tools/migrations/,/developer-tools/migrated/]
 toc: true
@@ -22,7 +27,7 @@ Take a look at this list of migration tools if you currently use other logging t
 
 ## Jekyll
 
-Alternatively, you can follow the manual [migration guide](/tutorials/migrate-from-jekyll-to-hugo/) or use the new [Jekyll import command](/commands/hugo_import_jekyll/).
+Alternatively, you can use the new [Jekyll import command](/commands/hugo_import_jekyll/).
 
 - [JekyllToHugo](https://github.com/SenjinDarashiva/JekyllToHugo) - A Small script for converting Jekyll blog posts to a Hugo site.
 - [ConvertToHugo](https://github.com/coderzh/ConvertToHugo) - Convert your blog from Jekyll to Hugo.

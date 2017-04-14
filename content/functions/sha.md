@@ -8,7 +8,8 @@ publishdate: 2017-02-01
 lastmod: 2017-02-01
 categories: [functions]
 tags: [sha,checksum]
-signature:
+ns:
+signature: ["sha1 INPUT", "sha256 INPUT"]
 workson: []
 hugoversion:
 relatedfuncs: []

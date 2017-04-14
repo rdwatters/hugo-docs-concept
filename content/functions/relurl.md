@@ -8,7 +8,8 @@ publishdate: 2017-02-01
 lastmod: 2017-02-01
 categories: [functions]
 tags: [urls]
-signature:
+ns:
+signature: ["relURL INPUT"]
 workson: []
 hugoversion:
 relatedfuncs: [absURL]

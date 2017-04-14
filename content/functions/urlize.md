@@ -8,7 +8,8 @@ lastmod: 2017-02-01
 categories: [functions]
 tags: [urls,strings]
 godocref:
-signature:
+ns:
+signature: ["urlize INPUT"]
 hugoversion:
 deprecated: false
 workson: []
@@ -31,7 +32,7 @@ tags = ["pizza","beer","hot dogs"]
 
 The following might be used as a partial within a [single page template][singletemplate]:
 
-{{% code file="layouts/partials/content-header.html" %}}
+{{% code file="layouts/partials/content-header.html" download="content-header.html" %}}
 ```html
 <header class="content-header">
     <h1>{{.Title}}</h1>
@@ -64,4 +65,4 @@ The preceding partial would then output to the rendered page as follows, assumin
 {{% /output %}}
 
 
-[singletemplate]: /templates/single-page-template/
+[singletemplate]: /templates/single-page-templates/

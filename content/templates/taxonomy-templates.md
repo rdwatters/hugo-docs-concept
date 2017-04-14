@@ -7,18 +7,23 @@ publishdate: 2017-02-01
 lastmod: 2017-02-01
 categories: [templates]
 tags: [taxonomies,metadata,front matter,terms]
+menu:
+  main:
+    parent: "Templates"
+    weight: 50
 weight: 50
+sections_weight: 50
 draft: false
 aliases: [/taxonomies/displaying/,/templates/terms/,/indexes/displaying/,/taxonomies/templates/,/indexes/ordering/, /templates/taxonomies/, /templates/taxonomy/]
 toc: true
-wip: true
 ---
 
-<!-- NOTE! Check on https://github.com/spf13/hugo/issues/2826 for shifting of terms' pages to .Data.Pages -->
+<!-- NOTE! Check on https://github.com/spf13/hugo/issues/2826 for shifting of terms' pages to .Data.Pages AND
+https://discuss.gohugo.io/t/how-to-specify-category-slug/4856/15 for original discussion.-->
 
-Hugo includes support for user-defined groupings of content called **taxonomies**. Taxonomies are classifications that demonstrate logical relationships between content. See [Taxonomies](/content-management/taxonomies) if you are unfamiliar with how Hugo leverages this powerful feature for content management.
+Hugo includes support for user-defined groupings of content called **taxonomies**. Taxonomies are classifications that demonstrate logical relationships between content. See [Taxonomies under Content Management](/content-management/taxonomies) if you are unfamiliar with how Hugo leverages this powerful feature.
 
-Hugo provides multiple ways to use taxonomies throughout your project:
+Hugo provides multiple ways to use taxonomies throughout your project templates:
 
 * Order the way the terms for a taxonomy are displayed in a [taxonomy terms template](#taxonomy-terms-template)
 * Order the way content associated with a taxonomy term is displayed in a [taxonomy list template](#taxonomy-list-template)
@@ -30,7 +35,7 @@ Taxonomy list page templates are lists and therefore have all the variables and 
 
 ### Taxonomy List Template Lookup Order
 
-A Taxonomy will be rendered at /`PLURAL`/`TERM`/ (e.g., http://spf13.com/topics/golang/) from according to the following lookup order:
+A taxonomy will be rendered at /`PLURAL`/`TERM`/ (e.g., http://spf13.com/topics/golang/) according to the following lookup order:
 
 1. `/layouts/taxonomy/<SINGULAR>.html`
 2. `/layouts/_default/taxonomy.html`
@@ -43,8 +48,15 @@ A Taxonomy will be rendered at /`PLURAL`/`TERM`/ (e.g., http://spf13.com/topics/
 
 ### Taxonomy Terms Templates Lookup Order
 
+A taxonomy terms page will be rendered at `yoursite.com/<PLURALTAXONOMYNAME>`/ (e.g., http://spf13.com/topics/) according to the following lookup order:
+
+1. `/layouts/taxonomy/<SINGULAR>.terms.html`
+2. `/layouts/_default/terms.html`
+3. `/themes/<THEME>/layouts/taxonomy/<SINGULAR>.terms.html`
+4. `/themes/<THEME>/layouts/_default/terms.html`
+
 {{% warning "The Taxonomy Terms Template has a Unique Lookup Order" %}}
-Compared to taxonomy list pages and other list templates such as [sections](/templates/section-templates/), a terms template lookup has only two options. If Hugo does not find a terms template in `layout/` or `/themes/<THEME>/layouts/`, Hugo will *not* render a taxonomy terms page.
+If Hugo does not find a terms template in `layout/` or `/themes/<THEME>/layouts/`, Hugo will *not* render a taxonomy terms page.
 {{% /warning %}}
 
 <!-- Begin /taxonomies/methods/ -->
@@ -191,7 +203,7 @@ using the [list templates](/templates/list/):
 3. You can list all terms for a taxonomy
 4. You can list all taxonomies (with their terms)
 
-### Displaying a Single Piece of Content's Taxonomies
+## Displaying a Single Piece of Content's Taxonomies
 
 Within your content templates, you may wish to display the taxonomies that piece of content is assigned to.
 
@@ -279,7 +291,7 @@ The following example displays all terms in a site's tags taxonomy:
 
 This example will list all taxonomies and their terms, as well as all the content assigned to each of the terms.
 
-{{% code file="layouts/partials/all-taxonomies.html" download="all-taxonomies.html" %}}
+{{% code file="layouts/partials/all-taxonomies.html" download="all-taxonomies.html" download="all-taxonomies.html" %}}
 ```html
 <section>
   <ul id="all-taxonomies">
@@ -304,12 +316,26 @@ This example will list all taxonomies and their terms, as well as all the conten
 
 ## `.Site.GetPage` for Taxonomies
 
-### `.Site.GetPage` Taxonomy List Example
+Because taxonomies are lists, the [`.GetPage` function][getpage] can be used to get all the pages associated with a particular taxonomy term using a terse syntax. The following ranges over the full list of tags on your site and links to each of the individual taxonomy pages for each term without having to use the more fragile URL construction of the "List All Site Tags" example above:
 
-### `.Site.GetPage` Taxonomy Terms Example
+{{% code file="links-to-all-tags" %}}
+```html
+<ul class="tags">
+  {{ range ($.Site.GetPage "taxonomyTerm" "tags").Pages }}
+   <li><a href="{{ .Permalink }}">{{ .Title}}</a></li>
+  {{ end }}
+</ul>
+```
+{{% /code %}}
+
+<!--### `.Site.GetPage` Taxonomy List Example
+
+### `.Site.GetPage` Taxonomy Terms Example -->
 
 
 [delimit]: /functions/delimit/
+[getpage]: /functions/getpage/
+[lists]: /templates/lists/
 [renderlists]: /templates/lists/
 [single page template]: /templates/single-page-templates/
-[sitevars]: /variables/site-variables/
+[sitevars]: /variables/site/

@@ -1,14 +1,19 @@
 ---
 title: Deployment with Wercker
 linktitle: Deployment with Wercker
-description: This guide walks you through the steps needed to create a basic Hugo site, host the site's source and final website on GitHub and GitHub pages, and set up automated deployment using a free tool called Wercker.
+description: You can use a free tool called Wercker to automate deployments between your GitHub-hosted source and final website on GitHub pages.
 date: 2017-02-01
 publishdate: 2017-02-01
 lastmod: 2017-02-01
 categories: [hosting and deployment]
 tags: [wercker,deployment,github,git]
 authors: [Arjen Schwarz, Samuel Debruyn]
-weight: 50
+menu:
+  main:
+    parent: "Hosting and Deployment"
+    weight: 60
+weight: 60
+sections_weight: 60
 draft: false
 aliases: [/tutorials/automated-deployments/]
 toc: true
@@ -126,7 +131,7 @@ git commit -a -m "Initial commit"
 
 ## Adding the Project to GitHub
 
-Now we need to create a new repository on GitHub. Once you are signed in to GitHub, you can add a new repository by clicking on the **&#43;&#9660;** dropdown at the top right or by going to <https://github.com/new>.
+Now we need to create a new repository on GitHub. Once you are signed in to GitHub, you can add a new repository by clicking on the **&#43;&#9660;** dropdown at the top right or by going to [https://github.com/new](https://github.com)..
 
 We then choose a name for the project (`hugo-wercker-example`). When clicking on create repository GitHub displays the commands for adding an existing project to the site. The commands shown below are the ones used for this site, if you're following along you will need to use the ones shown by GitHub. Once we've run those commands the project is in GitHub and we can move on to setting up the Wercker configuration. Be sure to replace `YourUserName` with your GitHub account/username:
 
@@ -340,4 +345,4 @@ If you want to see an example of how you can deploy to S3 instead of GitHub page
 [hugoconfig]: /getting-started/configuration/
 [publicappurl]: https://app.wercker.com/#applications/5586dcbdaf7de9c51b02b0d5
 [quickstart]: /getting-started/quick-start/
-[werckerdocs]: (http://devcenter.wercker.com/docs/deploy/s3.html)
+[werckerdocs]: http://devcenter.wercker.com/docs/deploy/s3.html

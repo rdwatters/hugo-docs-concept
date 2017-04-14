@@ -8,12 +8,14 @@ publishdate: 2017-02-01
 lastmod: 2017-02-01
 categories: [functions]
 tags: [dates,time]
-signature:
-workson: []
+ns:
+signature: ["Format FORMAT"]
+workson: [times]
 hugoversion:
 relatedfuncs: [dateFormat,now,Unix,time]
 deprecated: false
 aliases: []
+toc: true
 ---
 
 `Format` will format date values defined in your front matter. `.Format` and can be used as a property on the following [page variables][pagevars]:
@@ -119,5 +121,5 @@ In conjunction with the [`dateFormat` function][dateFormat], you can also conver
 [CST]: https://en.wikipedia.org/wiki/Central_Time_Zone
 [dateFormat]: /functions/dateformat/
 [gdex]: https://golang.org/pkg/time/#example_Time_Format
-[pagevars]: /variables/page-variables/
+[pagevars]: /variables/page/
 [time]: https://golang.org/pkg/time/

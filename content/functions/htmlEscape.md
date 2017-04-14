@@ -8,7 +8,8 @@ publishdate: 2017-02-01
 lastmod: 2017-02-01
 categories: [functions]
 tags: [strings, html]
-signature:
+ns:
+signature: ["htmlEscape INPUT"]
 workson: []
 hugoversion:
 relatedfuncs: [htmlUnescape]

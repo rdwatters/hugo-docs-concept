@@ -8,7 +8,8 @@ publishdate: 2017-02-01
 lastmod: 2017-02-01
 categories: [functions]
 tags: [iteration]
-signature:
+ns:
+signature: ["first LIMIT COLLECTION"]
 workson: [lists,taxonomies,terms,groups]
 hugoversion:
 relatedfuncs: [after,last]

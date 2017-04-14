@@ -6,7 +6,12 @@ date: 2017-02-01
 publishdate: 2017-02-01
 lastmod: 2017-02-01
 layout: single
+menu:
+  main:
+    parent: "About Hugo"
+    weight: 10
 weight: 10
+sections_weight: 10
 draft: false
 aliases: [/overview/introduction/,/about/why-i-built-hugo/]
 toc: true

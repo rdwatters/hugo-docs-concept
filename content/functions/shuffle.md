@@ -8,7 +8,8 @@ publishdate: 2017-02-01
 lastmod: 2017-02-01
 tags: [ordering]
 categories: [functions]
-signature:
+ns:
+signature: ["shuffle COLLECTION"]
 workson: []
 hugoversion:
 relatedfuncs: []

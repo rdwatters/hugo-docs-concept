@@ -7,7 +7,12 @@ publishdate: 2017-02-01
 lastmod: 2017-02-01
 tags: [highlighting,pygments,code blocks,syntax]
 categories: [developer tools]
+menu:
+  main:
+    parent: "Tools"
+    weight: 20
 weight: 20
+sections_weight: 20
 draft: false
 aliases: [/extras/highlighting/,/extras/highlight/]
 toc: true
@@ -17,7 +22,7 @@ Hugo provides the ability for you to highlight source code in _two different way
 
 ## Server-side
 
-For the pre-processed approach, highlighting is performed by an external Python-based program called [Pygments](http://pygments.org/) and is triggered via an embedded Hugo shortcode (see [example](#example-highlight-shortcode-input) below). If Pygments is absent from the path, it will silently simply pass the content along withou highlighting.
+For the pre-processed approach, highlighting is performed by an external Python-based program called [Pygments](http://pygments.org/) and is triggered via an embedded Hugo shortcode (see [example](#example-highlight-shortcode-input) below). If Pygments is absent from the path, it will silently simply pass the content along without highlighting.
 
 ### Server-side Advantages
 
@@ -39,7 +44,7 @@ Hugo gives you two options that you can set with the variable `pygmentsuseclasse
 
 ### Server-side Usage
 
-Highlighting is carried out via the [built-in shortcode](/content-management/shortcodes/) `highlight`. `highlight` takes exactly one required parameter for the programming language to be highlighted and requires a closing shortcode. Note that `highlight` is _not_ used for client-side javascript highlighting.
+Highlighting is carried out via the [built-in shortcode](/content-management/shortcodes/) `highlight`. `highlight` takes exactly one required parameter for the programming language to be highlighted and requires a closing shortcode. Note that `highlight` is *not* used for client-side javascript highlighting.
 
 ### Example `highlight` Shortcode Input
 
@@ -121,7 +126,7 @@ It is also possible to add syntax highlighting with GitHub flavored code fences.
 * The languages available for highlighting depend on your Pygments installation.
 {{% /note %}}
 
-## Client-side Syntax Highlighting
+## Client-side
 
 Alternatively, code highlighting can be applied to your code blocks in client-side JavaScript.
 
@@ -168,7 +173,6 @@ Add `prism.js` near the bottom of your `<body>` tag in whatever Hugo partial tem
 ```html
 ...
 <script src="/js/prism.js"></script>
-...
 </body>
 ```
 
@@ -216,7 +220,6 @@ Passing the above examples through the highlighter script would yield the follow
 &lt;pre&gt;&lt;code class="language-css hljs"&gt;;&lt;span class="hljs-selector-tag"&gt;body&lt;/span&gt; {
   &lt;span class="hljs-attribute"&gt;font-family&lt;/span&gt;: &ltspan class="hljs-string"&gt;"Noto Sans"&lt;/span&gt;, sans-serif;
 }
-</code></pre>
 {{< /nohighlight >}}
 
 In the case of the coding color scheme used by the Hugo docs, the resulting output would then look like the following to the website's end users:

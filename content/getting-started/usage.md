@@ -7,7 +7,12 @@ publishdate: 2017-02-01
 lastmod: 2017-02-01
 categories: [getting started]
 tags: [usage,livereload,command line,flags]
+menu:
+  main:
+    parent: "Getting Started"
+    weight: 40
 weight: 40
+sections_weight: 40
 draft: false
 aliases: [/overview/usage/,/extras/livereload/,/doc/usage/,/usage/]
 toc: true
@@ -146,6 +151,7 @@ This will run a fully functioning web server while simultaneously watching your 
 * `/static/*`
 * `/content/*`
 * `/data/*`
+* `/i18n/*`
 * `/layouts/*`
 * `/themes/<CURRENT-THEME>/*`
 * `config`
@@ -188,7 +194,7 @@ disableLiveReload: true
 
 After running `hugo server` for local web development, you need to do a final `hugo` run *without the `server` part of the command* to rebuild your site. You may then deploy your site by copying the `public/` directory to your production web server.
 
-Since Hugo generates a static website, your site can be hosted *anywhere* using any web server. See [Hosting and Deployments][] for methods for hosting and automating deployments contributed by the Hugo community.
+Since Hugo generates a static website, your site can be hosted *anywhere* using any web server. See [Hosting and Deployment][hosting] for methods for hosting and automating deployments contributed by the Hugo community.
 
 {{% warning "Generated Files are **NOT** Removed on Site Build" %}}
 Running `hugo` *does not* remove generated files before building. This means that you should delete your `public/` directory (or the publish directory you specified via flag or configuration file) before running the `hugo` command. If you do not remove these files, you run the risk of the wrong files (e.g., drafts or future posts) being left in the generated site.
@@ -212,32 +218,9 @@ hugo -s ~/Code/hugo/docs
 
 This prevents draft content from accidentally becoming available.
 
-### Using Hugo's Server in Production
-
-Because Hugo is so blazingly fast both in website creation *and* in web serving (thanks to its concurrent, multi-threaded design and Golang heritage), some users prefer to use Hugo itself to serve their website *on their production server*.
-
-No other web server software (e.g., Apache, nginx, IIS) is necessary.
-
-Here is the command:
-
-```bash
-hugo server --baseURL=http://yoursite.org/ \
---port=80 \
---appendPort=false \
---bind=87.245.198.50
-```
-
-Note the `bind` option, which is the interface to which the server will bind (defaults to `127.0.0.1`: fine for most development use cases). Some hosts, such as Amazon Web Services, run NAT (network address translation); sometimes it can be hard to figure out the actual IP address. Using `--bind=0.0.0.0` will bind to all interfaces.
-
-By using Hugo's server in production, you are able to deploy just the source files. Hugo, running on your server, will generate the resulting website on the fly and serve them at the same time.
-
-Interested? Here are some great tutorials contributed by Hugo users:
-
-* [hugo, syncthing](http://fredix.xyz/2014/10/hugo-syncthing/) (French) by Frédéric Logier (@fredix)
-
 [commands]: /commands/
 [config]: /getting-started/configuration/
 [dirs]: /getting-started/directory-structure/
 [front matter]: /content-management/front-matter/
-[hosting]: /hosting-and-deployments/
+[hosting]: /hosting-and-deployment/
 [install]: /getting-started/installing/

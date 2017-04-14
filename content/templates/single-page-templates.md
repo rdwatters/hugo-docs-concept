@@ -4,16 +4,21 @@ linktitle:
 description: The primary view of content in Hugo is the single view. Hugo will render every Markdown file provided with a corresponding single template.
 date: 2017-02-01
 publishdate: 2017-02-01
-lastmod: 2017-02-01
+lastmod: 2017-04-06
 categories: [templates]
 tags: [page]
+menu:
+  main:
+    parent: "Templates"
+    weight: 60
 weight: 60
+sections_weight: 60
 draft: false
 aliases: [/layout/content/]
 toc: true
 ---
 
-The primary view of content in Hugo is the single view. Hugo will render every Markdown file provided with a corresponding single template.
+The primary view of content in Hugo is the single view. Hugo's default behavior is to render every Markdown file provided with a corresponding single template.
 
 ## Single Page Template Lookup Order
 
@@ -38,17 +43,15 @@ Hugo assumes your content section and content type are the same unless you tell 
 
 ## Example Single Page Templates
 
-Content pages are of the type `page` and will therefore have all the [page variables][] and [site variables][] available to use in their templates.
+Content pages are of the type `page` and will therefore have all the [page variables][pagevars] and [site variables][] available to use in their templates.
 
 ### `post/single.html`
 
-This content template is used for [spf13.com][spf13]. It makes use of [partial templates][partials]:
+This single page template makes use of Hugo [base templates][], the [`.Format` function][] for dates, the [`.WordCount` page variable][pagevars], and ranges through the single content's specific [taxonomies][pagetaxonomy]. [`with`][] is also used to check whether the taxonomies are set in the front matter.
 
 {{% code file="layouts/post/single.html" download="single.html" %}}
 ```html
-{{ partial "header.html" . }}
-{{ partial "subheader.html" . }}
-{{ $baseURL := .Site.BaseURL }}
+{{ define "main" }}
 <section id="main">
   <h1 id="title">{{ .Title }}</h1>
   <div>
@@ -57,98 +60,54 @@ This content template is used for [spf13.com][spf13]. It makes use of [partial t
         </article>
   </div>
 </section>
-
 <aside id="meta">
     <div>
     <section>
       <h4 id="date"> {{ .Date.Format "Mon Jan 2, 2006" }} </h4>
-      <h5 id="wc"> {{ .FuzzyWordCount }} Words </h5>
+      <h5 id="wordcount"> {{ .WordCount }} Words </h5>
     </section>
-    <ul id="categories">
-      {{ range .Params.topics }}
-        <li><a href="{{ $baseURL }}/topics/{{ . | urlize }}">{{ . }}</a> </li>
+    {{ with .Params.topics }}
+    <ul id="topics">
+      {{ range . }}
+        <li><a href="{{ "topics" | absURL}}{{ . | urlize }}">{{ . }}</a> </li>
       {{ end }}
     </ul>
+    {{ end }}
+    {{ with .Params.tags }}
     <ul id="tags">
-      {{ range .Params.tags }}
-        <li> <a href="{{ $baseURL }}/tags/{{ . | urlize }}">{{ . }}</a> </li>
+      {{ range . }}
+        <li> <a href="{{ "tags" | absURL }}{{ . | urlize }}">{{ . }}</a> </li>
       {{ end }}
     </ul>
+    {{ end }}
     </div>
     <div>
-        {{ if .Prev }}
-          <a class="previous" href="{{.Prev.Permalink}}"> {{.Prev.Title}}</a>
+        {{ with .PrevInSection }}
+          <a class="previous" href="{{.Permalink}}"> {{.Title}}</a>
         {{ end }}
-        {{ if .Next }}
-          <a class="next" href="{{.Next.Permalink}}"> {{.Next.Title}}</a>
+        {{ with .NextInSection }}
+          <a class="next" href="{{.Permalink}}"> {{.Title}}</a>
         {{ end }}
     </div>
 </aside>
-{{ partial "disqus.html" . }}
-{{ partial "footer.html" . }}
+{{ end }}
 ```
 {{% /code %}}
 
-### `project/single.html`
-
-This content template is also used for [spf13.com][spf13] and makes use of [partial templates][partials]:
-
-{{% code file="project/single.html" download="single.html" %}}
-```html
-  {{ partial "header.html" . }}
-  {{ partial "subheader.html" . }}
-  {{ $baseURL := .Site.BaseURL }}
-
-  <section id="main">
-    <h1 id="title">{{ .Title }}</h1>
-    <div>
-          <article id="content">
-             {{ .Content }}
-          </article>
-    </div>
-  </section>
-
-  <aside id="meta">
-      <div>
-      <section>
-        <h4 id="date"> {{ .Date.Format "Mon Jan 2, 2006" }} </h4>
-        <h5 id="wc"> {{ .FuzzyWordCount }} Words </h5>
-      </section>
-      <ul id="categories">
-        {{ range .Params.topics }}
-        <li><a href="{{ $baseURL }}/topics/{{ . | urlize }}">{{ . }}</a> </li>
-        {{ end }}
-      </ul>
-      <ul id="tags">
-        {{ range .Params.tags }}
-          <li> <a href="{{ $baseURL }}/tags/{{ . | urlize }}">{{ . }}</a> </li>
-        {{ end }}
-      </ul>
-      </div>
-  </aside>
-
-  {{if isset .Params "project_url" }}
-  <div id="ribbon">
-      <a href="{{ index .Params "project_url" }}" rel="me">Fork me on GitHub</a>
-  </div>
-  {{ end }}
-
-  {{ partial "footer.html" . }}
-```
-{{% /code %}}
-
-Notice how `project/single.html` uses an additional parameter unique to this template. This doesn't need to be defined ahead of time. The key can wait to be used in the template if present in the content file's front matter.
-
-To easily generate new instances of this content type (e.g., new `.md` files in `project/`) with preconfigured front matter, use [content archetypes][archetypes].
+To easily generate new instances of a content type (e.g., new `.md` files in a section like `project/`) with preconfigured front matter, use [content archetypes][archetypes].
 
 [archetypes]: /content-management/archetypes/
+[base templates]: /templates/base/
 [config]: /getting-started/configuration/
 [content type]: /content-management/types/
 [directory structure]: /getting-started/directory-structure/
 [dry]: https://en.wikipedia.org/wiki/Don%27t_repeat_yourself
+[`.Format` function]: /functions/format/
 [front matter]: /content-management/front-matter/
-[page variables]: /variables/page-variables/
+[pagetaxonomy]: /templates/taxonomy-templates/#displaying-a-single-piece-of-content-s-taxonomies
+[pagevars]: /variables/page/
 [partials]: /templates/partials/
 [section]: /content-management/sections/
-[site variables]: /variables/site-variables/
+[site variables]: /variables/site/
 [spf13]: http://spf13.com/
+[`with`]: /functions/with/

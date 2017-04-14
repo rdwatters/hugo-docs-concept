@@ -8,7 +8,8 @@ publishdate: 2017-02-01
 lastmod: 2017-02-01
 tags: [multilingual,i18n,urls]
 categories: [functions]
-signature:
+ns:
+signature: ["relLangURL INPUT"]
 workson: []
 hugoversion:
 relatedfuncs: []

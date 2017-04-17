@@ -49,17 +49,23 @@ Since section lists and taxonomy lists (N.B., *not* [taxonomy terms lists][taxte
 1. `layouts/_default/taxonomy.html`
 2. `themes/<THEME>/layouts/_default/taxonomy.html`
 
-## Adding Content to List Pages
+## Adding Content and Front Matter to List Pages
 
-Since v0.18, [everything in Hugo is a `Page`][bepsays]. This means list pages and the homepage can have associated content files---i.e. `_index.md`---that contains page metadata (i.e., front matter) and content. This model allows you to include list-specific front matter via `.Params` and also means that list templates (e.g., `layouts/_default/list.html`) also have access to all [page variables][pagevars].
+Since v0.18, [everything in Hugo is a `Page`][bepsays]. This means list pages and the homepage can have associated content files (i.e. `_index.md`) that contain page metadata (i.e., front matter) and content.
+
+This new model allows you to include list-specific front matter via `.Params` and also means that list templates (e.g., `layouts/_default/list.html`) have access to all [page variables][pagevars].
+
+{{% note %}}
+It is important to note that all `_index.md` content files will render according to a *list* template and not according to a [single page template](/templates/single-page-templates/).
+{{% /note %}}
 
 ### Example Project Directory
 
-The following is an example of a typical Hugo project directory:
+The following is an example of a typical Hugo project directory's content:
 
 ```bash
 .
-├── config.toml
+...
 ├── content
 |   ├── post
 |   |   ├── _index.md
@@ -68,6 +74,7 @@ The following is an example of a typical Hugo project directory:
 |   └── quote
 |   |   ├── quote-01.md
 |   |   └── quote-02.md
+...
 ```
 
 Using the above example, let's assume you have the following in `content/post/_index.md`:
@@ -348,7 +355,7 @@ also get it:
 
 {{% code file="layouts/partials/by-nested-param.html" %}}
 ```html
-{{ range (.Date.Pages.ByParam "author.last_name") }}
+{{ range (.Data.Pages.ByParam "author.last_name") }}
   <!-- ... -->
 {{ end }}
 ```

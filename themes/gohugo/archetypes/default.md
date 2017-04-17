@@ -1,6 +1,0 @@
-+++
-title = ""
-categories = []
-date = ""
-description = ""
-+++

@@ -3,14 +3,14 @@
 {{ define "main" }}
 
   <article class="w-100 ph4 pb5 pb6-ns pt1 pt5-ns">
-      <!-- header spans the full width -->
+
     <div class="flex-l justify-between">
 
       <div class="order-2 w-20-l">
       {{- partial "toc.html" . -}}
       </div>
 
-      <div class="order-1 mid-gray nested-copy-line-height no-underline nested-links nested-img nested-copy-seperator nested-blockquote mt0-ns">
+      <div class="order-1 w-60-l ph0 ph5-ns mid-gray nested-copy-line-height no-underline nested-links nested-img nested-copy-seperator nested-blockquote mt0-ns" style="flex-grow:1;">
         <div class="documentation-copy center">
           {{ .Render "page" }}
         </div>
@@ -28,6 +28,14 @@
       </div>
 
   </article>
+
+<style>
+.prose h2 {
+  color: #357edd;
+  color: black;
+}
+</style>
+
 
   <div class="ph4 mb6 mb0-ns pa2 pa4-ns bg-light-gray flex-ns justify-center">
     {{- partial "previous-next-links" . -}}

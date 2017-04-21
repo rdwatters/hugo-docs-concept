@@ -4,13 +4,13 @@
 
   <article class="w-100 ph4 pb5 pb6-ns pt1 pt5-ns">
 
-    <div class="flex-l justify-between">
+    <div class="flex-l justify-betweenf">
 
-      <div class="order-2 w-20-l">
+      <div class="order-2 w-100 w-20-l ph5-m ph0-l mb4">
       {{- partial "toc.html" . -}}
       </div>
 
-      <div class="order-1 w-60-l ph0 ph5-ns mid-gray nested-copy-line-height no-underline nested-links nested-img nested-copy-seperator nested-blockquote mt0-ns" style="flex-grow:1;">
+      <div class="order-1 w-60-l mw7 ph0 ph5-ns mid-gray nested-copy-line-height no-underline nested-links nested-img nested-copy-seperator nested-blockquote mt0-ns" style="flex-grow:1;">
         <div class="documentation-copy center">
           {{ .Render "page" }}
         </div>
@@ -22,19 +22,15 @@
 
     </div>
 
-      <div class="gray f6 mv6">
-        Last Update: {{ .Lastmod.Format "January 2, 2006" }} <br>
-        {{ partial "edit-page" . }}
-      </div>
 
   </article>
-
-<style>
-.prose h2 {
-  color: #357edd;
-  color: black;
-}
-</style>
+  <div class="w-100 bg-light-gray">
+    <div class="mw7 pa4 center nested-links nested-lh-copy lh-copy">
+      {{ partial "page-meta-data.html" . }}
+      {{ partial "page-edit.html" . }}
+      {{ partial "tags.html" . }}
+    </div>
+  </div>
 
 
   <div class="ph4 mb6 mb0-ns pa2 pa4-ns bg-light-gray flex-ns justify-center">

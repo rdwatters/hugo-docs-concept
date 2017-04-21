@@ -2,7 +2,7 @@ baseurl = "https://hugodocs.info"
 canonifyurls = true
 # Pointing to this file
 config = "config.toml"
-
+enableGitInfo = true
 paginate=  100
 copyright = ""
 defaultContentLanguage = "en"
@@ -191,6 +191,13 @@ googleAnalytics = "UA-76549364-1"
   identifier = "categories"
   url = "/categories/"
 
+######## QUICKLINKS
+
+  [[menu.quicklinks]]
+    name = "Fundamentals"
+    weight = 140
+    identifier = "fundamentals"
+    url = "/tags/fundamentals/"
 
 
 

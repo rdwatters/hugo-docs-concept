@@ -1,10 +1,8 @@
 {{ define "header" }}{{ partial "page-header" . }}{{ end }}
 
 {{ define "main" }}
-
   <article class="w-100 ph4 pb5 pb6-ns pt1 pt5-ns">
-
-    <div class="flex-l justify-betweenf">
+    <div class="flex-l">
 
       <div class="order-2 w-100 w-20-l ph5-m ph0-l mb4">
       {{- partial "toc.html" . -}}
@@ -21,9 +19,8 @@
       </div>
 
     </div>
-
-
   </article>
+
   <div class="w-100 bg-light-gray">
     <div class="mw7 pa4 center nested-links nested-lh-copy lh-copy">
       {{ partial "page-meta-data.html" . }}
@@ -31,7 +28,6 @@
       {{ partial "tags.html" . }}
     </div>
   </div>
-
 
   <div class="ph4 mb6 mb0-ns pa2 pa4-ns bg-light-gray flex-ns justify-center">
     {{- partial "previous-next-links" . -}}

@@ -134,15 +134,12 @@ googleAnalytics = "UA-76549364-1"
   identifier = "variables"
   url = "/variables/"
 
-
-
-
-  [[menu.docs]]
-    name = "CLI"
-    weight = 40
-    post = "break"
-    identifier = "commands"
-    url = "/commands/"
+[[menu.docs]]
+  name = "CLI"
+  weight = 40
+  post = "break"
+  identifier = "commands"
+  url = "/commands/"
 
 
 
@@ -181,21 +178,18 @@ googleAnalytics = "UA-76549364-1"
   identifier = "contribute"
   url = "/contribute/"
 
+[[menu.docs]]
+  name = "Tags"
+  weight = 120
+  identifier = "tags"
+  url = "/tags/"
 
 
-
-  [[menu.docs]]
-    name = "Tags"
-    weight = 120
-    identifier = "tags"
-    url = "/tags/"
-
-
-    [[menu.docs]]
-      name = "Categories"
-      weight = 140
-      identifier = "categories"
-      url = "/categories/"
+[[menu.docs]]
+  name = "Categories"
+  weight = 140
+  identifier = "categories"
+  url = "/categories/"
 
 
 

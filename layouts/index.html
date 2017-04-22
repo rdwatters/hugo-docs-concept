@@ -1,18 +1,19 @@
 {{ define "header" }}{{ partial "page-header" . }}{{ end }}
 {{ define "main" }}
-    {{ $section_to_display :=  where .Site.RegularPages "Section" "about" }}
+{{ $section_to_display :=  where .Site.RegularPages "Section" "about" }}
 <div class="w-100 ph4 pb5 pb6-ns pt1 pt3-ns">
 
   <div class="flex">
-    <div class="w-20">
-      {{ partial "nav-links-docs.html" . }}
+    <div class="dn db-l w-20">
+        {{ partial "nav-links-docs.html" . }}
     </div>
-    <div class="w-80 ph4">
+
+    <div class="w-100 w-80-l ph0 ph4-l">
       <article class="w-100 nested-copy-line-height nested-links nested-img">
-        <h1 class="primary-color-dark">
+        <h1 class="primary-color-dark f2">
           {{ .Title }}
         </h1>
-        <div class="{{ .Site.Params.copyClass }} mid-gray f4">
+        <div class="{{ .Site.Params.copyClass }} mid-gray f5 f4-l">
           {{ .Content }}
         </div>
       </article>
@@ -33,8 +34,6 @@
     </div>
 
   </div>
-
-
 
 </div>
 {{ end }}

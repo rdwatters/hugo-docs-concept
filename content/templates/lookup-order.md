@@ -9,11 +9,10 @@ lastmod: 2017-02-25
 categories: [templates]
 tags: [lookup,fundamentals]
 menu:
-  docs:
-    parent: "templates"
+  main:
+    parent: "Templates"
     weight: 15
-  quicklinks:
-weight: 15	#rem
+weight: 15
 sections_weight: 15
 draft: false
 aliases: [/templates/lookup/]
@@ -70,25 +69,25 @@ The lookup order is best illustrated through examples. The following shows you t
 ```bash
 .
 ├── content
-│   ├── events
-│   │   ├── _index.md
-│   │   └── my-first-event.md
-│   └── posts
-│       ├── my-first-post.md
-│       └── my-second-post.md
+│   ├── events
+│   │   ├── _index.md
+│   │   └── my-first-event.md
+│   └── posts
+│       ├── my-first-post.md
+│       └── my-second-post.md
 ├── layouts
-│   ├── _default
-│   │   └── single.html
-│   ├── posts
-│   │   └── single.html
-│   └── reviews
-│       └── reviewarticle.html
+│   ├── _default
+│   │   └── single.html
+│   ├── posts
+│   │   └── single.html
+│   └── reviews
+│       └── reviewarticle.html
 └── themes
     └── mytheme
         └── layouts
             ├── _default
-            │   ├── list.html
-            │   └── single.html
+            │   ├── list.html
+            │   └── single.html
             └── posts
                 ├── list.html
                 └── single.html
@@ -195,34 +194,3 @@ Here is the way Hugo traverses the single-page lookup order for `my-first-event.
 {{% note %}}
 `my-first-event.md` is significant because it demonstrates the role of the lookup order in Hugo themes. Both the root project directory *and* the `mytheme` themes directory have a file at `_default/single.html`. Understanding this order allows you to [customize Hugo themes](/themes/customizing/) by creating template files with identical names in your project directory that step in front of theme template files in the lookup. This allows you to customize the look and feel of your website while maintaining compatibility with the theme's upstream.
 {{% /note %}}
-<<<<<<< HEAD
-
-## Lookup Orders
-
-The respective lookup order for each of Hugo's templates has been defined throughout the Hugo docs:
-
-* [Homepage Template][home]
-* [Base Templates][base]
-* [Section Page Templates][sectionlookup]
-* [Taxonomy List Templates][taxonomylookup]
-* [Taxonomy Terms Templates][termslookup]
-* [Single Page Templates][singlelookup]
-* [RSS Templates][rsslookup]
-* [Shortcode Templates][sclookup]
-
-[base]: /templates/base/#base-template-lookup-order
-[config]: /getting-started/configuration/
-[directory structure]: /getting-started/directory-structure/
-[DRY]: https://en.wikipedia.org/wiki/Don%27t_repeat_yourself
-[home]: /templates/homepage/#homepage-template-lookup-order
-[rsslookup]: /templates/rss/#rss-template-lookup-order
-[sclookup]: /templates/shortcode-templates/#shortcode-template-lookup-order
-[sections]: /content-management/sections/
-[sectionlookup]: /templates/section-templates/#section-template-lookup-order
-[single page templates]: /templates/single-page-templates/
-[singlelookup]: /templates/single-page-templates/#single-page-template-lookup-order
-[switch]: https://en.wikipedia.org/wiki/Switch_statement#Fallthrough
-[taxonomylookup]: /templates/taxonomy-templates/#taxonomy-list-template-lookup-order
-[termslookup]: /templates/taxonomy-templates/#taxonomy-terms-template-lookup-order
-=======
->>>>>>> master

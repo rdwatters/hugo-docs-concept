@@ -164,12 +164,12 @@ googleAnalytics = "UA-76549364-1"
   identifier = "hosting-and-deployment"
   url = "/hosting-and-deployment/"
 
-[[menu.docs]]
-  name = "Showcase"
-  weight = 90
-  identifier = "showcase"
-  url = "/showcase/"
-
+# [[menu.docs]]
+#   name = "Showcase"
+#   weight = 90
+#   identifier = "showcase"
+#   url = "/showcase/"
+#
 
 [[menu.docs]]
   name = "Contribute"
@@ -185,17 +185,17 @@ googleAnalytics = "UA-76549364-1"
   url = "/tags/"
 
 
-[[menu.docs]]
-  name = "Categories"
-  weight = 140
-  identifier = "categories"
-  url = "/categories/"
+# [[menu.docs]]
+#   name = "Categories"
+#   weight = 140
+#   identifier = "categories"
+#   url = "/categories/"
 
 ######## QUICKLINKS
 
   [[menu.quicklinks]]
     name = "Fundamentals"
-    weight = 140
+    weight = 1
     identifier = "fundamentals"
     url = "/tags/fundamentals/"
 
@@ -214,7 +214,7 @@ googleAnalytics = "UA-76549364-1"
     name = "Docs"
     weight = 5
     identifier = "docs"
-    url = "https://hugodocs.info/"
+    url = "/"
 
   [[menu.global]]
     name = "Themes"

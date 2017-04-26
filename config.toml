@@ -208,7 +208,7 @@ googleAnalytics = "UA-76549364-1"
     name = "News"
     weight = 1
     identifier = "news"
-    url = "http://gohugo.netlify.com/news/"
+    url = "https://gohugo.netlify.com/news/"
 
   [[menu.global]]
     name = "Docs"

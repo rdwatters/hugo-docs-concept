@@ -1,4 +1,4 @@
-baseurl = "http://hugodocs-170421.surge.sh/"
+baseurl = "//hugodocs-170426.netlify.com"
 canonifyurls = true
 # Pointing to this file
 config = "config.toml"

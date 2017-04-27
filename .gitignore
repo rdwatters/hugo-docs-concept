@@ -3,3 +3,5 @@ ryans-notes.md
 themes/hugo-docs-concept/pipeline/node_modules
 public
 .DS_Store
+
+.netlify

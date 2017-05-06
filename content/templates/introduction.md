@@ -285,7 +285,7 @@ The following shows how to define a variable independent of the context.
 {{% code file="tags-range-with-page-variable.html" %}}
 ```html
 {{ $title := .Site.Title }}
-<ul class="tags">
+<ul>
 {{ range .Params.tags }}
     <li>
         <a href="/tags/{{ . | urlize }}">{{ . }}</a>
@@ -305,8 +305,8 @@ Notice how once we have entered the loop (i.e. `range`), the value of `{{ . }}` 
 `$` has special significance in your templates. `$` is set to the starting value of `.` ("the dot") by default. This is a [documented feature of Go text/template][dotdoc]. This means you have access to the global context from anywhere. Here is an equivalent example of the preceding code block but now using `$` to grab `.Site.Title` from the global context:
 
 {{% code file="range-through-tags-w-global.html" %}}
-```html
-<ul class="tags">
+```hbs
+<ul>
 {{ range .Params.tags }}
   <li>
     <a href="/tags/{{ . | urlize }}">{{ . }}</a>
@@ -383,15 +383,15 @@ notoc: true
 ---
 ```
 
-Here is the corresponding code inside the `toc.html` [partial template][partials]:
+Here is an example of corresponding code that could be used inside a `toc.html` [partial template][partials]:
 
 {{% code file="layouts/partials/toc.html" download="toc.html" %}}
 ```html
 {{ if not .Params.notoc }}
-<aside id="toc">
-  <header class="toc-header">
+<aside>
+  <header>
     <a href="#{{.Title | urlize}}">
-    <h3 class="{{.Section}}">{{.Title}}</h3>
+    <h3>{{.Title}}</h3>
     </a>
   </header>
   {{.TableOfContents}}
@@ -412,9 +412,9 @@ For instance, you might declare the following:
 {{% code file="config.yaml" %}}
 ```yaml
 params:
-  CopyrightHTML: "Copyright &#xA9; 2013 John Doe. All Rights Reserved."
-  TwitterUser: "spf13"
-  SidebarRecentLimit: 5
+  copyrighthtml: "Copyright &#xA9; 2017 John Doe. All Rights Reserved."
+  twitteruser: "spf13"
+  sidebarrecentlimit: 5
 ```
 {{% /code %}}
 
@@ -430,22 +430,25 @@ An alternative way of writing the "`if`" and then referencing the same value is 
 
 {{% code file="layouts/partials/twitter.html" %}}
 ```html
-{{with .Site.Params.TwitterUser}}<span class="twitter">
-<a href="https://twitter.com/{{.}}" rel="author">
-<img src="/images/twitter.png" width="48" height="48" title="Twitter: {{.}}"
- alt="Twitter"></a>
-</span>{{end}}
+{{with .Site.Params.twitteruser}}
+<div>
+  <a href="https://twitter.com/{{.}}" rel="author">
+  <img src="/images/twitter.png" width="48" height="48" title="Twitter: {{.}}" alt="Twitter"></a>
+</div>
+{{end}}
 ```
 {{% /code %}}
 
 Finally, you can pull "magic constants" out of your layouts as well. The following uses the [`first`][first] function, as well as the [`.RelPermalink`][relpermalink] page variable and the [`.Site.Pages`][sitevars] site variable.
 
 ```html
-<nav class="recent">
+<nav>
   <h1>Recent Posts</h1>
-  <ul>{{range first .Site.Params.SidebarRecentLimit .Site.Pages}}
+  <ul>
+  {{- range first .Site.Params.SidebarRecentLimit .Site.Pages -}}
     <li><a href="{{.RelPermalink}}">{{.Title}}</a></li>
-  {{end}}</ul>
+  {{- end -}}
+  </ul>
 </nav>
 ```
 
@@ -459,10 +462,12 @@ Go allows you to do more than what's shown here. Using Hugo's [`where` function]
 <ul class="upcoming-events">
 {{ range where .Data.Pages.ByDate "Section" "events" }}
   {{ if ge .Date.Unix .Now.Unix }}
-    <li><span class="event-type">{{ .Type | title }} —</span>
-      {{ .Title }}
-      on <span class="event-date">
-      {{ .Date.Format "2 January at 3:04pm" }}</span>
+    <li>
+    <!-- add span for event type -->
+      <span>{{ .Type | title }} —</span>
+      {{ .Title }} on
+    <!-- add span for event date -->
+      <span>{{ .Date.Format "2 January at 3:04pm" }}</span>
       at {{ .Params.place }}
     </li>
   {{ end }}
@@ -482,7 +487,7 @@ Go allows you to do more than what's shown here. Using Hugo's [`where` function]
 [gohtmltemplate]: http://golang.org/pkg/html/template/ "Godocs references for Golang's html templating"
 [index]: /functions/index/
 [math functions]: /functions/math/
-[partials]: /templates/partials-templates/ "Link to the partial templates page inside of the templating section of the Hugo docs"
+[partials]: /templates/partials/ "Link to the partial templates page inside of the templating section of the Hugo docs"
 [relpermalink]: /variables/page/
 [safehtml]: /functions/safehtml/
 [sitevars]: /variables/site/

@@ -38,7 +38,8 @@ The following is an example of a sidebar partial that may be used in conjunction
 
 {{% code file="layouts/partials/bad-url-sidebar-menu.html" copy="false" %}}
 ```html
-<ul class="sidebar-menu">
+<!-- This unordered list may be part of a sidebar menu -->
+<ul>
   {{ range .Site.Menus.main }}
   <li><a href="{{ .URL }}">{{ .Name }}</a></li>
   {{ end }}
@@ -50,7 +51,8 @@ This partial would produce the following HTML output:
 
 {{% output file="bad-url-sidebar-menu-output.html" %}}
 ```html
-<ul class="sidebar-menu">
+<!-- This unordered list may be part of a sidebar menu -->
+<ul>
     <li><a href="#ZgotmplZ">IRC: #golang at freenode</a></li>
 </ul>
 ```
@@ -60,7 +62,8 @@ The odd output can be remedied by adding ` | safeURL` to our `.Title` page varia
 
 {{% code file="layouts/partials/correct-url-sidebar-menu.html" copy="false" %}}
 ```html
-<ul class="sidebar-menu">
+<!-- This unordered list may be part of a sidebar menu -->
+<ul>
     <li><a href="{{ .URL | safeURL }}">{{ .Name }}</a></li>
 </ul>
 ```

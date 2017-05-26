@@ -1,4 +1,4 @@
-baseurl = "//hugodocs-170426.netlify.com"
+baseurl = "https://hugodocs.info"
 canonifyurls = true
 # Pointing to this file
 config = "config.toml"
@@ -208,7 +208,7 @@ googleAnalytics = "UA-76549364-1"
     name = "News"
     weight = 1
     identifier = "news"
-    url = "https://gohugo.netlify.com/news/"
+    url = "https://hugodocs.info/news/"
 
   [[menu.global]]
     name = "Docs"

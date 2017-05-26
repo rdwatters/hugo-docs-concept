@@ -44,7 +44,7 @@ If you are on macOS and using [Homebrew][brew], you can install Hugo with the fo
 
 {{% code file="install-with-homebrew.sh" %}}
 ```bash
-brew update && brew install hugo
+brew install hugo
 ```
 {{% /code %}}
 
@@ -134,15 +134,7 @@ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/
 
 #### Step 2: Run the `brew` Command to Install `hugo`
 
-Whenever installing with Homebrew, it's a good idea to update the formulae and Homebrew itself by running the update command:
-
-{{% code file="update-brew.sh" %}}
-```bash
-brew update
-```
-{{% /code %}}
-
-You can then install Hugo using `brew`:
+Installing Hugo using `brew` is as easy as the following:
 
 {{% code file="install-brew.sh" %}}
 ```bash
@@ -153,10 +145,10 @@ brew install hugo
 If Homebrew is working properly, you should see something similar to the following:
 
 ```sh
-==> Downloading https://homebrew.bintray.com/bottles/hugo-0.13_1.yosemite.bottle.tar.gz
+==> Downloading https://homebrew.bintray.com/bottles/hugo-0.21.sierra.bottle.tar.gz
 ######################################################################### 100.0%
-==> Pouring hugo-0.13_1.yosemite.bottle.tar.gz
-🍺  /usr/local/Cellar/hugo/0.13_1: 4 files,  14M
+==> Pouring hugo-0.21.sierra.bottle.tar.gz
+🍺  /usr/local/Cellar/hugo/0.21: 32 files, 17.4MB
 ```
 
 {{% note "Installing the Latest Hugo with Brew" %}}

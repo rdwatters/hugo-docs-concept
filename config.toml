@@ -208,13 +208,13 @@ googleAnalytics = "UA-76549364-1"
     name = "News"
     weight = 1
     identifier = "news"
-    url = "https://hugodocs.info/news/"
+    url = "/news/"
 
   [[menu.global]]
     name = "Docs"
     weight = 5
     identifier = "docs"
-    url = "/"
+    url = "/documentation/"
 
   [[menu.global]]
     name = "Themes"

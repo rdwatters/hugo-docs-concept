@@ -68,6 +68,8 @@ googleAnalytics = "UA-76549364-1"
   ## Google Tag Manager
   gtmid = ""
 
+  flex_box_interior_classes = "flex-auto w-100 w-40-l mr3 mb3 bg-white ba b--moon-gray nested-copy-line-height"
+
   #sidebar_direction = "sidebar_left"
 
 # MARKDOWN

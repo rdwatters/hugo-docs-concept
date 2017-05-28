@@ -2,7 +2,7 @@
 title: Release Notes
 linktitle: Release Notes
 description: See the full list of Hugo release notes since v0.05 in June 2015.
-date: 2017-02-01
+date: 2016-02-01
 publishdate: 2017-02-01
 lastmod: 2017-02-01
 categories: [releases]

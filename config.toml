@@ -9,7 +9,7 @@ defaultContentLanguage = "en"
 # Set to true to keep url path preserve casing (eg, for sections)
 disablePathToLower = false
 # Site-level description
-description = ""
+description = "Website and documentation for the Hugo Project, the world's fastest framework for building websites."
 # Allows use of emoji shorthand directly in content
 enableEmoji = true
 # Set the unicode character used for the "return" link in page footnotes.
@@ -43,16 +43,14 @@ watch = true
 # Add GA Tracking Code Here. This leverages a built-in (ie, "internal") partial from HUGO: https://gohugo.io/extras/analytics#configuring-google-analytics
 googleAnalytics = "UA-76549364-1"
 
+[social]
+twitter = "GoHugoIO"
+
+
 #CUSTOM PARAMS
 [params]
   ## Used for views in rendered HTML (i.e., rather than using the .Hugo variable)
   release = "0.20"
-  ## Critical Render Path. If true, site style will be embedded in a <style> tag in each html <head> as part of Gulp Build. False puts a typical <link> to the stylesheet in <head> See layouts/partials/style-embed.html
-  usecrp = true
-  ## Twitter handle without the "@"
-  twitterhandle = "GoHugoIO"
-  ## Default Image for Social Sharing. This image should live at static/images/
-  defaultsocialimage = "hugodefaultsocial.png"
   ## Setting this to true will add a "noindex" to *EVERY* page on the site
   removefromexternalsearch = false
   ## This is used when the BaseURL does not need to modified (eg, in share links or in prerender, prefetch, etc to control for relativeURLs setting); do *not* include trailing slash

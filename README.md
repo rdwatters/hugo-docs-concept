@@ -1,21 +1,8 @@
-## Hugo Docs POC
+# Hugo Docs Temporary POC
 
-See the concept live at <https://hugodocs.info>.
+## **This repository is now closed**
 
-**CURRENTLY IN DEVELOPMENT.**
+First of all, thank you to everyone who provided feedback on the new documentation. It is *greatly* appreciated.
 
-This is *not* a new theme or skin for the [current website](https://gohugo.io). It is a **complete reworking of the Hugo documentation**.
-
-I originally posed a source reorganization of the current website in this Discuss thread in November 2016 here:
-
-<https://discourse.gohugo.io/t/proposed-source-organization-for-hugo-docs-concept/4506>
-
-I reorganized the docs content and realized it did very little to make the documentation more intelligible or intuitive.
-
-So, I'm running with it...
-
-TODOs:
-
-- [X] Fix theme /content/content-management/archetypes.md where theme is indicated
-- [X] Fix theme /content/contribute/documentation.md where theme is indicated
-- [X] Fix theme /content/templates/files.md where theme is indicated
+1. Moving forward, if you have any requests or suggestions for documentation improvement, please file an issue in the new Hugo docs repo: <https://github.com/gohugoio>
+2. If you have an open issue for this repository, the Hugo team will take care of moving relevant issues over to the official repo within the Hugo GH Organization.
